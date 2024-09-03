@@ -24,38 +24,33 @@
             margin: 20px auto;
         }
 
-        .spotify-button {
-            background-color: #1DB954;
+        .common-button {
             border: none;
-            border-radius: 50px;
-            color: white;
-            padding: 15px 30px;
+            border-radius: 15px;
+            padding: 20px;
             text-align: center;
             text-decoration: none;
-            display: inline-block;
+            display: block;
             font-size: 20px;
-            margin: 10px;
+            margin: 10px auto;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
+            color: #fff; /* Texto en color blanco para contraste */
+        }
+
+        .spotify-button {
+            background-color: #1DB954;
+            box-shadow: 0px 4px 8px rgba(30, 215, 96, 0.5);
         }
 
         .spotify-button:hover {
             transform: scale(1.03);
-            box-shadow: 0px 0px 10px rgba(30, 215, 96, 0.5);
+            box-shadow: 0px 6px 12px rgba(30, 215, 96, 0.5);
         }
 
         .project-box {
             background-color: rgba(135, 206, 250, 0.8); /* Azul cielo con transparencia */
-            border-radius: 15px;
-            padding: 30px;
-            text-align: center;
-            width: 250px; /* Ajusta el tamaño del recuadro */
-            margin: 20px auto; /* Centra el recuadro */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            color: #000; /* Texto en color negro para contraste */
-            font-size: 20px;
-            display: block; /* Asegura que los botones estén uno debajo del otro */
         }
 
         .project-box:hover {
@@ -69,22 +64,22 @@
 
     <div class="button-container">
         <!-- Botón de Spotify -->
-        <a href="https://miketrollyt.github.io/MikeTroll/trollify" class="spotify-button">
+        <a href="https://miketrollyt.github.io/MikeTroll/trollify" class="common-button spotify-button">
             Convertidor Spotify
         </a>
     </div>
 
     <div class="button-container">
         <!-- Recuadros Próximamente -->
-        <div class="project-box">
+        <div class="common-button project-box">
             Próximamente...
         </div>
 
-        <div class="project-box">
+        <div class="common-button project-box">
             Próximamente...
         </div>
 
-        <div class="project-box">
+        <div class="common-button project-box">
             Próximamente...
         </div>
     </div>
