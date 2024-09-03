@@ -8,69 +8,61 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             margin: 0;
-            padding: 20px;
             background-color: #121212;
             color: #fff;
-            text-align: center;
-        }
-
-        h1 {
-            color: #1DB954;
-            margin-bottom: 40px;
         }
 
         .button-container {
-            margin: 20px auto;
+            text-align: center;
         }
 
         .common-button {
             border: none;
-            border-radius: 15px;
-            padding: 30px;
+            border-radius: 50px;
+            color: #fff;
+            padding: 15px 30px;
             text-align: center;
             text-decoration: none;
-            display: block;
+            display: inline-block;
             font-size: 20px;
-            margin: 10px auto;
+            margin: 10px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
-            width: 250px; /* Asegura que todos los botones tengan el mismo ancho */
-            color: #fff; /* Texto en color blanco para contraste */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .spotify-button {
             background-color: #1DB954;
-            box-shadow: 0px 4px 8px rgba(30, 215, 96, 0.5);
+            box-shadow: 0px 0px 10px rgba(30, 215, 96, 0.5);
         }
 
         .spotify-button:hover {
             transform: scale(1.03);
-            box-shadow: 0px 6px 12px rgba(30, 215, 96, 0.5);
+            box-shadow: 0px 0px 15px rgba(30, 215, 96, 0.5);
         }
 
         .project-box {
             background-color: rgba(135, 206, 250, 0.8); /* Azul cielo con transparencia */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
         }
 
         .project-box:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            transform: scale(1.03);
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
         }
     </style>
 </head>
 <body>
-    <h1>Mis Proyectos</h1>
-
     <div class="button-container">
         <!-- Botón de Spotify -->
         <a href="https://miketrollyt.github.io/MikeTroll/trollify" class="common-button spotify-button">
             Convertidor Spotify
         </a>
-    </div>
 
-    <div class="button-container">
         <!-- Recuadros Próximamente -->
         <div class="common-button project-box">
             Próximamente...
