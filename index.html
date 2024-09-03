@@ -3,49 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mis Proyectos</title>
+    <title>Página Principal - MikeTroll</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
+            padding: 20px;
             background-color: #121212;
             color: #fff;
-        }
-
-        .button-container {
             text-align: center;
         }
 
-        .spotify-button {
+        h1 {
+            color: #1DB954;
+            margin-bottom: 40px;
+        }
+
+        .project-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .project-box {
+            background-color: rgba(135, 206, 250, 0.8); /* Azul cielo con transparencia */
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            width: 250px; /* Ajusta el tamaño del recuadro */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            color: #000; /* Texto en color negro para contraste */
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        .project-box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .home-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
             background-color: #1DB954;
             border: none;
-            border-radius: 50px;
+            border-radius: 50%;
             color: white;
-            padding: 15px 30px;
+            padding: 10px;
+            font-size: 24px;
+            width: 50px;
+            height: 50px;
             text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 20px;
-            margin: 10px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            line-height: 30px;
             cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .spotify-button:hover {
-            transform: scale(1.03);
-            box-shadow: 0px 0px 10px rgba(30, 215, 96, 0.5);
+        .home-button:hover {
+            background-color: #17a74a;
         }
     </style>
 </head>
 <body>
-    <div class="button-container">
-        <a href="trollify/index.html" class="spotify-button">
+    <a href="https://miketrollyt.github.io/MikeTroll" class="home-button">
+        <i class="fas fa-home"></i>
+    </a>
+
+    <h1>Mis Proyectos</h1>
+
+    <div class="project-container">
+        <!-- Recuadro 1 -->
+        <a href="https://miketrollyt.github.io/MikeTroll/trollify" class="project-box">
             Convertidor Spotify
         </a>
+
+        <!-- Recuadro 2 (Ejemplo de un proyecto próximo) -->
+        <div class="project-box">
+            Próximamente...
+        </div>
+
+        <!-- Recuadro 3 (Ejemplo de un proyecto próximo) -->
+        <div class="project-box">
+            Próximamente...
+        </div>
+
+        <!-- Recuadro 4 (Ejemplo de un proyecto próximo) -->
+        <div class="project-box">
+            Próximamente...
+        </div>
     </div>
 </body>
 </html>
