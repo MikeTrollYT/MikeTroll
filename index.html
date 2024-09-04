@@ -33,6 +33,7 @@
             text-decoration: none;
             display: inline-block;
             font-size: 20px;
+            font-weight: bold; /* Texto en negrita */
             margin: 10px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
@@ -47,6 +48,16 @@
         .spotify-button:hover {
             transform: scale(1.03);
             box-shadow: 0px 0px 15px rgba(30, 215, 96, 0.5);
+        }
+
+        .youtube-button {
+            background-color: #FF0000; /* Rojo de YouTube */
+            box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.5);
+        }
+
+        .youtube-button:hover {
+            transform: scale(1.03);
+            box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.5);
         }
 
         .project-box {
@@ -65,6 +76,11 @@
         <!-- Botón de Spotify -->
         <a href="https://miketrollyt.github.io/MikeTroll/trollify" class="common-button spotify-button">
             Convertidor Spotify
+        </a>
+
+        <!-- Botón de YouTube -->
+        <a href="https://miketrollyt.github.io/MikeTroll/trolltube" class="common-button youtube-button">
+            Convertidor Youtube
         </a>
 
         <!-- Recuadros Próximamente -->
