@@ -57,7 +57,7 @@
             display: none;
             text-align: left;
             margin: 20px auto;
-            max-width: 800px;
+            max-width: 100%;
         }
 
         .content.active {
@@ -80,6 +80,12 @@
         .proxy-table div {
             flex: 1;
             margin: 0 10px;
+            text-align: left;
+            padding: 5px;
+        }
+
+        .proxy-table pre {
+            margin: 0;
         }
 
         .proxy-table a {
@@ -106,17 +112,17 @@
     <!-- Contenido para Opción 1 -->
     <div id="content-1" class="content">
         <div class="proxy-table">
-            <div>
+            <div id="http-1">
                 <h2>HTTP</h2>
-                <a href="https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/http.txt" target="_blank">https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/http.txt</a>
+                <pre id="http-content-1"></pre>
             </div>
-            <div>
+            <div id="socks4-1">
                 <h2>SOCKS4</h2>
-                <a href="https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/socks4.txt" target="_blank">https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/socks4.txt</a>
+                <pre id="socks4-content-1"></pre>
             </div>
-            <div>
+            <div id="socks5-1">
                 <h2>SOCKS5</h2>
-                <a href="https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/socks5.txt" target="_blank">https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/socks5.txt</a>
+                <pre id="socks5-content-1"></pre>
             </div>
         </div>
     </div>
@@ -124,17 +130,17 @@
     <!-- Contenido para Opción 2 -->
     <div id="content-2" class="content">
         <div class="proxy-table">
-            <div>
+            <div id="http-2">
                 <h2>HTTP</h2>
-                <a href="https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/http.txt" target="_blank">https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/http.txt</a>
+                <pre id="http-content-2"></pre>
             </div>
-            <div>
+            <div id="socks4-2">
                 <h2>SOCKS4</h2>
-                <a href="https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks4.txt" target="_blank">https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks4.txt</a>
+                <pre id="socks4-content-2"></pre>
             </div>
-            <div>
+            <div id="socks5-2">
                 <h2>SOCKS5</h2>
-                <a href="https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks5.txt" target="_blank">https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks5.txt</a>
+                <pre id="socks5-content-2"></pre>
             </div>
         </div>
     </div>
@@ -142,17 +148,17 @@
     <!-- Contenido para Opción 3 -->
     <div id="content-3" class="content">
         <div class="proxy-table">
-            <div>
+            <div id="http-3">
                 <h2>HTTP</h2>
-                <a href="https://raw.githubusercontent.com/ErcinDedeoglu/proxies/main/proxies/http.txt" target="_blank">https://raw.githubusercontent.com/ErcinDedeoglu/proxies/main/proxies/http.txt</a>
+                <pre id="http-content-3"></pre>
             </div>
-            <div>
+            <div id="socks4-3">
                 <h2>SOCKS4</h2>
-                <a href="https://raw.githubusercontent.com/ErcinDedeoglu/proxies/main/proxies/socks4.txt" target="_blank">https://raw.githubusercontent.com/ErcinDedeoglu/proxies/main/proxies/socks4.txt</a>
+                <pre id="socks4-content-3"></pre>
             </div>
-            <div>
+            <div id="socks5-3">
                 <h2>SOCKS5</h2>
-                <a href="https://raw.githubusercontent.com/ErcinDedeoglu/proxies/main/proxies/socks5.txt" target="_blank">https://raw.githubusercontent.com/ErcinDedeoglu/proxies/main/proxies/socks5.txt</a>
+                <pre id="socks5-content-3"></pre>
             </div>
         </div>
     </div>
@@ -160,17 +166,17 @@
     <!-- Contenido para Opción 4 -->
     <div id="content-4" class="content">
         <div class="proxy-table">
-            <div>
+            <div id="http-4">
                 <h2>HTTP</h2>
-                <a href="https://raw.githubusercontent.com/proxifly/free-proxy-list/main/proxies/protocols/http/data.txt" target="_blank">https://raw.githubusercontent.com/proxifly/free-proxy-list/main/proxies/protocols/http/data.txt</a>
+                <pre id="http-content-4"></pre>
             </div>
-            <div>
+            <div id="socks4-4">
                 <h2>SOCKS4</h2>
-                <a href="https://raw.githubusercontent.com/proxifly/free-proxy-list/main/proxies/protocols/socks4/data.txt" target="_blank">https://raw.githubusercontent.com/proxifly/free-proxy-list/main/proxies/protocols/socks4/data.txt</a>
+                <pre id="socks4-content-4"></pre>
             </div>
-            <div>
+            <div id="socks5-4">
                 <h2>SOCKS5</h2>
-                <a href="https://raw.githubusercontent.com/proxifly/free-proxy-list/main/proxies/protocols/socks5/data.txt" target="_blank">https://raw.githubusercontent.com/proxifly/free-proxy-list/main/proxies/protocols/socks5/data.txt</a>
+                <pre id="socks5-content-4"></pre>
             </div>
         </div>
     </div>
@@ -183,7 +189,52 @@
             });
 
             // Muestra el contenido seleccionado
-            document.getElementById('content-' + option).classList.add('active');
+            const contentElement = document.getElementById('content-' + option);
+            contentElement.classList.add('active');
+
+            // Cargar y mostrar los datos en las columnas
+            loadProxies(option);
+        }
+
+        function loadProxies(option) {
+            const urls = {
+                1: {
+                    http: "https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/http.txt",
+                    socks4: "https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/socks4.txt",
+                    socks5: "https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/socks5.txt"
+                },
+                2: {
+                    http: "https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/http.txt",
+                    socks4: "https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks4.txt",
+                    socks5: "https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks5.txt"
+                },
+                3: {
+                    http: "https://raw.githubusercontent.com/ErcinDedeoglu/proxies/main/proxies/http.txt",
+                    socks4: "https://raw.githubusercontent.com/ErcinDedeoglu/proxies/main/proxies/socks4.txt",
+                    socks5: "https://raw.githubusercontent.com/ErcinDedeoglu/proxies/main/proxies/socks5.txt"
+                },
+                4: {
+                    http: "https://raw.githubusercontent.com/proxifly/free-proxy-list/main/proxies/protocols/http/data.txt",
+                    socks4: "https://raw.githubusercontent.com/proxifly/free-proxy-list/main/proxies/protocols/socks4/data.txt",
+                    socks5: "https://raw.githubusercontent.com/proxifly/free-proxy-list/main/proxies/protocols/socks5/data.txt"
+                }
+            };
+
+            const urlsForOption = urls[option];
+
+            const fetchAndDisplay = async (type) => {
+                try {
+                    const response = await fetch(urlsForOption[type]);
+                    const text = await response.text();
+                    document.getElementById(`${type}-content-${option}`).textContent = text;
+                } catch (error) {
+                    document.getElementById(`${type}-content-${option}`).textContent = 'Error al cargar datos';
+                }
+            };
+
+            fetchAndDisplay('http');
+            fetchAndDisplay('socks4');
+            fetchAndDisplay('socks5');
         }
     </script>
 </body>
