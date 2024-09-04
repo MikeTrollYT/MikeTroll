@@ -1,1 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proxies - MikeTroll</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
 
+        h1 {
+            font-size: 2.5em;
+            margin: 20px 0;
+        }
+
+        .description {
+            font-size: 1.2em;
+            margin: 20px 0;
+            color: #ccc;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .button {
+            background-color: #1DB954;
+            border: none;
+            border-radius: 50px;
+            color: #fff;
+            padding: 15px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+            font-weight: bold;
+            margin: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            width: 150px; /* Ajusta el tamaño del botón */
+        }
+
+        .button:hover {
+            transform: scale(1.03);
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .content {
+            display: none;
+            text-align: left;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+
+        .content.active {
+            display: block;
+        }
+
+        .proxy-table {
+            background-color: #333;
+            padding: 10px;
+            border-radius: 8px;
+            color: #fff;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            max-width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .proxy-table div {
+            flex: 1;
+            margin: 0 10px;
+        }
+
+        .proxy-table a {
+            color: #1DB954;
+            text-decoration: none;
+        }
+
+        .proxy-table a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Proxies</h1>
+    <p class="description">📈 Obtén una lista de proxies actualizada diariamente para mejorar tu experiencia en línea. ¡Explora las opciones y encuentra la lista que mejor se adapte a tus necesidades! 🌐</p>
+    
+    <div class="button-container">
+        <button class="button" onclick="showContent(1)">Opción 1</button>
+        <button class="button" onclick="showContent(2)">Opción 2</button>
+        <button class="button" onclick="showContent(3)">Opción 3</button>
+        <button class="button" onclick="showContent(4)">Opción 4</button>
+    </div>
+
+    <!-- Contenido para Opción 1 -->
+    <div id="content-1" class="content">
+        <div class="proxy-table">
+            <div>
+                <h2>HTTP</h2>
+                <a href="https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/http.txt" target="_blank">https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/http.txt</a>
+            </div>
+            <div>
+                <h2>SOCKS4</h2>
+                <a href="https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/socks4.txt" target="_blank">https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/socks4.txt</a>
+            </div>
+            <div>
+                <h2>SOCKS5</h2>
+                <a href="https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/socks5.txt" target="_blank">https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/socks5.txt</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenido para Opción 2 -->
+    <div id="content-2" class="content">
+        <div class="proxy-table">
+            <div>
+                <h2>HTTP</h2>
+                <a href="https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/http.txt" target="_blank">https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/http.txt</a>
+            </div>
+            <div>
+                <h2>SOCKS4</h2>
+                <a href="https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks4.txt" target="_blank">https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks4.txt</a>
+            </div>
+            <div>
+                <h2>SOCKS5</h2>
+                <a href="https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks5.txt" target="_blank">https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks5.txt</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenido para Opción 3 -->
+    <div id="content-3" class="content">
+        <div class="proxy-table">
+            <div>
+                <h2>HTTP</h2>
+                <a href="https://raw.githubusercontent.com/ErcinDedeoglu/proxies/main/proxies/http.txt" target="_blank">https://raw.githubusercontent.com/ErcinDedeoglu/proxies/main/proxies/http.txt</a>
+            </div>
+            <div>
+                <h2>SOCKS4</h2>
+                <a href="https://raw.githubusercontent.com/ErcinDedeoglu/proxies/main/proxies/socks4.txt" target="_blank">https://raw.githubusercontent.com/ErcinDedeoglu/proxies/main/proxies/socks4.txt</a>
+            </div>
+            <div>
+                <h2>SOCKS5</h2>
+                <a href="https://raw.githubusercontent.com/ErcinDedeoglu/proxies/main/proxies/socks5.txt" target="_blank">https://raw.githubusercontent.com/ErcinDedeoglu/proxies/main/proxies/socks5.txt</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenido para Opción 4 -->
+    <div id="content-4" class="content">
+        <div class="proxy-table">
+            <div>
+                <h2>HTTP</h2>
+                <a href="https://raw.githubusercontent.com/proxifly/free-proxy-list/main/proxies/protocols/http/data.txt" target="_blank">https://raw.githubusercontent.com/proxifly/free-proxy-list/main/proxies/protocols/http/data.txt</a>
+            </div>
+            <div>
+                <h2>SOCKS4</h2>
+                <a href="https://raw.githubusercontent.com/proxifly/free-proxy-list/main/proxies/protocols/socks4/data.txt" target="_blank">https://raw.githubusercontent.com/proxifly/free-proxy-list/main/proxies/protocols/socks4/data.txt</a>
+            </div>
+            <div>
+                <h2>SOCKS5</h2>
+                <a href="https://raw.githubusercontent.com/proxifly/free-proxy-list/main/proxies/protocols/socks5/data.txt" target="_blank">https://raw.githubusercontent.com/proxifly/free-proxy-list/main/proxies/protocols/socks5/data.txt</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showContent(option) {
+            // Oculta todo el contenido
+            document.querySelectorAll('.content').forEach(content => {
+                content.classList.remove('active');
+            });
+
+            // Muestra el contenido seleccionado
+            document.getElementById('content-' + option).classList.add('active');
+        }
+    </script>
+</body>
+</html>
