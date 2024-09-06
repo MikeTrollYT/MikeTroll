@@ -81,6 +81,7 @@
             flex: 1;
             min-width: 250px;
             text-align: left;
+            position: relative;
         }
 
         .proxy-box h2 {
@@ -91,6 +92,23 @@
             margin: 0;
             white-space: pre-wrap;
             word-wrap: break-word;
+        }
+
+        .download-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #00BFFF;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .download-btn:hover {
+            background-color: #009ACD;
         }
     </style>
 </head>
@@ -111,14 +129,17 @@
             <div id="http-1" class="proxy-box">
                 <h2>HTTP</h2>
                 <pre id="http-content-1"></pre>
+                <button class="download-btn" onclick="downloadFile('http-content-1', 'HTTP_proxies.txt')">Descargar</button>
             </div>
             <div id="socks4-1" class="proxy-box">
                 <h2>SOCKS4</h2>
                 <pre id="socks4-content-1"></pre>
+                <button class="download-btn" onclick="downloadFile('socks4-content-1', 'SOCKS4_proxies.txt')">Descargar</button>
             </div>
             <div id="socks5-1" class="proxy-box">
                 <h2>SOCKS5</h2>
                 <pre id="socks5-content-1"></pre>
+                <button class="download-btn" onclick="downloadFile('socks5-content-1', 'SOCKS5_proxies.txt')">Descargar</button>
             </div>
         </div>
     </div>
@@ -129,14 +150,17 @@
             <div id="http-2" class="proxy-box">
                 <h2>HTTP</h2>
                 <pre id="http-content-2"></pre>
+                <button class="download-btn" onclick="downloadFile('http-content-2', 'HTTP_proxies.txt')">Descargar</button>
             </div>
             <div id="socks4-2" class="proxy-box">
                 <h2>SOCKS4</h2>
                 <pre id="socks4-content-2"></pre>
+                <button class="download-btn" onclick="downloadFile('socks4-content-2', 'SOCKS4_proxies.txt')">Descargar</button>
             </div>
             <div id="socks5-2" class="proxy-box">
                 <h2>SOCKS5</h2>
                 <pre id="socks5-content-2"></pre>
+                <button class="download-btn" onclick="downloadFile('socks5-content-2', 'SOCKS5_proxies.txt')">Descargar</button>
             </div>
         </div>
     </div>
@@ -147,14 +171,17 @@
             <div id="http-3" class="proxy-box">
                 <h2>HTTP</h2>
                 <pre id="http-content-3"></pre>
+                <button class="download-btn" onclick="downloadFile('http-content-3', 'HTTP_proxies.txt')">Descargar</button>
             </div>
             <div id="socks4-3" class="proxy-box">
                 <h2>SOCKS4</h2>
                 <pre id="socks4-content-3"></pre>
+                <button class="download-btn" onclick="downloadFile('socks4-content-3', 'SOCKS4_proxies.txt')">Descargar</button>
             </div>
             <div id="socks5-3" class="proxy-box">
                 <h2>SOCKS5</h2>
                 <pre id="socks5-content-3"></pre>
+                <button class="download-btn" onclick="downloadFile('socks5-content-3', 'SOCKS5_proxies.txt')">Descargar</button>
             </div>
         </div>
     </div>
@@ -165,14 +192,17 @@
             <div id="http-4" class="proxy-box">
                 <h2>HTTP</h2>
                 <pre id="http-content-4"></pre>
+                <button class="download-btn" onclick="downloadFile('http-content-4', 'HTTP_proxies.txt')">Descargar</button>
             </div>
             <div id="socks4-4" class="proxy-box">
                 <h2>SOCKS4</h2>
                 <pre id="socks4-content-4"></pre>
+                <button class="download-btn" onclick="downloadFile('socks4-content-4', 'SOCKS4_proxies.txt')">Descargar</button>
             </div>
             <div id="socks5-4" class="proxy-box">
                 <h2>SOCKS5</h2>
                 <pre id="socks5-content-4"></pre>
+                <button class="download-btn" onclick="downloadFile('socks5-content-4', 'SOCKS5_proxies.txt')">Descargar</button>
             </div>
         </div>
     </div>
@@ -231,6 +261,18 @@
             fetchAndDisplay('http');
             fetchAndDisplay('socks4');
             fetchAndDisplay('socks5');
+        }
+
+        function downloadFile(contentId, filename) {
+            const content = document.getElementById(contentId).textContent;
+            const blob = new Blob([content], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
         }
     </script>
 </body>
