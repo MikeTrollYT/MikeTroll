@@ -3,128 +3,189 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Principal - MikeTroll</title>
+    <title>Comprobador de Proxies - Trollxies</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
+            padding: 20px;
             background-color: #121212;
             color: #fff;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        h1, h2 {
+            color: #00BFFF; /* Color azul claro */
+            text-align: center;
+        }
+
+        p {
+            max-width: 800px;
+            margin: 0 auto 20px auto;
+            text-align: justify;
+        }
+
+        ul {
+            max-width: 800px;
+            margin: 0 auto;
+            padding-left: 40px;
+            list-style-type: disc;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        pre {
+            background-color: #333;
+            padding: 10px;
+            border-radius: 8px;
+            color: #fff;
+            overflow-x: auto;
+            max-width: 800px;
+            margin: 20px auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        code {
+            font-family: "Courier New", Courier, monospace;
         }
 
         .button-container {
             text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            margin-top: 40px;
         }
 
-        .common-button {
+        .download-button {
+            background-color: #00BFFF; /* Azul claro */
             border: none;
             border-radius: 50px;
-            color: #fff;
+            color: white;
             padding: 15px 30px;
             text-align: center;
             text-decoration: none;
             display: inline-block;
             font-size: 20px;
-            font-weight: bold; /* Texto en negrita */
             margin: 10px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
-            width: 250px; /* Ajusta el tamaño del recuadro */
         }
 
-        .spotify-button {
-            background-color: #1DB954;
-            box-shadow: 0px 0px 10px rgba(30, 215, 96, 0.5);
-        }
-
-        .spotify-button:hover {
+        .download-button:hover {
             transform: scale(1.03);
-            box-shadow: 0px 0px 15px rgba(30, 215, 96, 0.5);
-        }
-
-        .youtube-button {
-            background-color: #FF0000; /* Rojo de YouTube */
-            box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.5);
-        }
-
-        .youtube-button:hover {
-            transform: scale(1.03);
-            box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.5);
-        }
-
-        .proxies-button {
-            background-color: #00BFFF; /* Azul profundo claro */
             box-shadow: 0px 0px 10px rgba(0, 191, 255, 0.5);
         }
 
-        .proxies-button:hover {
-            transform: scale(1.03);
-            box-shadow: 0px 0px 15px rgba(0, 191, 255, 0.5);
+        .home-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #00BFFF; /* Azul claro */
+            border: none;
+            border-radius: 50%;
+            color: white;
+            padding: 10px;
+            font-size: 24px;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .project-box {
-            background-color: rgba(135, 206, 250, 0.8); /* Azul cielo con transparencia */
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        .project-box:hover {
-            transform: scale(1.03);
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
-        }
-
-        .checker-button {
-            background-color: #007BFF; /* Azul */
-            box-shadow: 0px 0px 10px rgba(0, 123, 255, 0.5);
-        }
-
-        .checker-button:hover {
-            transform: scale(1.03);
-            box-shadow: 0px 0px 15px rgba(0, 123, 255, 0.5);
+        .home-button:hover {
+            background-color: #0080FF; /* Azul más oscuro */
         }
     </style>
 </head>
 <body>
+    <a href="https://miketrollyt.github.io/MikeTroll" class="home-button">
+        <i class="fas fa-home"></i>
+    </a>
+
+    <h1>Comprobador de Proxies - Trollxies</h1>
+    
+    <h2>Descripción</h2>
+    <p>
+        Este proyecto es un script en Python para comprobar proxies HTTP, SOCKS4 y SOCKS5. El script verifica si los proxies listados en un archivo de texto son funcionales y los clasifica en archivos separados para proxies que funcionan y los que no.
+    </p>
+
+    <h2>Características</h2>
+    <p>
+        - Verifica proxies HTTP, SOCKS4 y SOCKS5.<br>
+        - Usa múltiples hilos para comprobar proxies de manera eficiente.<br>
+        - Muestra el estado de cada proxy en la consola con colores: verde para proxies funcionales y rojo para proxies fallidos.<br>
+        - Guarda los resultados en archivos de texto separados para proxies que funcionan y los que no.
+    </p>
+
+    <h2>Requisitos</h2>
+    <p>
+        Para ejecutar este proyecto, necesitas tener instalados los siguientes componentes:
+    </p>
+    <ul>
+        <li>Python 3.6 o superior</li>
+        <li>Paquetes Python:
+            <ul>
+                <li><code>requests</code></li>
+                <li><code>pysocks</code></li>
+                <li><code>colorama</code></li>
+            </ul>
+        </li>
+    </ul>
+
+    <h2>Instalación</h2>
+    <p>1. Instala las dependencias del proyecto:</p>
+    <pre><code>pip install -r requirements.txt
+    </code></pre>
+
+    <h2>Uso</h2>
+    <p>
+        1. Prepara el archivo de proxies:
+        <ul>
+            <li>Los archivos de proxies deben estar en el formato <code>IP:PORT</code>. Los archivos proporcionados deben ser llenados con proxies válidos:</li>
+            <li><code>HTTP_proxies.txt</code></li>
+            <li><code>SOCKS4_proxies.txt</code></li>
+            <li><code>SOCKS5_proxies.txt</code></li>
+            <li>Puedes encontrar proxies en el siguiente sitio web: <a href="https://miketrollyt.github.io/MikeTroll/proxies/" target="_blank">MikeTroll - Proxies</a></li>
+        </ul>
+    </p>
+    <p>
+        2. Ejecuta el script:
+    </p>
+    <pre><code>python main.py
+    </code></pre>
+    <p>
+        3. Ingresa el tipo de proxy:
+        <ul>
+            <li>Ingresa el tipo de proxy que deseas verificar cuando se te solicite. Las opciones disponibles son <code>HTTP</code>, <code>SOCKS4</code>, y <code>SOCKS5</code>.</li>
+        </ul>
+    </p>
+    <p>
+        4. Revisa los resultados:
+        <ul>
+            <li>El script generará dos archivos de salida:</li>
+            <li><code>working_<tipo_de_proxy>_proxies.txt</code>: Contiene proxies que funcionan.</li>
+            <li><code>non_working_<tipo_de_proxy>_proxies.txt</code>: Contiene proxies que no funcionan.</li>
+        </ul>
+    </p>
+
+    <h2>Notas</h2>
+    <p>
+        - Asegúrate de que el archivo de proxies no contenga líneas vacías ni formatos incorrectos.<br>
+        - Si el archivo de proxies tiene un formato incorrecto, el script puede arrojar errores.
+    </p>
+
     <div class="button-container">
-        <!-- Botón de Spotify -->
-        <a href="https://miketrollyt.github.io/MikeTroll/trollify" class="common-button spotify-button">
-            Convertidor Spotify
+        <a href="https://github.com/MikeTrollYT/Trollxies-ComprobadorDeProxies" class="download-button">
+            Descargar Proyecto
         </a>
-
-        <!-- Botón de YouTube -->
-        <a href="https://miketrollyt.github.io/MikeTroll/trolltube" class="common-button youtube-button">
-            Convertidor Youtube
-        </a>
-
-        <!-- Botón de Proxies -->
-        <a href="https://miketrollyt.github.io/MikeTroll/proxies" class="common-button proxies-button">
-            Proxies
-        </a>
-
-        <!-- Nuevo Botón de Comprobador Proxies -->
-        <a href="https://miketrollyt.github.io/MikeTroll/trollxies" class="common-button checker-button">
-            Comprobador Proxies
-        </a>
-
-        <!-- Recuadros Próximamente -->
-        <div class="common-button project-box">
-            Próximamente...
-        </div>
-
-        <div class="common-button project-box">
-            Próximamente...
-        </div>
-
-        <div class="common-button project-box">
-            Próximamente...
-        </div>
     </div>
 </body>
 </html>
