@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SportTroll</title>
+    <title>SportTroll - Aplicación para Ver Deportes</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
@@ -17,7 +17,7 @@
         }
 
         h1, h2 {
-            color: #32CD32; /* Verde claro */
+            color: #00FF7F; /* Verde claro */
             text-align: center;
         }
 
@@ -56,11 +56,11 @@
 
         .button-container {
             text-align: center;
-            margin-top: 40px;
+            margin-top: 20px;
         }
 
         .download-button {
-            background-color: #32CD32; /* Verde claro */
+            background-color: #00FF7F; /* Verde claro */
             border: none;
             border-radius: 50px;
             color: white;
@@ -72,11 +72,15 @@
             margin: 10px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         .download-button:hover {
             transform: scale(1.03);
-            box-shadow: 0px 0px 10px rgba(50, 205, 50, 0.5);
+            box-shadow: 0px 0px 10px rgba(0, 255, 127, 0.5);
         }
 
         .screenshot-container {
@@ -85,8 +89,8 @@
         }
 
         .screenshot-container img {
-            width: 100%;
-            max-width: 500px;
+            width: 80%;
+            max-width: 300px; /* Tamaño reducido de las capturas */
             margin: 10px;
             border-radius: 8px;
         }
@@ -95,7 +99,7 @@
             position: absolute;
             top: 20px;
             left: 20px;
-            background-color: #32CD32; /* Verde claro */
+            background-color: #00FF7F; /* Verde claro */
             border: none;
             border-radius: 50%;
             color: white;
@@ -113,7 +117,7 @@
         }
 
         .home-button:hover {
-            background-color: #28a745;
+            background-color: #00e64d;
         }
     </style>
 </head>
@@ -126,31 +130,30 @@
     
     <h2>Descripción</h2>
     <p>
-        SportTroll es una aplicación diseñada para ver deportes en vivo y en directo desde tu dispositivo. Ofrece una interfaz amigable y fácil de usar para seguir tus eventos deportivos favoritos sin complicaciones.
+        SportTroll es una aplicación diseñada para ver deportes en vivo. Con una interfaz intuitiva y características avanzadas, 
+        ofrece una experiencia de visualización fluida y enriquecedora para los aficionados al deporte.
     </p>
 
     <h2>Instalación</h2>
     <p>
-        Para ejecutar SportTroll, necesitas tener instalada la aplicación Acestream. Puedes descargar Acestream desde el siguiente enlace:
+        Para utilizar SportTroll, necesitas tener instalada la aplicación Acestream. Puedes descargarla desde el siguiente enlace: 
+        <a href="https://play.google.com/store/apps/details?id=org.acestream.node&hl=es" style="color:#00FF7F;">Acestream</a>.
     </p>
-    <ul>
-        <li><a href="https://play.google.com/store/apps/details?id=org.acestream.node&hl=es" style="color:#32CD32;">Acestream</a></li>
-    </ul>
     <p>
-        También necesitas tener SportTroll instalado. Puedes descargar el archivo APK desde el siguiente enlace:
+        Asegúrate de seguir las instrucciones para la instalación de Acestream y luego instala SportTroll desde el enlace de descarga a continuación.
     </p>
-
-    <div class="button-container">
-        <a href="https://www.mediafire.com/file/bkfi2qcayk5m0gi/SportTroll-v3.1-release.apk/file" class="download-button">
-            Descargar SportTroll
-        </a>
-    </div>
 
     <h2>Capturas de Pantalla</h2>
     <div class="screenshot-container">
         <img src="Capturas/1.jpg" alt="Captura 1">
         <img src="Capturas/2.jpg" alt="Captura 2">
         <img src="Capturas/3.jpg" alt="Captura 3">
+    </div>
+
+    <div class="button-container">
+        <a href="https://www.mediafire.com/file/bkfi2qcayk5m0gi/SportTroll-v3.1-release.apk/file" class="download-button">
+            Descargar
+        </a>
     </div>
 </body>
 </html>
