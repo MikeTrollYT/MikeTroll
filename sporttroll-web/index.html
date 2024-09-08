@@ -1,1 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportTroll Web</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #121212;
+            color: #fff;
+            text-align: center;
+        }
 
+        h1, h2 {
+            color: #008B45; /* Verde más oscuro */
+            text-align: center;
+        }
+
+        p {
+            max-width: 800px;
+            margin: 0 auto 20px auto;
+            text-align: justify;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(5, 150px);
+            grid-gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .grid-item {
+            background-color: #333;
+            width: 150px;
+            height: 150px;
+            border-radius: 15px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación añadida */
+        }
+
+        .grid-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .grid-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0px 0px 10px rgba(0, 255, 127, 0.5); /* Sombra verde clara */
+        }
+
+        .home-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #008B45; /* Verde más oscuro */
+            border: none;
+            border-radius: 50%;
+            color: white;
+            padding: 10px;
+            font-size: 24px;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .home-button:hover {
+            background-color: #006B3A; /* Verde aún más oscuro en hover */
+        }
+    </style>
+</head>
+<body>
+    <a href="https://miketrollyt.github.io/MikeTroll" class="home-button">
+        <i class="fas fa-home"></i> <!-- Icono de casita -->
+    </a>
+    
+    <h1>SportTroll Web</h1>
+
+    <h2>Descripción</h2>
+    <p>
+        SportTroll es una aplicación diseñada para ver deportes en vivo. Con una interfaz intuitiva y características avanzadas, 
+        ofrece una experiencia de visualización fluida y enriquecedora para los aficionados al deporte.
+    </p>
+    
+    <div class="grid-container">
+        <!-- Repite estos bloques de div para cada uno de los 30 cuadrados -->
+        <div class="grid-item">
+            <a href="#">
+                <img src="/Imagenes/DAZN 1.jfif" alt="DAZN 1">
+            </a>
+        </div>
+        <div class="grid-item">
+            <a href="#">
+                <img src="/Imagenes/DAZN 2.jfif" alt="DAZN 2">
+            </a>
+        </div>
+        <div class="grid-item">
+            <a href="#">
+                <img src="/Imagenes/DAZN 3.jfif" alt="DAZN 3">
+            </a>
+        </div>
+        <div class="grid-item">
+            <a href="#">
+                <img src="/Imagenes/DAZN 4.jfif" alt="DAZN 4">
+            </a>
+        </div>
+        <div class="grid-item">
+            <a href="#">
+                <img src="/Imagenes/DAZN F1.jfif" alt="DAZN F1">
+            </a>
+        </div>
+        <div class="grid-item">
+            <a href="#">
+                <img src="/Imagenes/DAZN F1 Multicamara.jpg_large" alt="DAZN F1 (Multicamara)">
+            </a>
+        </div>
+        <div class="grid-item">
+            <a href="#">
+                <img src="/Imagenes/DAZN LaLiga.png" alt="DAZN LaLiga">
+            </a>
+        </div>
+        <div class="grid-item">
+            <a href="#">
+                <img src="/Imagenes/DAZN LaLiga 2.png" alt="DAZN LaLiga 2">
+            </a>
+        </div>
+        <div class="grid-item">
+            <a href="#">
+                <img src="/Imagenes/DAZN LaLiga 3.png" alt="DAZN LaLiga 3">
+            </a>
+        </div>
+        <div class="grid-item">
+            <a href="#">
+                <img src="/Imagenes/DAZN LaLiga 4.png" alt="DAZN LaLiga 4">
+            </a>
+        </div>
+        <div class="grid-item">
+            <a href="#">
+                <img src="/Imagenes/DAZN LaLiga 5.png" alt="DAZN LaLiga 5">
+            </a>
+        </div>
+        <div class="grid-item">
+            <a href="#">
+                <img src="/Imagenes/Movistar LaLiga.jpg" alt="Movistar LaLiga">
+            </a>
+        </div>
+        <div class="grid-item">
+            <a href="#">
+                <img src="/Imagenes/Movistar LigaDeCampeones.jpg" alt="Movistar LigaDeCampeones">
+            </a>
+        </div>
+        <div class="grid-item">
+            <a href="#">
+                <img src="/Imagenes/Movistar Vamos.jpg" alt="Movistar Vamos">
+            </a>
+        </div>
+        <div class="grid-item">
+            <a href="#">
+                <img src="/Imagenes/Movistar +.webp" alt="Movistar +">
+            </a>
+        </div>
+        <div class="grid-item">
+            <a href="#">
+                <img src="/Imagenes/Movistar Deportes.png" alt="Movistar Deportes">
+            </a>
+        </div>
+        <div class="grid-item">
+            <a href="#">
+                <img src="/Imagenes/Movistar Deportes 2.png" alt="Movistar Deportes 2">
+            </a>
+        </div>
+        <div class="grid-item">
+            <a href="#">
+                <img src="/Imagenes/Movistar Deportes 3.png" alt="Movistar Deportes 3">
+            </a>
+        </div>
+        <div class="grid-item">
+            <a href="#">
+                <img src="/Imagenes/Movistar Deportes 4.png" alt="Movistar Deportes 4">
+            </a>
+        </div>
+        <div class="grid-item">
+            <a href="#">
+                <img src="/Imagenes/Movistar Deportes 5.png" alt="Movistar Deportes 5">
+            </a>
+        </div>
+        <div class="grid-item">
+            <a href="#">
+                <img src="/Imagenes/Movistar Deportes 6.png" alt="Movistar Deportes 6">
+            </a>
+        </div>
+        <div class="grid-item">
+            <a href="#">
+                <img src="/Imagenes/Movistar Deportes 7.png" alt="Movistar Deportes 7">
+            </a>
+        </div>
+        <div class="grid-item">
+            <a href="#">
+                <img src="/Imagenes/Movistar Golf.jfif" alt="Movistar Golf">
+            </a>
+        </div>
+        <div class="grid-item">
+            <a href="#">
+                <img src="/Imagenes/Movistar Golf 2.jfif" alt="Movistar Golf 2">
+            </a>
+        </div>
+        <div class="grid-item">
+            <a href="#">
+                <img src="/Imagenes/Movistar SmartBank.png" alt="LaLiga SmartBank">
+            </a>
+        </div>
+        <div class="grid-item">
+            <a href="#">
+                <img src="/Imagenes/Eurosport.png" alt="EuroSport">
+            </a>
+        </div>
+        <div class="grid-item">
+            <a href="#">
+                <img src="/Imagenes/Eurosport 2.png" alt="EuroSport 2">
+            </a>
+        </div>
+        <div class="grid-item">
+            <a href="#">
+                <img src="/Imagenes/La 1.png" alt="La 1">
+            </a>
+        </div>
+        <div class="grid-item">
+            <a href="#">
+                <img src="/Imagenes/TDP.png" alt="TDP">
+            </a>
+        </div>
+        <div class="grid-item">
+            <a href="#">
+                <img src="/Imagenes/GOL.jpg" alt="GOL TV">
+            </a>
+        </div>
+    </div>
+</body>
+</html>
