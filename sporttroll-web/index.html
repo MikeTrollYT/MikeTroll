@@ -47,7 +47,7 @@
         .grid-item img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: cover; /* Ajusta la imagen para cubrir el cuadrado */
         }
 
         .grid-item:hover {
@@ -79,6 +79,41 @@
         .home-button:hover {
             background-color: #006B3A; /* Verde aún más oscuro en hover */
         }
+
+        /* Consultas de medios para ajustar el diseño en dispositivos más pequeños */
+        @media (max-width: 1200px) {
+            .grid-container {
+                grid-template-columns: repeat(4, 150px);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .grid-container {
+                grid-template-columns: repeat(3, 150px);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 150px);
+            }
+
+            .grid-item {
+                width: 100px;
+                height: 100px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+
+            .grid-item {
+                width: 100%;
+                height: 100px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -93,7 +128,7 @@
         ¡Buenas noticias! 🎉 SportTroll ahora está disponible también como página web. 📱🌐 
         ¡Olvídate de descargar la app y selecciona todos los canales directamente desde aquí! 
         Solo necesitas tener la app AceStream para comenzar.
-    </p>    
+    </p>   
     
     <div class="grid-container">
         <!-- Repite estos bloques de div para cada uno de los 30 cuadrados -->
