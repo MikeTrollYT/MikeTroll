@@ -1,1 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Agents - MikeTroll</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
 
+        h1 {
+            font-size: 2.5em;
+            margin: 20px 0;
+            color: #c3b1e1;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin: 20px 0; /* Actualizado para coincidir */
+            color: #ccc;    /* Color actualizado */
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .button {
+            background-color: #7a5cae;
+            border: none;
+            border-radius: 50px;
+            color: #fff;
+            padding: 15px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+            font-weight: bold;
+            margin: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            width: 150px;
+        }
+
+        .button:hover {
+            transform: scale(1.03);
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .content {
+            display: none;
+            margin: 20px auto;
+            max-width: 80%;
+            text-align: left;
+            position: relative;
+        }
+
+        .content.active {
+            display: block;
+        }
+
+        .download-btn {
+            background-color: #7a5cae;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 10px;
+        }
+
+        .download-btn:hover {
+            background-color: #684f94;
+        }
+
+        pre {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 8px;
+            color: #fff;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            margin-top: 50px; /* Para asegurar que el texto no quede debajo del botón */
+        }
+    </style>
+</head>
+<body>
+    <h1>User Agents</h1>
+    <p>🔍 ¡Descubre una extensa lista de más de 13,000 user agents! 🌐 Optimiza tus pruebas y garantiza que tu sitio web funcione a la perfección en cualquier dispositivo y navegador. 🚀</p>
+
+    <div class="button-container">
+        <button class="button" onclick="showContent(1)">Opción 1</button>
+        <button class="button" onclick="showContent(2)">Opción 2</button>
+        <button class="button" onclick="showContent(3)">Opción 3</button>
+    </div>
+
+    <!-- Contenido para Opción 1 -->
+    <div id="content-1" class="content">
+        <button class="download-btn" onclick="downloadFile('content-text-1', 'user-agents.txt')">Descargar</button>
+        <pre id="content-text-1"></pre>
+    </div>
+
+    <!-- Contenido para Opción 2 -->
+    <div id="content-2" class="content">
+        <button class="download-btn" onclick="downloadFile('content-text-2', 'user-agents.txt')">Descargar</button>
+        <pre id="content-text-2"></pre>
+    </div>
+
+    <!-- Contenido para Opción 3 -->
+    <div id="content-3" class="content">
+        <button class="download-btn" onclick="downloadFile('content-text-3', 'user-agents.txt')">Descargar</button>
+        <pre id="content-text-3"></pre>
+    </div>
+
+    <script>
+        function showContent(option) {
+            document.querySelectorAll('.content').forEach(content => content.classList.remove('active'));
+            const contentElement = document.getElementById('content-' + option);
+            contentElement.classList.add('active');
+            loadContent(option);
+        }
+
+        async function loadContent(option) {
+            const urls = {
+                1: 'https://raw.githubusercontent.com/MikeTrollYT/MikeTroll/main/user-agents/user-agents.txt',
+                2: 'https://raw.githubusercontent.com/MikeTrollYT/MikeTroll/main/user-agents/user-agents-2.txt',
+                3: 'https://raw.githubusercontent.com/MikeTrollYT/MikeTroll/main/user-agents/user-agents-3.txt'
+            };
+
+            try {
+                const response = await fetch(urls[option]);
+                const text = await response.text();
+                document.getElementById('content-text-' + option).textContent = text;
+            } catch (error) {
+                document.getElementById('content-text-' + option).textContent = 'Error al cargar los datos';
+            }
+        }
+
+        function downloadFile(contentId, filename) {
+            const content = document.getElementById(contentId).textContent;
+            const blob = new Blob([content], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+    </script>
+</body>
+</html>
