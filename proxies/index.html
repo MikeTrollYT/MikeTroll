@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proxies - MikeTroll</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -98,7 +99,7 @@
             position: absolute;
             top: 10px;
             right: 10px;
-            background-color: #00BFFF;
+            background-color: #00BFFF; /* Azul cielo brillante */
             border: none;
             border-radius: 5px;
             color: #fff;
@@ -110,9 +111,38 @@
         .download-btn:hover {
             background-color: #009ACD;
         }
+
+        .home-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #1E90FF; /* Azul medio */
+            border: none;
+            border-radius: 50%;
+            color: white;
+            padding: 10px;
+            font-size: 24px;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .home-button:hover {
+            background-color: #4169E1; /* Azul royal */
+        }
     </style>
 </head>
 <body>
+    <a href="https://miketrollyt.github.io/MikeTroll" class="home-button">
+        <i class="fas fa-home"></i>
+    </a>
+
     <h1>Proxies</h1>
     <p class="description">📈 Obtén una lista de proxies actualizada diariamente para mejorar tu experiencia en línea. ¡Explora las opciones y encuentra la lista que mejor se adapte a tus necesidades! 🌐</p>
     
@@ -209,70 +239,34 @@
 
     <script>
         function showContent(option) {
-            // Oculta todo el contenido
-            document.querySelectorAll('.content').forEach(content => {
-                content.classList.remove('active');
-            });
+            const contents = document.querySelectorAll('.content');
+            contents.forEach(content => content.classList.remove('active'));
 
-            // Muestra el contenido seleccionado
-            const contentElement = document.getElementById('content-' + option);
-            contentElement.classList.add('active');
-
-            // Cargar y mostrar los datos en las columnas
-            loadProxies(option);
+            const selectedContent = document.getElementById(`content-${option}`);
+            if (selectedContent) {
+                selectedContent.classList.add('active');
+                fetchContent(option);
+            }
         }
 
-        function loadProxies(option) {
-            const urls = {
-                1: {
-                    http: "https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/http.txt",
-                    socks4: "https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/socks4.txt",
-                    socks5: "https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/socks5.txt"
-                },
-                2: {
-                    http: "https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/http.txt",
-                    socks4: "https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks4.txt",
-                    socks5: "https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks5.txt"
-                },
-                3: {
-                    http: "https://raw.githubusercontent.com/ErcinDedeoglu/proxies/main/proxies/http.txt",
-                    socks4: "https://raw.githubusercontent.com/ErcinDedeoglu/proxies/main/proxies/socks4.txt",
-                    socks5: "https://raw.githubusercontent.com/ErcinDedeoglu/proxies/main/proxies/socks5.txt"
-                },
-                4: {
-                    http: "https://raw.githubusercontent.com/Zaeem20/FREE_PROXIES_LIST/master/http.txt",
-                    socks4: "https://raw.githubusercontent.com/Zaeem20/FREE_PROXIES_LIST/master/socks4.txt",
-                    socks5: "https://raw.githubusercontent.com/Zaeem20/FREE_PROXIES_LIST/master/socks5.txt"
-                }
-            };
-
-            const urlsForOption = urls[option];
-
-            const fetchAndDisplay = async (type) => {
-                try {
-                    const response = await fetch(urlsForOption[type]);
-                    const text = await response.text();
-                    document.getElementById(`${type}-content-${option}`).textContent = text;
-                } catch (error) {
-                    document.getElementById(`${type}-content-${option}`).textContent = 'Error al cargar datos';
-                }
-            };
-
-            fetchAndDisplay('http');
-            fetchAndDisplay('socks4');
-            fetchAndDisplay('socks5');
+        function fetchContent(option) {
+            fetch(`https://raw.githubusercontent.com/MikeTrollYT/MikeTroll/main/proxies/${option}.txt`)
+                .then(response => response.text())
+                .then(text => {
+                    document.querySelector(`#http-content-${option}`).textContent = text;
+                    document.querySelector(`#socks4-content-${option}`).textContent = text;
+                    document.querySelector(`#socks5-content-${option}`).textContent = text;
+                })
+                .catch(error => console.error('Error fetching content:', error));
         }
 
         function downloadFile(contentId, filename) {
-            const content = document.getElementById(contentId).textContent;
-            const blob = new Blob([content], { type: 'text/plain' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = filename;
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
+            const text = document.getElementById(contentId).textContent;
+            const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = filename;
+            link.click();
         }
     </script>
 </body>
