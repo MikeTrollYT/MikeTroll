@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Agents - MikeTroll</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,6 +13,7 @@
             margin: 0;
             padding: 0;
             text-align: center;
+            position: relative;
         }
 
         h1 {
@@ -22,8 +24,8 @@
 
         p {
             font-size: 1.2em;
-            margin: 20px 0; /* Actualizado para coincidir */
-            color: #ccc;    /* Color actualizado */
+            margin: 20px 0;
+            color: #ccc;
         }
 
         .button-container {
@@ -91,11 +93,40 @@
             color: #fff;
             white-space: pre-wrap;
             word-wrap: break-word;
-            margin-top: 50px; /* Para asegurar que el texto no quede debajo del botón */
+            margin-top: 50px;
+        }
+
+        .home-button {
+            position: absolute;
+            top: -5px; /* Ajustado para mover el botón más hacia arriba */
+            left: 20px;
+            background-color: #6a4f8d; /* Color morado claro */
+            border: none;
+            border-radius: 50%;
+            color: white;
+            padding: 10px;
+            font-size: 24px;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .home-button:hover {
+            background-color: #5a3f7d; /* Morado más oscuro */
         }
     </style>
 </head>
 <body>
+    <a href="https://miketrollyt.github.io/MikeTroll" class="home-button">
+        <i class="fas fa-home"></i>
+    </a>
+
     <h1>User Agents</h1>
     <p>🔍 ¡Descubre una extensa lista de más de 13,000 user agents! 🌐 Optimiza tus pruebas y garantiza que tu sitio web funcione a la perfección en cualquier dispositivo y navegador. 🚀</p>
 
