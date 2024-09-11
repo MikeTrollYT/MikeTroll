@@ -1,4 +1,3 @@
 #EXTM3U
-#EXTINF:0,
-#EXTVLCOPT:network-caching=1000
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/MikeTrollYT/MikeTroll/main/sporttroll-web/Imagenes/LaLiga%20Hypermotion.jpg" tvg-name="LaLiga Hypermotion", LaLiga Hypermotion
 http://127.0.0.1:6878/ace/getstream?id=d81b4f2f3fde433539c097b2edc9b587ca47b087
