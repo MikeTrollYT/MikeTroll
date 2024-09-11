@@ -34,6 +34,8 @@ ul {
 }
 
 li {
+  display: flex;
+  align-items: center;
   padding: 10px;
   margin: 5px 0;
   background-color: #2e2e2e;
@@ -44,4 +46,16 @@ li {
 
 li:hover {
   background-color: #3e3e3e;
+}
+
+.channel-logo {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.channel-item {
+  display: flex;
+  align-items: center;
 }
