@@ -1,5 +1,5 @@
 // URL del archivo .m3u que contiene los canales
-const m3uUrl = "https://raw.githubusercontent.com/SirRandomss/kebabs/main/mixto";
+const m3uUrl = "https://raw.githubusercontent.com/MikeTrollYT/MikeTroll/main/LaTele/canales";
 
 // Elementos del DOM
 const channelsList = document.getElementById('channels');
