@@ -15,9 +15,11 @@ fetch(m3uUrl)
     // Parsear el archivo M3U
     lines.forEach(line => {
       if (line.startsWith('#EXTINF')) {
-        // Extraer el nombre del canal
-        const channelName = line.split(',')[1].trim();
-        currentChannel = { name: channelName };
+        // Extraer el nombre y el logo del canal
+        const info = line.match(/tvg-logo="(.*?)".*?,(.*)/);
+        const channelLogo = info[1];
+        const channelName = info[2].trim();
+        currentChannel = { name: channelName, logo: channelLogo };
       } else if (line.startsWith('http')) {
         // Asignar la URL al canal
         if (currentChannel) {
@@ -29,10 +31,22 @@ fetch(m3uUrl)
     });
   });
 
-// Función para crear elementos en la lista de canales
+// Función para crear elementos en la lista de canales con su logo
 function createChannelElement(channel) {
   const li = document.createElement('li');
-  li.textContent = channel.name;
+  li.classList.add('channel-item');
+  
+  const logo = document.createElement('img');
+  logo.src = channel.logo;
+  logo.alt = channel.name;
+  logo.classList.add('channel-logo');
+  
+  const name = document.createElement('span');
+  name.textContent = channel.name;
+  
+  li.appendChild(logo);
+  li.appendChild(name);
+  
   li.addEventListener('click', () => playChannel(channel.url));
   channelsList.appendChild(li);
 }
