@@ -1,7 +1,0 @@
-#EXTM3U
-#EXTINF:-1 tvg-id="la1.es" tvg-name="ES: LA 1 FHD" tvg-logo="https://miguia.tv/channels/big_157.png" group-title="ES   MOVISTAR+",ES: LA 1 FHD
-http://253118123198321276.ofkp911.xyz:80/live/Antobici/Lavuelta23/321276.m3u8
-#EXTINF:-1 tvg-id="la1.es" tvg-name="ES: LA 1 HD" tvg-logo="https://miguia.tv/channels/big_157.png" group-title="ES   MOVISTAR+",ES: LA 1 HD
-http://253118123198321277.ofkp911.xyz:80/live/Antobici/Lavuelta23/321277.m3u8
-#EXTINF:-1 tvg-id="" tvg-name="PT: BlacKkKlansman: O Infiltrado" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/AuWp3kfSCtXIOY3Cr2cBA9t9Sib.jpg" group-title="VOD Portuguese",PT: BlacKkKlansman: O Infiltrado
-http://253118123198145333.ofkp911.xyz:80/movie/Antobici/Lavuelta23/145333.mp4
