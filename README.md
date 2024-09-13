@@ -2,11 +2,6 @@
 
 ¡Bienvenido a mi portafolio de proyectos! 🎉 Aquí encontrarás una colección de mis proyectos más recientes. 
 
-## Proyectos
-
-### [Convertidor Spotify](https://github.com/MikeTroll/Trollify-ConvertidorDeSpotify)
-Este proyecto es un convertidor de Spotify que te permite descargar listas o canciones de Spotify en tu equipo. Puedes ver más detalles y el código fuente en el repositorio.
-
 ## Cómo ver la página web
 Puedes ver mi portafolio en vivo [aquí](https://miketrollyt.github.io/MikeTroll).
 
