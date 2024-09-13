@@ -1,5 +1,5 @@
 #EXTM3U
 #EXTINF:-1 tvg-id="la1.es" tvg-name="ES: LA 1 FHD" tvg-logo="https://miguia.tv/channels/big_157.png" group-title="ES   MOVISTAR+",ES: LA 1 FHD
-http://253118123198321276.ofkp911.xyz:80/live/Antobici/Lavuelta23/321276.m3u
+http://253118123198321276.ofkp911.xyz:80/live/Antobici/Lavuelta23/321276.m3u8
 #EXTINF:-1 tvg-id="la1.es" tvg-name="ES: LA 1 HD" tvg-logo="https://miguia.tv/channels/big_157.png" group-title="ES   MOVISTAR+",ES: LA 1 HD
-http://253118123198321277.ofkp911.xyz:80/live/Antobici/Lavuelta23/321277.m3u
+http://253118123198321277.ofkp911.xyz:80/live/Antobici/Lavuelta23/321277.m3u8
