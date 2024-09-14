@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprobador de User Agents - Trollgents</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #121212;
+            color: #fff;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        h1, h2 {
+            color: #9370DB; /* Morado oscuro */
+            text-align: center;
+        }
+
+        p {
+            max-width: 800px;
+            margin: 0 auto 20px auto;
+            text-align: justify;
+        }
+
+        ul {
+            max-width: 800px;
+            margin: 0 auto;
+            padding-left: 40px;
+            list-style-type: disc;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        pre {
+            background-color: #333;
+            padding: 10px;
+            border-radius: 8px;
+            color: #fff;
+            overflow-x: auto;
+            max-width: 800px;
+            margin: 20px auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .download-button {
+            background-color: #9370DB; /* Morado oscuro */
+            border: none;
+            border-radius: 50px;
+            color: white;
+            padding: 15px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+            margin: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .download-button:hover {
+            transform: scale(1.03);
+            box-shadow: 0px 0px 10px rgba(147, 112, 219, 0.5);
+        }
+
+        .home-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #9370DB; /* Morado oscuro */
+            border: none;
+            border-radius: 50%;
+            color: white;
+            padding: 10px;
+            font-size: 24px;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .home-button:hover {
+            background-color: #6A5ACD; /* Morado más oscuro */
+        }
+    </style>
+</head>
+<body>
+    <a href="https://miketrollyt.github.io/MikeTroll" class="home-button">
+        <i class="fas fa-home"></i>
+    </a>
+
+    <h1>Comprobador de User Agents - Trollgents</h1>
+    
+    <h2>Descripción</h2>
+    <p>
+        Este proyecto es un script en Python para comprobar user agents. El script verifica si los user agents listados en un archivo de texto son funcionales o si están obsoletos, y los clasifica en archivos separados para user agents funcionales y obsoletos.
+    </p>
+
+    <h2>Características</h2>
+    <p>
+        - Verifica la funcionalidad de user agents enviando solicitudes HTTP a un sitio web especificado.<br>
+        - Muestra el estado de cada user agent en la consola con colores: verde para user agents funcionales y rojo para obsoletos.<br>
+        - Guarda los resultados en archivos de texto separados para user agents funcionales y obsoletos.
+    </p>
+
+    <h2>Requisitos</h2>
+    <p>
+        Para ejecutar este proyecto, necesitas tener instalados los siguientes componentes:
+    </p>
+    <ul>
+        <li>Python 3.6 o superior</li>
+        <li>Paquetes Python:
+            <ul>
+                <li><code>requests</code></li>
+            </ul>
+        </li>
+    </ul>
+
+    <h2>Instalación</h2>
+    <p>1. Instala las dependencias del proyecto:</p>
+    <pre><code>pip install -r requirements.txt
+    </code></pre>
+
+    <h2>Uso</h2>
+    <p>
+        1. Prepara el archivo de user agents:
+        <ul>
+            <li>El archivo <code>user_agents.txt</code> debe contener una lista de user agents, uno por línea.</li>
+            <li>Puedes encontrar user agents en el siguiente sitio web: <a href="https://miketrollyt.github.io/MikeTroll/user-agents/" target="_blank">MikeTroll - User Agents</a></li>
+        </ul>
+    </p>
+    <p>
+        2. Ejecuta el script:
+    </p>
+    <pre><code>python main.py
+    </code></pre>
+    <p>
+        3. Ingresa la URL del sitio web:
+        <ul>
+            <li>Ingresa la URL del sitio web que deseas usar para verificar los user agents (por ejemplo, <code>https://www.google.com</code>).</li>
+        </ul>
+    </p>
+    <p>
+        4. Revisa los resultados:
+        <ul>
+            <li>El script generará dos archivos de salida:</li>
+            <li><code>user_agents_funcionales.txt</code>: Contiene user agents que funcionan.</li>
+            <li><code>user_agents_obsoletos.txt</code>: Contiene user agents que no funcionan.</li>
+        </ul>
+    </p>
+
+    <h2>Notas</h2>
+    <p>
+        - Asegúrate de que el archivo de user agents no contenga líneas vacías ni formatos incorrectos.<br>
+        - Si el archivo de user agents tiene un formato incorrecto, el script puede arrojar errores.
+    </p>
+
+    <div class="button-container">
+        <a href="https://github.com/MikeTrollYT/Trollgents-ComprobadorDeUserAgents" class="download-button">
+            Descargar Proyecto
+        </a>
+    </div>
+</body>
+</html>
