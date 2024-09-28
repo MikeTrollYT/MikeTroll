@@ -18,9 +18,16 @@
   <div class="overlay">
     <div class="actualizacion-container">
         <h2>Actualización Disponible</h2>
-        <a href="https://www.mediafire.com/file/560wlffptoe48rl/SportTroll-v3.3-release.apk/file" target="_blank" class="btn-descargar">Descargar</a>
+        <button class="btn-descargar" onclick="abrirEnNavegador()">Descargar</button>
     </div>
 </div>
+
+<script>
+    function abrirEnNavegador() {
+        // Abre la URL en el navegador predeterminado del dispositivo
+        window.open('https://www.mediafire.com/file/560wlffptoe48rl/SportTroll-v3.3-release.apk/file', '_system');
+    }
+</script>
 <section id="topper">
   <div id="parallax">
     <div class="layer background" data-type="parallax" data-depth="0.1"></div>
