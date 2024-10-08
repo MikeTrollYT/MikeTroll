@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>En la TV</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .buttons {
+            margin: 20px 0;
+        }
+        button {
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0c47b7;
+        }
+        iframe {
+            width: 80%;
+            height: 600px;
+            margin-top: 20px;
+            border: 2px solid #1a73e8;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="buttons">
+        <button onclick="loadPage('https://jacks1ba.freedombetter54.shop/')">Opción 1</button>
+        <button onclick="loadPage('https://nadia558j.roughcrews4q4.shop/')">Opción 2</button>
+        <button onclick="loadPage('https://niakk.forgottenheading8x14.shop/')">Opción 3</button>
+        <button onclick="loadPage('https://mimif9gg.itsdownacuj.shop/')">Opción 4</button>
+        <button onclick="loadPage('https://vida61gg.combinedried4a.shop/')">Opción 5</button>
+        <button onclick="loadPage('https://leah988r.steadyhusbandl3161.shop/')">Opción 6</button>
+        <button onclick="loadPage('https://oswald74xf.barkbrief53.shop/')">Opción 7</button>
+        <button onclick="loadPage('https://lewisjy9n.cupslightlyuewfsx0.shop/')">Opción 8</button>
+        <button onclick="loadPage('https://elsaz1p9.loadimportantdr2c22.shop/es')">Opción 9</button>
+    </div>
+
+    <!-- Agregar allowfullscreen y permisos para pantalla completa -->
+    <iframe id="webFrame" src="" frameborder="0" allowfullscreen allow="fullscreen"></iframe>
+
+    <script>
+        // Función para cargar la página seleccionada en el iframe
+        function loadPage(url) {
+            var iframe = document.getElementById('webFrame');
+            iframe.src = url;
+
+            // Esperamos a que la página cargue para interceptar enlaces
+            iframe.onload = function() {
+                interceptLinks(iframe);
+            };
+        }
+
+        // Bloquear cualquier ventana emergente de anuncios
+        window.open = function() {
+            console.log("Intento de abrir ventana emergente bloqueado");
+            return null;
+        };
+
+        // Capturar eventos que intenten abrir nuevas ventanas o pestañas
+        window.addEventListener('beforeunload', function(event) {
+            // Si hay intentos de abrir nuevas ventanas, se bloquean
+            event.preventDefault();
+            event.returnValue = '';
+        });
+
+        // Función para interceptar clics dentro del iframe y prevenir nuevas ventanas
+        function interceptLinks(iframe) {
+            try {
+                var iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                iframeDoc.addEventListener('click', function(event) {
+                    var target = event.target;
+                    // Si el usuario hace clic en un enlace
+                    if (target.tagName === 'A') {
+                        event.preventDefault(); // Prevenir la acción por defecto (abrir en nueva ventana)
+                        iframe.src = target.href; // Redirigir el enlace dentro del iframe
+                    }
+                }, false);
+            } catch (e) {
+                console.error("No se puede acceder al contenido del iframe por restricciones de CORS.");
+            }
+        }
+    </script>
+
+</body>
+</html>
