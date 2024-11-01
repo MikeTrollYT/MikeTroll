@@ -1,81 +1,205 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Convertidor de YouTube - MikeTroll</title>
+    <title>Convertidor Spotify - Trollify</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
             background-color: #121212;
             color: #fff;
-            margin: 0;
-            padding: 0;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        h1, h2 {
+            color: #ff0000;
             text-align: center;
         }
 
-        h1 {
-            font-size: 2.5em;
-            margin: 20px 0;
+        p {
+            max-width: 800px;
+            margin: 0 auto 20px auto;
+            text-align: justify;
         }
 
-        .description {
-            font-size: 1.2em;
-            margin: 20px 0;
-            color: #ccc;
+        ul {
+            max-width: 800px;
+            margin: 0 auto;
+            padding-left: 40px;
+            list-style-type: disc;
         }
 
-        .under-construction {
-            background-color: #1DB954; /* Verde de Spotify */
-            padding: 20px;
+        li {
+            margin-bottom: 10px;
+        }
+
+        pre {
+            background-color: #333;
+            padding: 10px;
             border-radius: 8px;
             color: #fff;
-            max-width: 600px;
+            overflow-x: auto;
+            max-width: 800px;
             margin: 20px auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
         }
 
-        .under-construction p {
-            margin: 0;
-            font-size: 1.5em;
+        code {
+            font-family: "Courier New", Courier, monospace;
         }
 
         .button-container {
-            margin: 20px 0;
+            text-align: center;
+            margin-top: 40px;
         }
 
-        .home-button {
-            background-color: #00BFFF; /* Azul cielo brillante */
+        .download-button {
+            background-color: #1DB954;
             border: none;
             border-radius: 50px;
-            color: #fff;
+            color: white;
             padding: 15px 30px;
             text-align: center;
             text-decoration: none;
             display: inline-block;
             font-size: 20px;
-            font-weight: bold;
             margin: 10px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
-            width: 150px;
+        }
+
+        .download-button:hover {
+            transform: scale(1.03);
+            box-shadow: 0px 0px 10px rgba(30, 215, 96, 0.5);
+        }
+
+        .screenshot-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .screenshot-container img {
+            width: 100%;
+            max-width: 500px;
+            margin: 10px;
+            border-radius: 8px;
+        }
+
+        .home-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #ff0000;
+            border: none;
+            border-radius: 50%;
+            color: white;
+            padding: 10px;
+            font-size: 24px;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .home-button:hover {
-            transform: scale(1.03);
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            background-color: #17a74a;
         }
     </style>
 </head>
 <body>
-    <h1>Convertidor de YouTube</h1>
-    <p class="description">🔄 Estamos trabajando en la página para el Convertidor de YouTube. ¡Vuelve pronto para obtener más información! 🚀</p>
+    <a href="https://miketrollyt.github.io/MikeTroll" class="home-button">
+        <i class="fas fa-home"></i>
+    </a>
 
-    <div class="under-construction">
-        <p>🛠️ Esta página está en proceso. ¡Estamos trabajando para ofrecerte una gran herramienta de conversión de YouTube!</p>
+    <h1>Convertidor Spotify - TrollTube</h1>
+    
+    <h2>Descripción</h2>
+    <p>
+        Este proyecto es una aplicación de escritorio que te permite descargar canciones de Youtube como archivos MP3 utilizando 
+        <code>yt-dlp</code> para descargar el audio desde YouTube.
+    </p>
+
+    <h2>Características</h2>
+    <p>
+        - Descarga audio de videos de YouTube en formato MP3.<br>
+        - Interfaz gráfica amigable construida con <code>Tkinter</code>.<br>
+        - Muestra información relevante sobre el video, como título, duración y miniatura.<br>
+        - Barra de progreso para visualizar el estado de la descarga.
+    </p>
+
+    <h2>Requisitos</h2>
+    <p>
+        Para ejecutar este proyecto, necesitas tener instalados los siguientes componentes:
+    </p>
+    <ul>
+        <li><code>Python</code></li>
+        <li><code>yt-dlp</code></li>
+        <li><code>Pillow</code></li>
+        <li><code>requests</code></li>
+        <li><a href="https://ffmpeg.org/download.html" style="color: #ff0000;">FFmpeg</a> (asegúrate de que <code>ffmpeg</code> esté disponible en tu variable de entorno PATH).</li>
+    </ul>
+
+    <h2>Instalación</h2>
+    <p>1. Clona este repositorio:</p>
+    <pre><code>git clone https://github.com/MikeTrollYT/TrollTube-ConvertidorDeYouTube.git
+cd spotify-downloader
+    </code></pre>
+    <p>2. Instala las dependencias del proyecto:</p>
+    <pre><code>pip install -r requirements.txt
+    </code></pre>
+    <p>3. Asegúrate de tener FFmpeg instalado y disponible en el PATH de tu sistema operativo. <a href="https://ffmpeg.org/download.html" style="color:#1DB954;">Guía de instalación de FFmpeg</a></p>
+
+    <h2>Verificar la Instalación de FFmpeg</h2>
+    <p>
+        Para asegurarte de que FFmpeg está instalado y configurado correctamente, puedes usar el script de prueba <code>prueba.py</code>.
+    </p>
+    <p>
+        1. Ejecuta el script con el siguiente comando:
+    </p>
+    <pre><code>python prueba.py
+    </code></pre>
+    <p>
+        2. Si el script descarga correctamente el archivo de prueba y no muestra errores, entonces FFmpeg está instalado y configurado correctamente.
+    </p>
+
+    <h2>Uso</h2>
+    <p>
+        1. Ejecuta la aplicación:
+    </p>
+    <pre><code>python main.py
+    </code></pre>
+    <p>
+        2. Introduce la URL de una canción de Youtube en el campo correspondiente.
+    </p>
+    <p>
+        3. Haz clic en "Descargar" para iniciar la descarga. La barra de progreso se mostrará una vez que comience la descarga.
+    </p>
+    <p>
+        4. Los archivos descargados se guardarán en la carpeta Descargas dentro del directorio del proyecto.
+    </p>
+
+    <h2>Capturas de Pantalla</h2>
+    <div class="screenshot-container">
+        <img src="Capturas/Convertidor.png" alt="Convertidor">
+        <img src="Capturas/EjemploSong.png" alt="Canción">
     </div>
 
     <div class="button-container">
-        <a href="https://miketrollyt.github.io/MikeTroll" class="home-button">Volver al Inicio</a>
+        <a href="https://github.com/MikeTrollYT/TrollTube-ConvertidorDeYouTube" class="download-button">
+            Descargar Proyecto
+        </a>
     </div>
 </body>
 </html>
