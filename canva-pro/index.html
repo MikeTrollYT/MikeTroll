@@ -181,9 +181,28 @@
     .expired {
       filter: blur(4px);
     }
+
+    .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f5f8fa;
+    z-index: 5;
+    display: block; /* Visible inicialmente */
+    }
+
+    .overlay.hidden {
+    display: none; /* Oculta la barrera cuando se da "Comenzar" */
+    }
+
   </style>
 </head>
 <body>
+
+<!-- Barrera invisible para bloquear interacción -->
+<div class="overlay" id="overlay"></div>
 
 <!-- Cuadro de bienvenida -->
 <div class="welcome-box" id="welcome-box">
@@ -200,21 +219,23 @@
 </div>
 
 <script>
-  function startApp() {
-    const welcomeBox = document.getElementById('welcome-box');
-    const background = document.getElementById('background');
+function startApp() {
+  const welcomeBox = document.getElementById('welcome-box');
+  const background = document.getElementById('background');
+  const overlay = document.getElementById('overlay');
 
-    // Animación para ocultar el cuadro de bienvenida
-    welcomeBox.style.animation = 'slideOut 0.8s ease-in-out forwards';
+  // Animación para ocultar el cuadro de bienvenida
+  welcomeBox.style.animation = 'slideOut 0.8s ease-in-out forwards';
 
-    // Mostrar el contenido principal después de la animación
-    setTimeout(() => {
-      welcomeBox.style.display = 'none'; // Quitar completamente el cuadro
-      background.style.opacity = '1';   // Mostrar contenido con transición
-      background.classList.add('active'); // Quitar blur del fondo
-      document.body.style.overflow = 'auto'; // Habilitar scroll si es necesario
-    }, 800);
-  }
+  // Mostrar el contenido principal después de la animación
+  setTimeout(() => {
+    welcomeBox.style.display = 'none'; // Quitar completamente el cuadro
+    background.style.opacity = '1';   // Mostrar contenido con transición
+    background.classList.add('active'); // Quitar blur del fondo
+    document.body.style.overflow = 'auto'; // Habilitar scroll si es necesario
+    overlay.classList.add('hidden'); // Ocultar la barrera invisible
+  }, 800);
+}
 
   // Datos de equipos
   const teamData = [
@@ -222,7 +243,7 @@
     { id: 'team2', endDate: '2024-12-06T00:00:00', title: 'Equipo de Lorena20044marializ', link: 'https://www.canva.com/brand/join?token=XuKPjRJ4-4jNx1JjeI_I8Q&referrer=team-invite' },
     { id: 'team3', endDate: '2024-11-26T00:00:00', title: 'Grupo by Drax', link: 'https://www.canva.com/brand/join?token=2qMTXai3Y4ArOls2Z8waMw&referrer=team-invite' },
     { id: 'team4', endDate: '2024-11-19T00:00:00', title: 'Equipo de Sszjair', link: 'https://www.canva.com/brand/join?token=iVQ_9J_Rg51z1GU4VsLK4A&referrer=team-invite' },
-    { id: 'team5', endDate: '2024-11-19T00:00:00', title: 'Equipo de Prueba', link: '' }
+    { id: 'team5', endDate: '', title: '', link: '' }
   ];
 
   // Ordenar equipos por fecha más reciente
