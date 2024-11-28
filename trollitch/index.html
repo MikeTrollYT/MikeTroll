@@ -1,1 +1,203 @@
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertidor Twitch - Trollitch</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #121212;
+            color: #fff;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        h1, h2 {
+            color: #9146ff;
+            text-align: center;
+        }
+
+        p {
+            max-width: 800px;
+            margin: 0 auto 20px auto;
+            text-align: justify;
+        }
+
+        ul {
+            max-width: 800px;
+            margin: 0 auto;
+            padding-left: 40px;
+            list-style-type: disc;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        pre {
+            background-color: #333;
+            padding: 10px;
+            border-radius: 8px;
+            color: #fff;
+            overflow-x: auto;
+            max-width: 800px;
+            margin: 20px auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .download-button {
+            background-color: #9146ff;
+            border: none;
+            border-radius: 50px;
+            color: white;
+            padding: 15px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+            margin: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .download-button:hover {
+            transform: scale(1.03);
+            box-shadow: 0px 0px 10px rgba(30, 215, 96, 0.5);
+        }
+
+        .screenshot-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .screenshot-container img {
+            width: 100%;
+            max-width: 500px;
+            margin: 10px;
+            border-radius: 8px;
+        }
+
+        .home-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #9146ff;
+            border: none;
+            border-radius: 50%;
+            color: white;
+            padding: 10px;
+            font-size: 24px;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .home-button:hover {
+            background-color: #6441a5;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://miketrollyt.github.io/MikeTroll" class="home-button">
+        <i class="fas fa-home"></i>
+    </a>
+
+    <h1>Convertidor Twitch - Trollitch</h1>
+    
+    <h2>Descripción</h2>
+    <p>
+        Trollitch es una aplicación de escritorio diseñada para descargar transmisiones en directo desde Twitch en formatos MP4 y MP3. La aplicación utiliza <code>yt-dlp</code> para gestionar las descargas y <code>Tkinter</code> para ofrecer una interfaz gráfica sencilla e intuitiva, facilitando a los usuarios la elección del formato y la calidad de la descarga.
+    </p>
+
+    <h2>Características</h2>
+    <p>
+        - Descarga transmisiones en directo de Twitch en formatos MP4 o MP3.<br>
+        - Interfaz gráfica amigable construida con <code>Tkinter</code>.<br>
+        - Selección de calidad de descarga: mejor o peor disponible.<br>
+        - Barra de progreso visual para monitorear el estado de la descarga.<br>
+        - Compatible con la conversión automática a MP3 utilizando <code>FFmpeg</code>.
+    </p>
+
+    <h2>Requisitos</h2>
+    <p>
+        Para ejecutar este proyecto, necesitas tener instalados los siguientes componentes:
+    </p>
+    <ul>
+        <li><code>Python</code></li>
+        <li><code>yt-dlp</code></li>
+        <li><code>tk</code></li>
+        <li><a href="https://ffmpeg.org/download.html" style="color: #9146ff;">FFmpeg</a> (necesario para la conversión de audio y video).</li>
+    </ul>
+
+    <h2>Instalación</h2>
+    <p>1. Clona este repositorio:</p>
+    <pre><code>git clone https://github.com/MikeTrollYT/Trollitch-ConvertidorDeTwitch.git
+cd Trollitch-ConvertidorDeTwitch
+    </code></pre>
+    <p>2. Instala las dependencias del proyecto:</p>
+    <pre><code>pip install -r requirements.txt
+    </code></pre>
+    <p>3. Asegúrate de tener FFmpeg instalado y disponible en el PATH de tu sistema operativo. <a href="https://ffmpeg.org/download.html" style="color:#9146ff;">Guía de instalación de FFmpeg</a></p>
+
+    <h2>Verificar la Instalación de FFmpeg</h2>
+    <p>
+        Para asegurarte de que FFmpeg está instalado y configurado correctamente, puedes usar el script de prueba <code>prueba.py</code>.
+    </p>
+    <p>
+        1. Ejecuta el script con el siguiente comando:
+    </p>
+    <pre><code>python prueba.py
+    </code></pre>
+    <p>
+        2. Si el script descarga correctamente el archivo de prueba y no muestra errores, entonces FFmpeg está instalado y configurado correctamente.
+    </p>
+
+    <h2>Uso</h2>
+    <p>
+        1. Ejecuta la aplicación:
+    </p>
+    <pre><code>python main.py
+    </code></pre>
+    <p>
+        2. Introduce la URL de una canción de Youtube en el campo correspondiente.
+    </p>
+    <p>
+        3. Haz clic en "Descargar" para iniciar la descarga. La barra de progreso se mostrará una vez que comience la descarga.
+    </p>
+    <p>
+        4. Los archivos descargados se guardarán en la carpeta Descargas dentro del directorio del proyecto.
+    </p>
+
+    <h2>Capturas de Pantalla</h2>
+    <div class="screenshot-container">
+        <img src="Capturas/Convertidor.png" alt="Convertidor">
+    </div>
+
+    <div class="button-container">
+        <a href="https://github.com/MikeTrollYT/Trollitch-ConvertidorDeTwitch" class="download-button">
+            Descargar Proyecto
+        </a>
+    </div>
+</body>
+</html>
