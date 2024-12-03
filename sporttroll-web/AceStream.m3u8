@@ -57,6 +57,8 @@ acestream://f31a586422c9244196c810c84b6c85da350318a5
 acestream://ebe14f1edeb49f2253e3b355a8beeadc9b4f0bc4
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/MikeTrollYT/MikeTroll/refs/heads/main/sporttroll-web/Imagenes/MovistarLaLiga3.jpg", Movistar LaLiga 3
 acestream://835639b89db00cc0d94660da3c10b6e38bfbcdc1
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/MikeTrollYT/MikeTroll/refs/heads/main/sporttroll-web/Imagenes/MovistarLaLiga4.jpg", Movistar LaLiga 4
+acestream://68697ea4f261289d97bbc3418ad3cbc4180aa32f
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/MikeTrollYT/MikeTroll/refs/heads/main/sporttroll-web/Imagenes/LaLigaTVBar.jpg", LaLiga TV BAR
 acestream://608b0faf7d3d25f6fe5dba13d5e4b4142949990e
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/MikeTrollYT/MikeTroll/refs/heads/main/sporttroll-web/Imagenes/LaLigaTVBar.jpg", LaLiga TV BAR
