@@ -65,7 +65,7 @@
 
         .radio {
             margin-left: 5px;
-            width: 100px;
+            width: 120px;
             cursor: pointer;
             animation: floatUp 3s infinite alternate ease-in-out;
         }
@@ -93,6 +93,10 @@
             z-index: 1000;
         }
 
+        .modal p {
+            font-size: 20px;
+        }
+
         .modal-overlay {
             display: none;
             position: fixed;
@@ -114,7 +118,10 @@
                 padding: 8px;
             }
             .radio {
-                width: 70px;
+                width: 90px;
+            }
+            .modal p {
+                font-size: 16px;
             }
         }
 
@@ -128,7 +135,10 @@
                 padding: 5px;
             }
             .radio {
-                width: 50px;
+                width: 70px;
+            }
+            .modal p {
+                font-size: 14px;
             }
         }
     </style>
@@ -146,9 +156,9 @@
 
     <div class="modal-overlay" id="modal-overlay"></div>
     <div class="modal" id="modal">
-        <p style="font-size: 20px;">PREPÁRATE PARA DESCUBRIR UNA NUEVA EXPERIENCIA AUDITIVA. ESTAMOS TRABAJANDO EN ALGO INCREÍBLE PARA REUNIR TODAS LAS EMISORAS DE RADIO DE ESPAÑA EN UN SOLO LUGAR.</p>
+        <p>PREPÁRATE PARA DESCUBRIR UNA NUEVA EXPERIENCIA AUDITIVA. ESTAMOS TRABAJANDO EN ALGO INCREÍBLE PARA REUNIR TODAS LAS EMISORAS DE RADIO DE ESPAÑA EN UN SOLO LUGAR.</p>
         <br>
-        <p style="font-size: 20px;">¡MANTENTE ATENTO! FALTA POCO PARA EL LANZAMIENTO.</p>
+        <p>¡MANTENTE ATENTO! FALTA POCO PARA EL LANZAMIENTO.</p>
     </div>
 
     <script>
