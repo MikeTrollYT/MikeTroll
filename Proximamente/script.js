@@ -1,6 +1,6 @@
 function updateCountdown() {
     const now = new Date();
-    const targetDate = new Date("2024-12-31T00:00:00"); // Define your target date here
+    const targetDate = new Date("2025-02-01T00:00:00"); // Define your target date here
     const timeDifference = targetDate - now;
 
     if (timeDifference <= 0) {
@@ -57,20 +57,22 @@ function updateAudioInfo() {
 }
 
 function playPauseAudio() {
+    const playIcon = document.getElementById('play-icon');
     if (audioElement.paused) {
         audioElement.play();
-        playButton.textContent = "⏸️"; // Pause symbol
+        playIcon.src = "Pausa.png"; // Pause symbol
     } else {
         audioElement.pause();
-        playButton.textContent = "▶️"; // Play symbol
+        playIcon.src = "Play.png"; // Play symbol
     }
 }
 
 function nextTrack() {
+    const playIcon = document.getElementById('play-icon');
     currentTrackIndex = (currentTrackIndex + 1) % audioFiles.length;
     audioElement.src = audioFiles[currentTrackIndex].src;
     audioElement.pause();
-    playButton.textContent = "▶️"; // Play symbol
+    playIcon.src = "Play.png"; // Play symbol
     updateAudioInfo();
     if (!audioElement.paused) {
         audioElement.play();
@@ -78,10 +80,11 @@ function nextTrack() {
 }
 
 function prevTrack() {
+    const playIcon = document.getElementById('play-icon');
     currentTrackIndex = (currentTrackIndex - 1 + audioFiles.length) % audioFiles.length;
     audioElement.src = audioFiles[currentTrackIndex].src;
     audioElement.pause();
-    playButton.textContent = "▶️"; // Play symbol
+    playIcon.src = "Play.png"; // Play symbol
     updateAudioInfo();
     if (!audioElement.paused) {
         audioElement.play();
