@@ -179,6 +179,9 @@
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
             position: relative;
             overflow: hidden;
+            width: 250px;
+            height: 60px;
+            margin-top: 20px;
         }
 
         .project-box .progress {
@@ -189,6 +192,7 @@
             background-color: #00FF00;
             z-index: 0;
             width: var(--progress-width, 10%); /* Control del progreso */
+            transition: width 0.5s ease-in-out;
         }
 
         .project-box .progress::before {
@@ -216,6 +220,7 @@
         .project-box .label {
             position: relative;
             z-index: 1;
+            font-size: 18px;
         }
     </style>
 </head>
@@ -261,8 +266,12 @@
         <a href="https://miketrollyt.github.io/MikeTroll/generador-qr/" class="common-button generador-qr-button">
             Generador QR
         </a>
-            <a href="https://miketrollyt.github.io/MikeTroll/Proximamente" class="common-button project-box progress label" style="--progress-width: 10%;" >
+        <a href="https://miketrollyt.github.io/MikeTroll/Proximamente" class="common-button project-box progress label" style="--progress-width: 10%;" >
             Próximamente...
+        </a>
+        <a href="https://miketrollyt.github.io/MikeTroll/Proximamente" class="common-button project-box" style="--progress-width: 10px;">
+            <span class="label">Próximamente...</span>
+            <div class="progress"></div>
         </a>
     </div>
 </body>
