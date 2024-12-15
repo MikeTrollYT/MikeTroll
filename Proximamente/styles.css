@@ -1,98 +1,226 @@
-function updateCountdown() {
-    const now = new Date();
-    const targetDate = new Date("2025-02-01T00:00:00"); // Define your target date here
-    const timeDifference = targetDate - now;
+@font-face {
+    font-family: 'CustomFont';
+    src: url('SuperArena.ttf') format('truetype'); 
+}
 
-    if (timeDifference <= 0) {
-        countdownElement.textContent = "¡Lanzamiento completado!";
-        return;
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #121212;
+    color: #ffffff;
+    font-family: 'CustomFont', sans-serif;
+    overflow: hidden;
+    animation: fadeIn 1.5s ease-in-out;
+    background-image: url('https://www.transparenttextures.com/patterns/black-linen.png'),
+                        linear-gradient(to bottom, #1a1a2e, #16213e);
+    position: relative;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
     }
-
-    const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((timeDifference / (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((timeDifference / (1000 * 60)) % 60);
-    const seconds = Math.floor((timeDifference / 1000) % 60);
-
-    document.getElementById('days').textContent = String(days).padStart(2, '0');
-    document.getElementById('hours').textContent = String(hours).padStart(2, '0');
-    document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-    document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
-}
-
-setInterval(updateCountdown, 1000);
-
-const modalOverlay = document.getElementById('modal-overlay');
-const modal = document.getElementById('modal');
-const radioImage = document.getElementById('radio-image');
-
-radioImage.addEventListener('click', () => {
-    modalOverlay.style.display = 'block';
-    modal.style.display = 'block';
-});
-
-modalOverlay.addEventListener('click', () => {
-    modalOverlay.style.display = 'none';
-    modal.style.display = 'none';
-});
-
-const audioFiles = [
-    { title: "Hawaii", author: "LiQWYD", cover: "Canciones/Portadas/Hawaii.jpg", src: "Canciones/Hawaii.mp3" },
-    { title: "Neon Nights", author: "Snoozy Beats", cover: "Canciones/Portadas/Neon_Nights.jpg", src: "Canciones/Neon_Nights.mp3" },
-    { title: "Arena", author: "KV", cover: "Canciones/Portadas/Arena.jpg", src: "Canciones/Arena.mp3" },
-    { title: "Aurora", author: "DEgITx", cover: "Canciones/Portadas/Aurora.jpg", src: "Canciones/Aurora.mp3" },
-    { title: "Mango Bay", author: "Scandinavianz", cover: "Canciones/Portadas/Mango_Bay.jpg", src: "Canciones/Mango_Bay.mp3" },
-    { title: "Tulips", author: "Snoozy Beats", cover: "Canciones/Portadas/Tulips.jpg", src: "Canciones/Tulips.mp3" }
-];
-
-let currentTrackIndex = 0;
-const audioElement = new Audio(audioFiles[currentTrackIndex].src);
-const playButton = document.getElementById('play-btn');
-const nextButton = document.getElementById('next-btn');
-const prevButton = document.getElementById('prev-btn');
-
-function updateAudioInfo() {
-    document.getElementById('audio-title').textContent = audioFiles[currentTrackIndex].title;
-    document.getElementById('audio-author').textContent = audioFiles[currentTrackIndex].author;
-    document.getElementById('audio-cover').src = audioFiles[currentTrackIndex].cover;
-}
-
-function playPauseAudio() {
-    const playIcon = document.getElementById('play-icon');
-    if (audioElement.paused) {
-        audioElement.play();
-        playIcon.src = "Pausa.png"; // Pause symbol
-    } else {
-        audioElement.pause();
-        playIcon.src = "Play.png"; // Play symbol
+    to {
+        opacity: 1;
     }
 }
 
-function nextTrack() {
-    const playIcon = document.getElementById('play-icon');
-    currentTrackIndex = (currentTrackIndex + 1) % audioFiles.length;
-    audioElement.src = audioFiles[currentTrackIndex].src;
-    audioElement.pause();
-    playIcon.src = "Play.png"; // Play symbol
-    updateAudioInfo();
-    if (!audioElement.paused) {
-        audioElement.play();
+.countdown-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center; /* Centrando la cuenta regresiva */
+    padding: 20px;
+}
+
+.countdown {
+    text-align: center;
+    font-size: 3rem;
+    padding: 10px;
+}
+
+.countdown span {
+    display: inline-block;
+    min-width: 90px;
+    margin: 0 10px;
+    padding: 10px;
+    background: linear-gradient(135deg, #1e90ff, #00bfff);
+    border-radius: 8px;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.countdown span:last-child {
+    margin-right: 0;
+}
+
+.radio {
+    margin-left: 5px;
+    width: 120px;
+    cursor: pointer;
+    animation: floatUp 3s infinite alternate ease-in-out;
+}
+
+@keyframes floatUp {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-10px);
     }
 }
 
-function prevTrack() {
-    const playIcon = document.getElementById('play-icon');
-    currentTrackIndex = (currentTrackIndex - 1 + audioFiles.length) % audioFiles.length;
-    audioElement.src = audioFiles[currentTrackIndex].src;
-    audioElement.pause();
-    playIcon.src = "Play.png"; // Play symbol
-    updateAudioInfo();
-    if (!audioElement.paused) {
-        audioElement.play();
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #1e1e2f;
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.modal p {
+    font-size: 20px;
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+}
+
+.audio-player {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(135deg, #1e90ff, #00bfff);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.audio-info {
+    display: flex;
+    align-items: center;
+}
+
+.audio-info img {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    margin-right: 10px;
+}
+
+.audio-info .details {
+    display: flex;
+    flex-direction: column;
+}
+
+.audio-info .details .title {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.audio-info .details .author {
+    font-size: 0.85rem;
+    color: #d1d1d1;
+}
+
+.audio-controls button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin: 0 20px;
+}
+
+.audio-controls button:hover {
+    color: #ffcc00;
+}
+
+@media screen and (max-width: 768px) {
+    .countdown {
+        font-size: 2rem;
+    }
+    .countdown span {
+        min-width: 70px;
+        margin: 0 5px;
+        padding: 8px;
+    }
+    .radio {
+        width: 90px;
+    }
+    .modal p {
+        font-size: 16px;
+    }
+    .audio-player {
+        height: 60px;
+    }
+    .audio-info img {
+        width: 50px;
+        height: 50px;
+    }
+    .audio-info .details .title {
+        font-size: 0.85rem;
+    }
+    .audio-info .details .author {
+        font-size: 0.75rem;
+    }
+    .audio-controls button {
+        font-size: 1.2rem;
     }
 }
 
-playButton.addEventListener('click', playPauseAudio);
-nextButton.addEventListener('click', nextTrack);
-prevButton.addEventListener('click', prevTrack);
-
-updateAudioInfo();
+@media screen and (max-width: 480px) {
+    .countdown {
+        font-size: 1.5rem;
+    }
+    .countdown span {
+        min-width: 50px;
+        margin: 0 3px;
+        padding: 5px;
+    }
+    .radio {
+        width: 70px;
+    }
+    .modal p {
+        font-size: 14px;
+    }
+    .audio-player {
+        height: 50px;
+    }
+    .audio-info img {
+        width: 40px;
+        height: 40px;
+    }
+    .audio-info .details .title {
+        font-size: 0.75rem;
+    }
+    .audio-info .details .author {
+        font-size: 0.65rem;
+    }
+    .audio-controls button {
+        font-size: 1rem;
+    }
+}
