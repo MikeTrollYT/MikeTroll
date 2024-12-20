@@ -3,269 +3,270 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Principal - MikeTroll</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>MikeTrollYT</title>
     <style>
         body {
+            margin: 0;
             font-family: Arial, sans-serif;
+            background-color: #f0f0f5;
+            color: #333;
             display: flex;
             justify-content: center;
-            margin: 0;
-            background-color: #121212;
-            color: #fff;
-        }
-
-        .button-container {
-            text-align: center;
-            display: flex;
-            flex-direction: column;
             align-items: center;
+            min-height: 100vh;
+            padding: 1em;
+            box-sizing: border-box;
         }
-
-        .common-button {
-            border: none;
-            border-radius: 50px;
-            color: #fff;
-            padding: 15px 30px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 20px;
-            font-weight: bold;
-            margin: 10px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-            width: 250px;
-        }
-
-        .spotify-button {
-            background-color: #1DB954;
-            box-shadow: 0px 0px 10px rgba(30, 215, 96, 0.5);
-        }
-
-        .spotify-button:hover {
-            transform: scale(1.03);
-            box-shadow: 0px 0px 15px rgba(30, 215, 96, 0.5);
-        }
-
-        .youtube-button {
-            background-color: #FF0000;
-            box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.5);
-        }
-
-        .youtube-button:hover {
-            transform: scale(1.03);
-            box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.5);
-        }
-
-        .twitch-button {
-            background-color: #9146ff;
-            box-shadow: 0px 0px 10px rgba(145, 70, 255, 0.5);
-        }
-
-        .twitch-button:hover {
-            transform: scale(1.03);
-            box-shadow: 0px 0px 15px rgba(145, 70, 255, 0.5);
-        }
-        .proxies-button {
-            background-color: #00BFFF;
-            box-shadow: 0px 0px 10px rgba(0, 191, 255, 0.5);
-        }
-
-        .proxies-button:hover {
-            transform: scale(1.03);
-            box-shadow: 0px 0px 15px rgba(0, 191, 255, 0.5);
-        }
-
-        .checker-button {
-            background-color: #007BFF;
-            box-shadow: 0px 0px 10px rgba(0, 123, 255, 0.5);
-        }
-
-        .checker-button:hover {
-            transform: scale(1.03);
-            box-shadow: 0px 0px 15px rgba(0, 123, 255, 0.5);
-        }
-
-        .sporttroll-button {
-            background-color: #00FF00;
-            box-shadow: 0px 0px 10px rgba(0, 255, 0, 0.5);
-        }
-
-        .sporttroll-button:hover {
-            transform: scale(1.03);
-            box-shadow: 0px 0px 15px rgba(0, 255, 0, 0.5);
-        }
-
-        .sporttroll-web-button {
-            background-color: #006400;
-            box-shadow: 0px 0px 10px rgba(0, 100, 0, 0.5);
-        }
-
-        .sporttroll-web-button:hover {
-            transform: scale(1.03);
-            box-shadow: 0px 0px 15px rgba(0, 100, 0, 0.5);
-        }
-
-        .user-agents-button {
-            background-color: #800080;
-            box-shadow: 0px 0px 10px rgba(128, 0, 128, 0.5);
-        }
-
-        .user-agents-button:hover {
-            transform: scale(1.03);
-            box-shadow: 0px 0px 15px rgba(128, 0, 128, 0.5);
-        }
-
-        .iptv-button {
-            background-color: #FFA500;
-            box-shadow: 0px 0px 10px rgba(255, 165, 0, 0.5);
-        }
-
-        .iptv-button:hover {
-            transform: scale(1.03);
-            box-shadow: 0px 0px 15px rgba(255, 165, 0, 0.5);
-        }
-
-        .project-box {
-            background-color: rgba(135, 206, 250, 0.8);
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        .project-box:hover {
-            transform: scale(1.03);
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
-        }
-
-        .user-agents-checker-button {
-            background-color: #4B0082;
-            box-shadow: 0px 0px 10px rgba(75, 0, 130, 0.5);
-        }
-
-        .user-agents-checker-button:hover {
-            transform: scale(1.03);
-            box-shadow: 0px 0px 15px rgba(75, 0, 130, 0.5);
-        }
-        .canva-pro-button {
-            background-color: #2d88ff;
-            box-shadow: 0px 0px 10px rgba(45, 136, 255, 0.5);
-        }
-
-        .canva-pro-button:hover {
-            transform: scale(1.03);
-            box-shadow: 0px 0px 15px rgba(45, 136, 255, 0.5);
-        }
-        .generador-codigos-button {
-            background-color: #e16576;
-            box-shadow: 0px 0px 10px rgba(225, 101, 118, 0.5);
-        }
-
-        .generador-codigos-button:hover {
-            transform: scale(1.03);
-            box-shadow: 0px 0px 15px rgba(225, 101, 118, 0.5);
-        }
-        .generador-qr-button {
-            background-color: #59dc82;
-            box-shadow: 0px 0px 10px rgba(89, 220, 130, 0.5);
-        }
-
-        .generador-qr-button:hover {
-            transform: scale(1.03);
-            box-shadow: 0px 0px 15px rgba(89, 220, 130, 0.5);
-        }
-
-        .project-box {
-            background-color: rgba(135, 206, 250, 0.8);
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-            position: relative;
+        .main-container {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            width: 100%;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             overflow: hidden;
         }
-
-        .project-box .progress {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            background-color: #00FF00;
-            z-index: 0;
-            width: var(--progress-width, 10%); /* Control del progreso */
-            transition: width 0.5s ease-in-out;
+        .profile-container {
+            flex: 1 1 300px;
+            background-color: #0077b6;
+            color: #fff;
+            text-align: center;
+            padding: 2em 1em;
+        }
+        .profile-container img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            border: 2px solid #fff;
+        }
+        .profile-container h2 {
+            margin: 1em 0 0.5em;
+        }
+        .profile-container p {
+            font-style: italic;
+        }
+        .projects-container {
+            flex: 2 1 600px;
+            padding: 2em;
+        }
+        .category {
+            margin-bottom: 2em;
+        }
+        .category h3 {
+            color: #0096c7;
+            border-bottom: 2px solid #0096c7;
+            padding-bottom: 0.5em;
+        }
+        .project-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1em;
+        }
+        .project-item {
+            background-color: #e0f7fa;
+            border: 1px solid #b2ebf2;
+            border-radius: 8px;
+            padding: 1em;
+            text-align: center;
+        }
+        .project-item a {
+            text-decoration: none;
+            color: #005f73;
+            font-weight: bold;
+        }
+        .project-item a:hover {
+            color: #0077b6;
         }
 
-        .project-box .progress::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: radial-gradient(circle, rgba(255, 255, 255, 0.3) 20%, transparent 20%);
-            background-size: 15px 15px;
-            animation: bubbleEffect 2s linear infinite;
-            opacity: 0.5;
-        }
-
-        @keyframes bubbleEffect {
-            0% {
-                background-position: 0 100%;
+        @media (max-width: 768px) {
+            .main-container {
+                flex-direction: column;
             }
-            100% {
-                background-position: 0 0;
+            .profile-container {
+                text-align: center;
             }
         }
 
-        .project-box .label {
-            position: relative;
-            z-index: 1;
+        /* --- INICIO POPUP NUEVO PROYECTO --- */
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            background: #0077b6;
+            color: white;
+            width: 90%;
+            max-width: 400px;
+            padding: 1.5em;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            animation: popup-appear 0.5s forwards ease-in-out;
+            z-index: 1000;
         }
+
+        .popup h3 {
+            margin-top: 0;
+            text-align: center;
+        }
+
+        .popup p {
+            margin: 1em 0;
+            text-align: center;
+        }
+
+        .popup a {
+            display: inline-block;
+            padding: 0.5em 1em;
+            background: #00b4d8;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+            transition: background 0.3s;
+            margin: 0 auto;
+        }
+
+        .popup a:hover {
+            background: #0096c7;
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.5em;
+            color: white;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        .popup-close:hover {
+            color: #00b4d8;
+        }
+
+        @keyframes popup-appear {
+            from {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .popup {
+                width: 90%;
+                padding: 1em;
+                font-size: 0.9em;
+            }
+            .popup h3 {
+                font-size: 1.2em;
+            }
+            .popup p {
+                font-size: 1em;
+            }
+            .popup a {
+                font-size: 0.9em;
+                padding: 0.4em 0.8em;
+            }
+        }
+        /* --- FIN POPUP NUEVO PROYECTO --- */
     </style>
 </head>
 <body>
-    <div class="button-container">
-        <a href="https://miketrollyt.github.io/MikeTroll/trollify" class="common-button spotify-button">
-            Convertidor Spotify
-        </a>
-        <a href="https://miketrollyt.github.io/MikeTroll/trolltube" class="common-button youtube-button">
-            Convertidor Youtube
-        </a>
-        <a href="https://miketrollyt.github.io/MikeTroll/trollitch" class="common-button twitch-button">
-            Convertidor Twitch
-        </a>
-        <a href="https://miketrollyt.github.io/MikeTroll/proxies" class="common-button proxies-button">
-            Proxies
-        </a>
-        <a href="https://miketrollyt.github.io/MikeTroll/trollxies" class="common-button checker-button">
-            Comprobador Proxies
-        </a>
-        <a href="https://miketrollyt.github.io/MikeTroll/sporttroll/" class="common-button sporttroll-button">
-            SportTroll
-        </a>
-        <a href="https://miketrollyt.github.io/MikeTroll/sporttroll-web/" class="common-button sporttroll-web-button">
-            SportTroll Web
-        </a>
-        <a href="https://miketroll-iptv.surge.sh" class="common-button iptv-button">
-            Reproductor IPTV
-        </a>
-        <a href="https://miketrollyt.github.io/MikeTroll/user-agents/" class="common-button user-agents-button">
-            User Agents
-        </a>
-        <a href="https://miketrollyt.github.io/MikeTroll/trollgents/" class="common-button user-agents-checker-button">
-            Comprobador User Agents
-        </a>
-
-        <a href="https://miketrollyt.github.io/MikeTroll/canva-pro/" class="common-button canva-pro-button">
-            Canva Pro
-        </a>
-        <a href="https://miketrollyt.github.io/MikeTroll/generador-codigos/" class="common-button generador-codigos-button">
-            Generador Codigos
-        </a>
-        <a href="https://miketrollyt.github.io/MikeTroll/generador-qr/" class="common-button generador-qr-button">
-            Generador QR
-        </a>
-        <a href="https://miketrollyt.github.io/MikeTroll/Proximamente" class="common-button project-box" style="--progress-width: 10px;">
-            <span class="label">Próximamente...</span>
-            <div class="progress"></div>
-        </a>
+    <div class="main-container">
+        <div class="profile-container">
+            <img src="https://avatars.githubusercontent.com/u/65973807?v=4" alt="Perfil de José Cortés">
+            <h2>José Cortés</h2>
+            <p>"MikeTrollYT"</p>
+        </div>
+        <div class="projects-container">
+            <div id="convertidores" class="category">
+                <h3>Convertidores</h3>
+                <div class="project-list">
+                    <div class="project-item">
+                        <a href="https://miketrollyt.github.io/MikeTroll/trollify">Convertidor Spotify</a>
+                    </div>
+                    <div class="project-item">
+                        <a href="https://miketrollyt.github.io/MikeTroll/trolltube">Convertidor Youtube</a>
+                    </div>
+                    <div class="project-item">
+                        <a href="https://miketrollyt.github.io/MikeTroll/trollitch">Convertidor Twitch</a>
+                    </div>
+                </div>
+            </div>
+            <div id="herramientas" class="category">
+                <h3>Herramientas</h3>
+                <div class="project-list">
+                    <div class="project-item">
+                        <a href="https://miketrollyt.github.io/MikeTroll/proxies">Proxies</a>
+                    </div>
+                    <div class="project-item">
+                        <a href="https://miketrollyt.github.io/MikeTroll/trollxies">Comprobador Proxies</a>
+                    </div>
+                    <div class="project-item">
+                        <a href="https://miketrollyt.github.io/MikeTroll/user-agents">User Agents</a>
+                    </div>
+                    <div class="project-item">
+                        <a href="https://miketrollyt.github.io/MikeTroll/trollgents">Comprobador User Agents</a>
+                    </div>
+                    <div class="project-item">
+                        <a href="https://miketrollyt.github.io/MikeTroll/generador-codigos">Generador Códigos</a>
+                    </div>
+                    <div class="project-item">
+                        <a href="https://miketrollyt.github.io/MikeTroll/generador-qr">Generador QR</a>
+                    </div>
+                </div>
+            </div>
+            <div id="otros" class="category">
+                <h3>Otros</h3>
+                <div class="project-list">
+                    <div class="project-item">
+                        <a href="https://miketrollyt.github.io/MikeTroll/sporttroll/">SportTroll</a>
+                    </div>
+                    <div class="project-item">
+                        <a href="https://miketrollyt.github.io/MikeTroll/sporttroll-web/">SportTroll Web</a>
+                    </div>
+                    <div class="project-item">
+                        <a href="https://miketrol-iptv.surge.sh">Reproductor IPTV</a>
+                    </div>
+                    <div class="project-item">
+                        <a href="https://miketrollyt.github.io/MikeTroll/canva-pro">Canva Pro</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <!-- --- INICIO POPUP NUEVO PROYECTO --- -->
+    <div class="popup" id="newProjectPopup">
+        <button class="popup-close" id="popupCloseButton">&times;</button>
+        <h3>¡Proximamente un nuevo proyecto!</h3>
+        <p>Descubre de que va a tratar mi proximo proyecto</p>
+        <div style="text-align: center;">
+            <a href="https://miketrollyt.github.io/MikeTroll/Proximamente/" 
+               target="_blank" 
+               id="viewProjectButton">Ver</a>
+        </div>
+    </div>
+    <!-- --- FIN POPUP NUEVO PROYECTO --- -->
+
+    <script>
+        // Cierra el popup cuando se hace clic en el botón de cierre
+        document.getElementById('popupCloseButton').addEventListener('click', function () {
+            document.getElementById('newProjectPopup').style.display = 'none';
+        });
+
+        // Cierra el popup cuando se hace clic en "Ver Proyecto"
+        document.getElementById('viewProjectButton').addEventListener('click', function () {
+            document.getElementById('newProjectPopup').style.display = 'none';
+        });
+    </script>
+
 </body>
 </html>
