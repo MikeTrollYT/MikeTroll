@@ -246,6 +246,8 @@ https://secure5.todostreaming.es/live/division-alm.m3u8
 https://streamer.zapitv.com/ptv-linarez/index.m3u8
 #EXTINF:-1 tvg-id="MarbellaTV.TV" tvg-logo="https://graph.facebook.com/RTVMarbella/picture?width=200&height=200" group-title="Andalucía" tvg-name="Marbella TV",Marbella TV
 https://streaming.rtvmarbella.tv/hls/streamingweb.m3u8
+#EXTINF:-1 tvg-logo="https://cdn.resfu.com/img_data/equipos/2099.png?width=200&height=200" group-title="Andalucía" tvg-name="Betis TV",Betis TV
+https://betistv-live.flumotion.com/AXTDaykcfm5VE2RvRg0KAA/1742312381/betistv/live_all/betistv/live_720p/chunks.m3u8
 #EXTINF:-1 tvg-id="Torrevision.TV" tvg-logo="https://graph.facebook.com/torremolinostv/picture?width=200&height=200" group-title="Andalucía" tvg-name="Torrevisión",Torrevisión
 https://cdnlivevlc.codev8.net/canaltorremolinoslive/smil:channel1.smil/playlist.m3u8
 #EXTINF:-1 tvg-id="Telemotril.TV" tvg-logo="https://graph.facebook.com/telemotriltv/picture?width=200&height=200" group-title="Andalucía" tvg-name="Telemotril",Telemotril
