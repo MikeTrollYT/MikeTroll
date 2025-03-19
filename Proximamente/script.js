@@ -4,7 +4,13 @@ function updateCountdown() {
     const timeDifference = targetDate - now;
 
     if (timeDifference <= 0) {
-        countdownElement.textContent = "¡Lanzamiento completado!";
+        const countdownContainer = document.querySelector('.countdown-container');
+        countdownContainer.innerHTML = `
+            <div style="text-align: center; margin-top: 20px;">
+                <p style="font-size: 28px; font-weight: bold;">¡Mira el nuevo proyecto!</p>
+                <a href="https://buscafm.com" target="_blank" style="display: inline-block; padding: 15px 25px; background-color: #007BFF; color: white; text-decoration: none; border-radius: 5px; font-size: 18px;">Ir a BuscaFM</a>
+            </div>
+        `;
         return;
     }
 
