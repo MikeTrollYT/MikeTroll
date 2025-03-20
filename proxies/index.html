@@ -18,40 +18,13 @@
         h1 {
             font-size: 2.5em;
             margin: 20px 0;
+            color: #00BFFF;
         }
 
         .description {
             font-size: 1.2em;
             margin: 20px 0;
             color: #ccc;
-        }
-
-        .button-container {
-            display: flex;
-            justify-content: center;
-            margin: 20px 0;
-        }
-
-        .button {
-            background-color: #00BFFF; /* Azul cielo brillante */
-            border: none;
-            border-radius: 50px;
-            color: #fff;
-            padding: 15px 30px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 20px;
-            font-weight: bold;
-            margin: 10px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-            width: 150px; /* Ajusta el tamaño del botón */
-        }
-
-        .button:hover {
-            transform: scale(1.03);
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
         }
 
         .content {
@@ -68,7 +41,7 @@
             display: flex;
             justify-content: center;
             gap: 20px;
-            flex-wrap: wrap;
+            flex-wrap: wrap; /* Permite que las columnas se ajusten automáticamente */
             margin-top: 20px;
         }
 
@@ -77,10 +50,10 @@
             padding: 10px;
             border-radius: 8px;
             color: #fff;
-            overflow-x: auto;
+            overflow: visible; /* Permitir que el contenido crezca */
             max-width: 300px;
-            flex: 1;
-            min-width: 250px;
+            flex: 1 1 30%; /* Ocupa un 30% del ancho disponible */
+            min-width: 200px; /* Ancho mínimo para evitar que se reduzca demasiado */
             text-align: left;
             position: relative;
         }
@@ -91,8 +64,10 @@
 
         .proxy-box pre {
             margin: 0;
-            white-space: pre-wrap;
-            word-wrap: break-word;
+            white-space: pre-wrap; /* Permitir que las líneas se ajusten */
+            word-wrap: break-word; /* Ajustar las palabras largas */
+            overflow: hidden; /* Ocultar contenido adicional si es necesario */
+            max-height: none; /* Permitir que crezca dinámicamente */
         }
 
         .download-btn {
@@ -112,37 +87,159 @@
             background-color: #009ACD;
         }
 
-        .home-button {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            background-color: #1E90FF; /* Azul medio */
-            border: none;
-            border-radius: 50%;
-            color: white;
-            padding: 10px;
-            font-size: 24px;
-            width: 50px;
-            height: 50px;
-            text-align: center;
-            line-height: 30px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
+        .button-container {
             display: flex;
-            align-items: center;
             justify-content: center;
+            flex-wrap: wrap; /* Permite que los botones se ajusten automáticamente */
+            gap: 10px; /* Espaciado entre botones */
         }
 
-        .home-button:hover {
-            background-color: #4169E1;
+        .button {
+            background-color: #00BFFF;
+            border: none;
+            border-radius: 50px;
+            color: #fff;
+            padding: 15px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+            font-weight: bold;
+            margin: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            flex: 1 1 auto; /* Permite que los botones se ajusten automáticamente */
+            max-width: 200px; /* Ancho máximo de los botones */
         }
+
+        .button:hover {
+            transform: scale(1.03);
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .show-more-btn {
+            background-color: #00BFFF;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .show-more-btn:hover {
+            background-color: #009ACD;
+        }
+
+    @media (max-width: 768px) {
+        .button {
+            font-size: 16px; /* Reducir tamaño de texto en botones */
+            padding: 10px 20px; /* Ajustar padding */
+            max-width: 150px; /* Reducir ancho máximo */
+        }
+
+        h1 {
+            font-size: 2em; /* Reducir tamaño del título */
+        }
+
+        .description {
+            font-size: 1em; /* Reducir tamaño del texto descriptivo */
+        }
+
+        .proxy-box {
+            flex: 1 1 100%; /* Ocupa todo el ancho en pantallas pequeñas */
+        }
+
+        .proxy-container {
+            gap: 10px; /* Reducir el espacio entre columnas */
+        }
+
+        .proxy-box h2 {
+            font-size: 16px; /* Reducir el tamaño del título */
+        }
+
+        .proxy-box pre {
+            font-size: 12px; /* Reducir el tamaño del texto */
+        }
+
+        .download-btn {
+            font-size: 12px; /* Reducir el tamaño del botón */
+            padding: 5px 8px; /* Ajustar el padding del botón */
+        }
+
+        .proxy-box pre {
+            font-size: 12px; /* Reducir el tamaño del texto */
+            max-height: 200px; /* Limitar la altura inicial */
+            overflow: hidden; /* Ocultar contenido adicional */
+        }
+        
+        .proxy-box pre {
+            font-size: 12px; /* Reducir el tamaño del texto */
+            max-height: none; /* Permitir que crezca dinámicamente */
+            overflow: visible; /* Permitir que el contenido adicional sea visible */
+        }
+        
+    }
+
+    @media (max-width: 480px) {
+        .button {
+            font-size: 14px; /* Reducir aún más el tamaño de texto */
+            padding: 8px 16px; /* Ajustar padding */
+            max-width: 100%; /* Botones ocupan todo el ancho */
+        }
+
+        .button-container {
+            flex-direction: column; /* Apilar botones verticalmente */
+        }
+
+        .download-btn {
+            font-size: 12px; /* Reducir tamaño del botón de descarga */
+            padding: 5px 8px;
+        }
+        .proxy-box {
+            flex: 1 1 100%; /* Ocupa todo el ancho en pantallas pequeñas */
+        }
+
+        .proxy-container {
+            gap: 10px; /* Reducir el espacio entre columnas */
+        }
+        .proxy-box {
+            flex: 1 1 100%; /* Ocupa todo el ancho en pantallas pequeñas */
+        }
+
+        .proxy-container {
+            gap: 10px; /* Reducir el espacio entre columnas */
+        }
+
+        .proxy-box h2 {
+            font-size: 16px; /* Reducir el tamaño del título */
+        }
+
+        .proxy-box pre {
+            font-size: 12px; /* Reducir el tamaño del texto */
+        }
+
+        .download-btn {
+            font-size: 12px; /* Reducir el tamaño del botón */
+            padding: 5px 8px; /* Ajustar el padding del botón */
+        }
+
+        .proxy-box pre {
+            font-size: 12px; /* Reducir el tamaño del texto */
+            max-height: 200px; /* Limitar la altura inicial */
+            overflow: hidden; /* Ocultar contenido adicional */
+        }
+
+        .proxy-box pre {
+            font-size: 12px; /* Reducir el tamaño del texto */
+            max-height: none; /* Permitir que crezca dinámicamente */
+            overflow: visible; /* Permitir que el contenido adicional sea visible */
+        }
+    }
     </style>
 </head>
 <body>
-    <a href="https://miketrollyt.github.io/MikeTroll" class="home-button">
-        <i class="fas fa-home"></i>
-    </a>
-
     <h1>Proxies</h1>
     <p class="description">📈 Obtén una lista de proxies actualizada diariamente para mejorar tu experiencia en línea. ¡Explora las opciones y encuentra la lista que mejor se adapte a tus necesidades! 🌐</p>
     
@@ -238,72 +335,115 @@
     </div>
 
     <script>
-        function showContent(option) {
-            // Oculta todo el contenido
-            document.querySelectorAll('.content').forEach(content => {
-                content.classList.remove('active');
-            });
+    function showContent(option) {
+        // Oculta todo el contenido
+        document.querySelectorAll('.content').forEach(content => {
+            content.classList.remove('active');
+        });
 
-            // Muestra el contenido seleccionado
-            const contentElement = document.getElementById('content-' + option);
-            contentElement.classList.add('active');
+        // Muestra el contenido seleccionado
+        const contentElement = document.getElementById('content-' + option);
+        contentElement.classList.add('active');
 
-            // Cargar y mostrar los datos en las columnas
-            loadProxies(option);
+        // Cargar y mostrar los datos en las columnas
+        loadProxies(option);
+    }
+
+    function loadProxies(option) {
+        const urls = {
+            1: {
+                http: "https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/http.txt",
+                socks4: "https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/socks4.txt",
+                socks5: "https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/socks5.txt"
+            },
+            2: {
+                http: "https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/http.txt",
+                socks4: "https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks4.txt",
+                socks5: "https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks5.txt"
+            },
+            3: {
+                http: "https://raw.githubusercontent.com/ErcinDedeoglu/proxies/main/proxies/http.txt",
+                socks4: "https://raw.githubusercontent.com/ErcinDedeoglu/proxies/main/proxies/socks4.txt",
+                socks5: "https://raw.githubusercontent.com/ErcinDedeoglu/proxies/main/proxies/socks5.txt"
+            },
+            4: {
+                http: "https://raw.githubusercontent.com/Zaeem20/FREE_PROXIES_LIST/master/http.txt",
+                socks4: "https://raw.githubusercontent.com/Zaeem20/FREE_PROXIES_LIST/master/socks4.txt",
+                socks5: "https://raw.githubusercontent.com/Zaeem20/FREE_PROXIES_LIST/master/socks5.txt"
+            }
+        };
+
+        const urlsForOption = urls[option];
+
+        const fetchAndDisplay = async (type) => {
+            try {
+                const response = await fetch(urlsForOption[type]);
+                const text = await response.text();
+                const lines = text.split('\n'); // Dividir el contenido en líneas
+                const preElement = document.getElementById(`${type}-content-${option}`);
+                preElement.dataset.lines = JSON.stringify(lines); // Guardar todas las líneas en un atributo
+
+                const isSmallScreen = window.matchMedia("(max-width: 999px)").matches; // Detectar si es una pantalla pequeña
+
+                if (isSmallScreen) {
+                    // Mostrar solo las primeras 10 líneas en pantallas pequeñas
+                    preElement.textContent = lines.slice(0, 10).join('\n');
+
+                    // Verificar si el botón "Ver más" ya existe
+                    if (!preElement.parentNode.querySelector('.show-more-btn')) {
+                        // Agregar botón "Ver más"
+                        const showMoreBtn = document.createElement('button');
+                        showMoreBtn.textContent = 'Ver más';
+                        showMoreBtn.className = 'show-more-btn';
+                        showMoreBtn.onclick = () => showMore(preElement, 10);
+                        preElement.parentNode.appendChild(showMoreBtn);
+                    }
+                } else {
+                    // Mostrar todo el contenido en pantallas grandes
+                    preElement.textContent = lines.join('\n');
+
+                    // Eliminar el botón "Ver más" si existe
+                    const existingButton = preElement.parentNode.querySelector('.show-more-btn');
+                    if (existingButton) {
+                        existingButton.remove();
+                    }
+                }
+            } catch (error) {
+                document.getElementById(`${type}-content-${option}`).textContent = 'Error al cargar datos';
+            }
+        };
+
+        fetchAndDisplay('http');
+        fetchAndDisplay('socks4');
+        fetchAndDisplay('socks5');
+    }
+
+    function showMore(preElement, linesToShow) {
+        const allLines = JSON.parse(preElement.dataset.lines); // Obtener todas las líneas guardadas
+        const currentLines = preElement.textContent.split('\n').length; // Contar las líneas actuales
+        const newLines = allLines.slice(0, currentLines + linesToShow); // Obtener más líneas
+        preElement.textContent = newLines.join('\n'); // Actualizar el contenido
+
+        // Verificar si se han mostrado todas las líneas
+        if (newLines.length >= allLines.length) {
+            const showMoreBtn = preElement.parentNode.querySelector('.show-more-btn');
+            if (showMoreBtn) {
+                showMoreBtn.style.display = 'none'; // Ocultar el botón si no hay más líneas
+            }
         }
+    }
 
-        function loadProxies(option) {
-    const urls = {
-        1: {
-            http: "https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/http.txt",
-            socks4: "https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/socks4.txt",
-            socks5: "https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/socks5.txt"
-        },
-        2: {
-            http: "https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/http.txt",
-            socks4: "https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks4.txt",
-            socks5: "https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks5.txt"
-        },
-        3: {
-            http: "https://raw.githubusercontent.com/ErcinDedeoglu/proxies/main/proxies/http.txt",
-            socks4: "https://raw.githubusercontent.com/ErcinDedeoglu/proxies/main/proxies/socks4.txt",
-            socks5: "https://raw.githubusercontent.com/ErcinDedeoglu/proxies/main/proxies/socks5.txt"
-        },
-        4: {
-            http: "https://raw.githubusercontent.com/Zaeem20/FREE_PROXIES_LIST/master/http.txt",
-            socks4: "https://raw.githubusercontent.com/Zaeem20/FREE_PROXIES_LIST/master/socks4.txt",
-            socks5: "https://raw.githubusercontent.com/Zaeem20/FREE_PROXIES_LIST/master/socks5.txt"
-        }
-    };
-
-    const urlsForOption = urls[option];
-
-    const fetchAndDisplay = async (type) => {
-        try {
-            const response = await fetch(urlsForOption[type]);
-            const text = await response.text();
-            document.getElementById(`${type}-content-${option}`).textContent = text;
-        } catch (error) {
-            document.getElementById(`${type}-content-${option}`).textContent = 'Error al cargar datos';
-        }
-    };
-
-    fetchAndDisplay('http');
-    fetchAndDisplay('socks4');
-    fetchAndDisplay('socks5');
-}
-
-        function downloadFile(contentId, filename) {
-            const content = document.getElementById(contentId).textContent;
-            const blob = new Blob([content], { type: 'text/plain' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = filename;
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-        }
-    </script>
+    function downloadFile(contentId, filename) {
+        const content = document.getElementById(contentId).textContent;
+        const blob = new Blob([content], { type: 'text/plain' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+    }
+</script>
 </body>
 </html>
