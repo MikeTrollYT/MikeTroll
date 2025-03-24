@@ -69,17 +69,16 @@
         }
 
         .download-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
             background-color: #7a5cae;
             border: none;
             border-radius: 5px;
             color: #fff;
-            padding: 10px 20px;
+            padding: 5px 10px;
             cursor: pointer;
-            font-size: 16px;
-            position: absolute;
-            top: 0;
-            right: 0;
-            margin: 10px;
+            font-size: 14px
         }
 
         .download-btn:hover {
@@ -96,37 +95,64 @@
             margin-top: 50px;
         }
 
-        .home-button {
-            position: absolute;
-            top: -5px; /* Ajustado para mover el botón más hacia arriba */
-            left: 20px;
-            background-color: #6a4f8d; /* Color morado claro */
-            border: none;
-            border-radius: 50%;
-            color: white;
-            padding: 10px;
-            font-size: 24px;
-            width: 50px;
-            height: 50px;
-            text-align: center;
-            line-height: 30px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        /* Media query para pantallas pequeñas */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            p {
+                font-size: 1em;
+                margin: 15px 0;
+            }
+
+            .button-container {
+                flex-direction: column;
+            }
+
+            .button {
+                width: 100%;
+                padding: 10px;
+                font-size: 18px;
+                margin: 5px 0;
+            }
+
+            .content {
+                max-width: 95%;
+                margin: 10px auto;
+            }
+
+            .download-btn {
+                top: 5px;
+                right: 5px;
+                font-size: 12px;
+                padding: 5px;
+            }
+
+            pre {
+                padding: 15px;
+                font-size: 14px;
+            }
         }
 
-        .home-button:hover {
-            background-color: #5a3f7d; /* Morado más oscuro */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5em;
+            }
+
+            .button {
+                font-size: 16px;
+                padding: 8px;
+            }
+
+            pre {
+                font-size: 12px;
+                padding: 10px;
+            }
         }
     </style>
 </head>
 <body>
-    <a href="https://miketrollyt.github.io/MikeTroll" class="home-button">
-        <i class="fas fa-home"></i>
-    </a>
-
     <h1>User Agents</h1>
     <p>🔍 ¡Descubre una extensa lista de más de 13,000 user agents! 🌐 Optimiza tus pruebas y garantiza que tu sitio web funcione a la perfección en cualquier dispositivo y navegador. 🚀</p>
 
