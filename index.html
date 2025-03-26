@@ -6,6 +6,7 @@
     <title>MikeTrollYT</title>
     <meta name="description" content="Pagina web de MikeTrollYT donde podrás encontrar bastantes herramientas que te harán facilitar tu día a día.">
     <link rel="icon" href="logos/M.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.7.2/css/all.css">
     <style>
         body {
             margin: 0;
@@ -178,6 +179,93 @@
             }
         }
         /* --- FIN POPUP NUEVO PROYECTO --- */
+        /* --- REDES SOCIALES --- */
+        .rs-ul {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Espaciado entre los íconos */
+  padding: 0;
+  margin: 1em 0;
+}
+
+.rs-ul .rs-li {
+  list-style: none;
+}
+
+.rs-ul .rs-li .rs-a {
+  width: 50px; /* Reducir tamaño */
+  height: 50px;
+  background-color: #fff;
+  text-align: center;
+  line-height: 50px;
+  font-size: 20px; /* Reducir tamaño de íconos */
+  display: block;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #fff;
+  transition: transform 0.3s ease;
+}
+
+.rs-ul .rs-li .rs-a:hover {
+  transform: scale(1.1); /* Efecto hover */
+}
+
+.rs-ul li .rs-a .icon {
+  position: relative;
+  color: #262626;
+  transition: color 0.3s ease, transform 0.5s ease;
+}
+
+.rs-ul .rs-li .rs-a:hover .icon {
+  color: #fff;
+  transform: rotateY(360deg);
+}
+
+.rs-ul .rs-li .rs-a:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f00;
+  transition: top 0.5s ease;
+}
+
+.rs-ul .rs-li .rs-a:hover:before {
+  top: 0;
+}
+
+.rs-ul .rs-li:nth-child(1) .rs-a:before {
+  background: #E1306C;
+}
+
+.rs-ul .rs-li:nth-child(2) .rs-a:before {
+  background: #FF0000;
+}
+
+.rs-ul .rs-li:nth-child(3) .rs-a:before {
+  background: #000000;
+}
+
+.rs-ul .rs-li:nth-child(4) .rs-a:before {
+  background: #9146FF;
+}
+
+.rs-ul .rs-li:nth-child(5) .rs-a:before {
+  background: #14171A;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+  .rs-ul .rs-li .rs-a {
+    width: 40px; /* Reducir más en pantallas pequeñas */
+    height: 40px;
+    font-size: 16px;
+    line-height: 40px;
+  }
+}
     </style>
 </head>
 <body>
@@ -186,6 +274,20 @@
             <img src="https://avatars.githubusercontent.com/u/65973807?v=4" alt="Perfil de José Cortés">
             <h2>José Cortés</h2>
             <p>"MikeTrollYT"</p>
+            <div>
+                <ul class="rs-ul">
+                    <li class="rs-li">
+                      <a class="rs-a" href="https://www.instagram.com/josecortes__07/"><i class="fab fa-instagram icon"></i></a></li>
+                    <li class="rs-li">
+                      <a class="rs-a" href="https://www.youtube.com/@MikeTrollYT"><i class="fab fa-youtube icon"></i></a></li>
+                    <li class="rs-li">
+                      <a class="rs-a" href="https://www.tiktok.com/@josecortes__07"><i class="fab fa-tiktok icon"></i></a></li>
+                    <li class="rs-li">
+                        <a class="rs-a" href="https://www.twitch.tv/miketrollyt"><i class="fab fa-twitch icon"></i></a></li>
+                    <li class="rs-li">
+                        <a class="rs-a" href="https://x.com/Josecortes__07"><i class="fab fa-x-twitter icon"></i></a></li>
+                </ul>
+            </div>
         </div>
         <div class="projects-container">
             <div id="convertidores" class="category">
