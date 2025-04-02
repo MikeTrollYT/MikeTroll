@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página no encontrada</title>
+    <link rel="icon" href="logos/M.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.7.2/css/all.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #0077b6, #0096c7);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 1em;
+            box-sizing: border-box;
+        }
+        .error-container {
+            max-width: 600px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 2em;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease-in-out;
+        }
+        .error-container h1 {
+            font-size: 5em;
+            color: #0077b6;
+            margin: 0;
+            animation: pulse 3s infinite;
+        }
+        .error-container h2 {
+            font-size: 1.8em;
+            color: #333;
+            margin: 0.5em 0;
+        }
+        .error-container p {
+            font-size: 1.1em;
+            color: #555;
+            margin: 1em 0;
+        }
+        .error-container a {
+            display: inline-block;
+            padding: 0.7em 2em;
+            background-color: #0077b6;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .error-container a:hover {
+            background-color: #005f73;
+            transform: scale(1.05);
+        }
+        .error-container .icon {
+            font-size: 6em;
+            color: #0096c7;
+            margin-bottom: 0.5em;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* --- Media Queries para Responsividad --- */
+        @media (max-width: 768px) {
+            .error-container {
+                padding: 1.5em;
+            }
+            .error-container h1 {
+                font-size: 4em;
+            }
+            .error-container h2 {
+                font-size: 1.5em;
+            }
+            .error-container p {
+                font-size: 1em;
+            }
+            .error-container .icon {
+                font-size: 5em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .error-container {
+                padding: 1em;
+            }
+            .error-container h1 {
+                font-size: 3em;
+            }
+            .error-container h2 {
+                font-size: 1.2em;
+            }
+            .error-container p {
+                font-size: 0.9em;
+            }
+            .error-container .icon {
+                font-size: 4em;
+            }
+            .error-container a {
+                padding: 0.5em 1.5em;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <div class="icon">
+            <i class="fas fa-exclamation-triangle"></i>
+        </div>
+        <h1>404</h1>
+        <h2>Oops!</h2>
+        <p>La página que buscas no está disponible.</p>
+
+        <a href="https://miketroll.es">Volver al inicio</a>
+    </div>
+</body>
+</html>
