@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cuenta Atrás</title>
+  <style>
+    @font-face {
+      font-family: 'BarberChop';
+      src: url('font/BarberChop.woff') format('opentype');
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'BarberChop';
+      background-color: #5b8ea2;
+      background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      color: #fff;
+    }
+
+    .countdown {
+      font-size: 6rem;
+      letter-spacing: 0.15em;
+    }
+  </style>
+</head>
+<body>
+  <div class="countdown" id="countdown">00:00:00:00</div>
+  <script>
+    const countdownElement = document.getElementById("countdown");
+    const targetDate = new Date("2025-07-01T00:00:00");
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = targetDate - now;
+
+      if (diff <= 0) {
+        countdownElement.textContent = "00:00:00:00";
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / 1000 / 60) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      countdownElement.textContent =
+        String(days).padStart(2, '0') + ":" +
+        String(hours).padStart(2, '0') + ":" +
+        String(minutes).padStart(2, '0') + ":" +
+        String(seconds).padStart(2, '0');
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>
