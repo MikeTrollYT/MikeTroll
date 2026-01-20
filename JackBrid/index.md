@@ -1,17 +1,17 @@
 # 🎬 JackBrid - Documentación Oficial
 
-<div align="center">
+<p align="center">
+  <img src="https://raw.githubusercontent.com/MikeTrollYT/JackBrid/refs/heads/main/frontend/img/logo.png" alt="JackBrid Logo" width="180">
+</p>
 
-<img src="https://github.com/MikeTrollYT/JackBrid/blob/main/frontend/img/logo.png" alt="JackBrid Logo" width="180">
+<h3 align="center">Panel Privado de Búsqueda y Streaming de Torrents</h3>
 
-### Panel Privado de Búsqueda y Streaming de Torrents
-
-[![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker&logoColor=white)](https://www.docker.com/)
-[![Node.js](https://img.shields.io/badge/Node.js-18+-339933?logo=node.js&logoColor=white)](https://nodejs.org/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](../LICENSE)
-[![GitHub](https://img.shields.io/badge/GitHub-MikeTrollYT-181717?logo=github)](https://github.com/MikeTrollYT/JackBrid)
-
-</div>
+<p align="center">
+  <a href="https://www.docker.com/"><img src="https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker&logoColor=white" alt="Docker"></a>
+  <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/Node.js-18+-339933?logo=node.js&logoColor=white" alt="Node.js"></a>
+  <a href="../LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License"></a>
+  <a href="https://github.com/MikeTrollYT/JackBrid"><img src="https://img.shields.io/badge/GitHub-MikeTrollYT-181717?logo=github" alt="GitHub"></a>
+</p>
 
 ---
 
