@@ -27,28 +27,19 @@ Imagina poder buscar contenido en múltiples trackers de torrents, añadirlo dir
 
 ## 📚 Navegación Rápida
 
-<table>
-<tr>
-<td width="50%">
-
 ### 🚀 Primeros Pasos
+
 - [📥 Instalación Rápida](/JackBrid/guias/instalacion)
 - [⚙️ Configuración Inicial](/JackBrid/guias/configuracion)
 - [🎯 Guía de Uso](/JackBrid/guias/uso)
 - [❓ FAQ y Solución de Problemas](/JackBrid/guias/faq)
 
-</td>
-<td width="50%">
-
 ### 🔧 Documentación Técnica
+
 - [🏗️ Arquitectura del Sistema](/JackBrid/arquitectura/overview)
 - [🔌 Referencia de API](/JackBrid/api/endpoints)
 - [📦 Componentes y Módulos](/JackBrid/arquitectura/componentes)
 - [🤝 Guía de Contribución](/JackBrid/guias/contribuir)
-
-</td>
-</tr>
-</table>
 
 ---
 
@@ -87,29 +78,21 @@ Imagina poder buscar contenido en múltiples trackers de torrents, añadirlo dir
 
 ## 🏗️ Stack Tecnológico
 
-### Backend
+### 💻 Backend
 
-![Node.js](https://img.shields.io/badge/-Node.js-339933?style=flat-square&logo=node.js&logoColor=white)
-![Express](https://img.shields.io/badge/-Express-000000?style=flat-square&logo=express&logoColor=white)
+![Node.js](https://img.shields.io/badge/-Node.js-339933?style=flat-square&logo=node.js&logoColor=white) ![Express](https://img.shields.io/badge/-Express-000000?style=flat-square&logo=express&logoColor=white)
 
 **Node.js + Express** - API REST modular y escalable
 
----
+### 🎨 Frontend
 
-### Frontend
-
-![HTML5](https://img.shields.io/badge/-HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/-CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![HTML5](https://img.shields.io/badge/-HTML5-E34F26?style=flat-square&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/-CSS3-1572B6?style=flat-square&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
 
 **Vanilla JS** - Sin frameworks, máxima velocidad
 
----
+### 🐳 Infraestructura
 
-### Infraestructura
-
-![Docker](https://img.shields.io/badge/-Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
-![Nginx](https://img.shields.io/badge/-Nginx-009639?style=flat-square&logo=nginx&logoColor=white)
+![Docker](https://img.shields.io/badge/-Docker-2496ED?style=flat-square&logo=docker&logoColor=white) ![Nginx](https://img.shields.io/badge/-Nginx-009639?style=flat-square&logo=nginx&logoColor=white)
 
 **Docker + Nginx** - Despliegue simplificado
 
