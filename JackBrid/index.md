@@ -2,7 +2,7 @@
 
 <div align="center">
 
-<img src="../frontend/img/logo.png" alt="JackBrid Logo" width="180">
+<img src="https://github.com/MikeTrollYT/JackBrid/blob/main/frontend/img/logo.png" alt="JackBrid Logo" width="180">
 
 ### Panel Privado de Búsqueda y Streaming de Torrents
 
