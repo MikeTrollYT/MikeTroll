@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprobador de User Agents - Trollgents</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Comprobador de User Agents - Trollgents</h1>
+    
+    <h2>Descripción</h2>
+    <p>
+        Este proyecto es un script en Python para comprobar user agents. El script verifica si los user agents listados en un archivo de texto son funcionales o si están obsoletos, y los clasifica en archivos separados para user agents funcionales y obsoletos.
+    </p>
+
+    <h2>Características</h2>
+    <p>
+        - Verifica la funcionalidad de user agents enviando solicitudes HTTP a un sitio web especificado.<br>
+        - Muestra el estado de cada user agent en la consola con colores: verde para user agents funcionales y rojo para obsoletos.<br>
+        - Guarda los resultados en archivos de texto separados para user agents funcionales y obsoletos.
+    </p>
+
+    <h2>Requisitos</h2>
+    <p>
+        Para ejecutar este proyecto, necesitas tener instalados los siguientes componentes:
+    </p>
+    <ul>
+        <li>Python 3.6 o superior</li>
+        <li>Paquetes Python:
+            <ul>
+                <li><code>requests</code></li>
+            </ul>
+        </li>
+    </ul>
+
+    <h2>Instalación</h2>
+    <p>1. Instala las dependencias del proyecto:</p>
+    <pre><code>pip install -r requirements.txt
+    </code></pre>
+
+    <h2>Uso</h2>
+    <p>
+        1. Prepara el archivo de user agents:
+        <ul>
+            <li>El archivo <code>user_agents.txt</code> debe contener una lista de user agents, uno por línea.</li>
+            <li>Puedes encontrar user agents en el siguiente sitio web: <a href="https://miketrollyt.github.io/MikeTroll/user-agents/" target="_blank">MikeTroll - User Agents</a></li>
+        </ul>
+    </p>
+    <p>
+        2. Ejecuta el script:
+    </p>
+    <pre><code>python main.py
+    </code></pre>
+    <p>
+        3. Ingresa la URL del sitio web:
+        <ul>
+            <li>Ingresa la URL del sitio web que deseas usar para verificar los user agents (por ejemplo, <code>https://www.google.com</code>).</li>
+        </ul>
+    </p>
+    <p>
+        4. Revisa los resultados:
+        <ul>
+            <li>El script generará dos archivos de salida:</li>
+            <li><code>user_agents_funcionales.txt</code>: Contiene user agents que funcionan.</li>
+            <li><code>user_agents_obsoletos.txt</code>: Contiene user agents que no funcionan.</li>
+        </ul>
+    </p>
+
+    <h2>Notas</h2>
+    <p>
+        - Asegúrate de que el archivo de user agents no contenga líneas vacías ni formatos incorrectos.<br>
+        - Si el archivo de user agents tiene un formato incorrecto, el script puede arrojar errores.
+    </p>
+
+    <div class="button-container">
+        <a href="https://github.com/MikeTrollYT/Trollgents-ComprobadorDeUserAgents" class="download-button">
+            Descargar Proyecto
+        </a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

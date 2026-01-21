@@ -5,272 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MikeTrollYT</title>
     <meta name="description" content="Pagina web de MikeTrollYT donde podrás encontrar bastantes herramientas que te harán facilitar tu día a día.">
-    <link rel="icon" href="logos/M.png" type="image/x-icon">
+    <link rel="icon" href="img/M.png" type="image/x-icon">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.7.2/css/all.css">
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f5;
-            color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 1em;
-            box-sizing: border-box;
-        }
-        .main-container {
-            display: flex;
-            flex-wrap: wrap;
-            max-width: 1200px;
-            width: 100%;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-        }
-        .profile-container {
-            flex: 1 1 300px;
-            background-color: #0077b6;
-            color: #fff;
-            text-align: center;
-            padding: 2em 1em;
-        }
-        .profile-container img {
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-            border: 2px solid #fff;
-        }
-        .profile-container h2 {
-            margin: 1em 0 0.5em;
-        }
-        .profile-container p {
-            font-style: italic;
-        }
-        .projects-container {
-            flex: 2 1 600px;
-            padding: 2em;
-        }
-        .category {
-            margin-bottom: 2em;
-        }
-        .category h3 {
-            color: #0096c7;
-            border-bottom: 2px solid #0096c7;
-            padding-bottom: 0.5em;
-        }
-        .project-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1em;
-        }
-        .project-item {
-            background-color: #e0f7fa;
-            border: 1px solid #b2ebf2;
-            border-radius: 8px;
-            padding: 1em;
-            text-align: center;
-        }
-        .project-item a {
-            text-decoration: none;
-            color: #005f73;
-            font-weight: bold;
-        }
-        .project-item a:hover {
-            color: #0077b6;
-        }
-
-        @media (max-width: 768px) {
-            .main-container {
-                flex-direction: column;
-            }
-            .profile-container {
-                text-align: center;
-            }
-        }
-
-        /* --- INICIO POPUP NUEVO PROYECTO --- */
-        .popup {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0.8);
-            background: #0077b6;
-            color: white;
-            width: 90%;
-            max-width: 400px;
-            padding: 1.5em;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            animation: popup-appear 0.5s forwards ease-in-out;
-            z-index: 1000;
-        }
-
-        .popup h3 {
-            margin-top: 0;
-            text-align: center;
-        }
-
-        .popup p {
-            margin: 1em 0;
-            text-align: center;
-        }
-
-        .popup a {
-            display: inline-block;
-            padding: 0.5em 1em;
-            background: #00b4d8;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            text-align: center;
-            transition: background 0.3s;
-            margin: 0 auto;
-        }
-
-        .popup a:hover {
-            background: #0096c7;
-        }
-
-        .popup-close {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 1.5em;
-            color: white;
-            cursor: pointer;
-            background: none;
-            border: none;
-        }
-
-        .popup-close:hover {
-            color: #00b4d8;
-        }
-
-        @keyframes popup-appear {
-            from {
-                opacity: 0;
-                transform: translate(-50%, -50%) scale(0.5);
-            }
-            to {
-                opacity: 1;
-                transform: translate(-50%, -50%) scale(1);
-            }
-        }
-
-        @media (max-width: 500px) {
-            .popup {
-                width: 90%;
-                padding: 1em;
-                font-size: 0.9em;
-            }
-            .popup h3 {
-                font-size: 1.2em;
-            }
-            .popup p {
-                font-size: 1em;
-            }
-            .popup a {
-                font-size: 0.9em;
-                padding: 0.4em 0.8em;
-            }
-        }
-        /* --- FIN POPUP NUEVO PROYECTO --- */
-        /* --- REDES SOCIALES --- */
-        .rs-ul {
-  display: flex;
-  justify-content: center;
-  gap: 10px; /* Espaciado entre los íconos */
-  padding: 0;
-  margin: 1em 0;
-}
-
-.rs-ul .rs-li {
-  list-style: none;
-}
-
-.rs-ul .rs-li .rs-a {
-  width: 50px; /* Reducir tamaño */
-  height: 50px;
-  background-color: #fff;
-  text-align: center;
-  line-height: 50px;
-  font-size: 20px; /* Reducir tamaño de íconos */
-  display: block;
-  border-radius: 50%;
-  position: relative;
-  overflow: hidden;
-  border: 2px solid #fff;
-  transition: transform 0.3s ease;
-}
-
-.rs-ul .rs-li .rs-a:hover {
-  transform: scale(1.1); /* Efecto hover */
-}
-
-.rs-ul li .rs-a .icon {
-  position: relative;
-  color: #262626;
-  transition: color 0.3s ease, transform 0.5s ease;
-}
-
-.rs-ul .rs-li .rs-a:hover .icon {
-  color: #fff;
-  transform: rotateY(360deg);
-}
-
-.rs-ul .rs-li .rs-a:before {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #f00;
-  transition: top 0.5s ease;
-}
-
-.rs-ul .rs-li .rs-a:hover:before {
-  top: 0;
-}
-
-.rs-ul .rs-li:nth-child(1) .rs-a:before {
-  background: #E1306C;
-}
-
-.rs-ul .rs-li:nth-child(2) .rs-a:before {
-  background: #FF0000;
-}
-
-.rs-ul .rs-li:nth-child(3) .rs-a:before {
-  background: #000000;
-}
-
-.rs-ul .rs-li:nth-child(4) .rs-a:before {
-  background: #9146FF;
-}
-
-.rs-ul .rs-li:nth-child(5) .rs-a:before {
-  background: #14171A;
-}
-
-.rs-ul .rs-li:nth-child(6) .rs-a:before {
-  background: #24292E;
-}
-
-/* Ajustes para pantallas pequeñas */
-@media (max-width: 768px) {
-  .rs-ul .rs-li .rs-a {
-    width: 40px; /* Reducir más en pantallas pequeñas */
-    height: 40px;
-    font-size: 16px;
-    line-height: 40px;
-  }
-}
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="main-container">
@@ -300,13 +37,13 @@
                 <h3>Convertidores</h3>
                 <div class="project-list">
                     <div class="project-item">
-                        <a href="https://miketrollyt.github.io/MikeTroll/trollify">Convertidor Spotify</a>
+                        <a href="https://miketrollyt.github.io/MikeTroll/Proyectos/Trollify">Convertidor Spotify</a>
                     </div>
                     <div class="project-item">
-                        <a href="https://miketrollyt.github.io/MikeTroll/trolltube">Convertidor Youtube</a>
+                        <a href="https://miketrollyt.github.io/MikeTroll/Proyectos/Trolltube">Convertidor Youtube</a>
                     </div>
                     <div class="project-item">
-                        <a href="https://miketrollyt.github.io/MikeTroll/trollitch">Convertidor Twitch</a>
+                        <a href="https://miketrollyt.github.io/MikeTroll/Proyectos/Trollitch">Convertidor Twitch</a>
                     </div>
                 </div>
             </div>
@@ -314,22 +51,22 @@
                 <h3>Herramientas</h3>
                 <div class="project-list">
                     <div class="project-item">
-                        <a href="https://miketrollyt.github.io/MikeTroll/proxies">Proxies</a>
+                        <a href="https://miketrollyt.github.io/MikeTroll/Proyectos/Proxies">Proxies</a>
                     </div>
                     <div class="project-item">
-                        <a href="https://miketrollyt.github.io/MikeTroll/trollxies">Comprobador Proxies</a>
+                        <a href="https://miketrollyt.github.io/MikeTroll/Proyectos/Trollxies">Comprobador Proxies</a>
                     </div>
                     <div class="project-item">
-                        <a href="https://miketrollyt.github.io/MikeTroll/user-agents">User Agents</a>
+                        <a href="https://miketrollyt.github.io/MikeTroll/Proyectos/User-Agents">User Agents</a>
                     </div>
                     <div class="project-item">
-                        <a href="https://miketrollyt.github.io/MikeTroll/trollgents">Comprobador User Agents</a>
+                        <a href="https://miketrollyt.github.io/MikeTroll/Proyectos/Trollgents">Comprobador User Agents</a>
                     </div>
                     <div class="project-item">
-                        <a href="https://miketrollyt.github.io/MikeTroll/generador-codigos">Generador Códigos</a>
+                        <a href="https://miketrollyt.github.io/MikeTroll/Proyectos/Generador-Codigos">Generador Códigos</a>
                     </div>
                     <div class="project-item">
-                        <a href="https://miketrollyt.github.io/MikeTroll/generador-qr">Generador QR</a>
+                        <a href="https://miketrollyt.github.io/MikeTroll/Proyectos/Generador-QR">Generador QR</a>
                     </div>
                 </div>
             </div>
@@ -343,7 +80,7 @@
                         <a href="https://buscafm.com">BuscaFM</a>
                     </div>
                     <div class="project-item">
-                        <a href="https://miketrollyt.github.io/MikeTroll/iptv">Reproductor IPTV</a>
+                        <a href="https://miketrollyt.github.io/MikeTroll/Proyectos/IPTV">Reproductor IPTV</a>
                     </div>
                 </div>
             </div>
@@ -374,17 +111,6 @@
         </div>
     </div>-->
     
-    <script>
-        // Cierra el popup cuando se hace clic en el botón de cierre
-        document.getElementById('popupCloseButton').addEventListener('click', function () {
-            document.getElementById('newProjectPopup').style.display = 'none';
-        });
-
-        // Cierra el popup cuando se hace clic en "Ver Proyecto"
-        document.getElementById('viewProjectButton').addEventListener('click', function () {
-            document.getElementById('newProjectPopup').style.display = 'none';
-        });
-    </script>
-
+    <script src="script.js"></script>
 </body>
 </html>

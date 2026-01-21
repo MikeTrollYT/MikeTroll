@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proxies - MikeTroll</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Proxies</h1>
+    <p class="description">📈 Obtén una lista de proxies actualizada diariamente para mejorar tu experiencia en línea. ¡Explora las opciones y encuentra la lista que mejor se adapte a tus necesidades! 🌐</p>
+    
+    <div class="button-container">
+        <button class="button" onclick="showContent(1)">Opción 1</button>
+        <button class="button" onclick="showContent(2)">Opción 2</button>
+        <button class="button" onclick="showContent(3)">Opción 3</button>
+        <button class="button" onclick="showContent(4)">Opción 4</button>
+    </div>
+
+    <!-- Contenido para Opción 1 -->
+    <div id="content-1" class="content">
+        <div class="proxy-container">
+            <div id="http-1" class="proxy-box">
+                <h2>HTTP</h2>
+                <pre id="http-content-1"></pre>
+                <button class="download-btn" onclick="downloadFile('http-content-1', 'HTTP_proxies.txt')">Descargar</button>
+            </div>
+            <div id="socks4-1" class="proxy-box">
+                <h2>SOCKS4</h2>
+                <pre id="socks4-content-1"></pre>
+                <button class="download-btn" onclick="downloadFile('socks4-content-1', 'SOCKS4_proxies.txt')">Descargar</button>
+            </div>
+            <div id="socks5-1" class="proxy-box">
+                <h2>SOCKS5</h2>
+                <pre id="socks5-content-1"></pre>
+                <button class="download-btn" onclick="downloadFile('socks5-content-1', 'SOCKS5_proxies.txt')">Descargar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenido para Opción 2 -->
+    <div id="content-2" class="content">
+        <div class="proxy-container">
+            <div id="http-2" class="proxy-box">
+                <h2>HTTP</h2>
+                <pre id="http-content-2"></pre>
+                <button class="download-btn" onclick="downloadFile('http-content-2', 'HTTP_proxies.txt')">Descargar</button>
+            </div>
+            <div id="socks4-2" class="proxy-box">
+                <h2>SOCKS4</h2>
+                <pre id="socks4-content-2"></pre>
+                <button class="download-btn" onclick="downloadFile('socks4-content-2', 'SOCKS4_proxies.txt')">Descargar</button>
+            </div>
+            <div id="socks5-2" class="proxy-box">
+                <h2>SOCKS5</h2>
+                <pre id="socks5-content-2"></pre>
+                <button class="download-btn" onclick="downloadFile('socks5-content-2', 'SOCKS5_proxies.txt')">Descargar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenido para Opción 3 -->
+    <div id="content-3" class="content">
+        <div class="proxy-container">
+            <div id="http-3" class="proxy-box">
+                <h2>HTTP</h2>
+                <pre id="http-content-3"></pre>
+                <button class="download-btn" onclick="downloadFile('http-content-3', 'HTTP_proxies.txt')">Descargar</button>
+            </div>
+            <div id="socks4-3" class="proxy-box">
+                <h2>SOCKS4</h2>
+                <pre id="socks4-content-3"></pre>
+                <button class="download-btn" onclick="downloadFile('socks4-content-3', 'SOCKS4_proxies.txt')">Descargar</button>
+            </div>
+            <div id="socks5-3" class="proxy-box">
+                <h2>SOCKS5</h2>
+                <pre id="socks5-content-3"></pre>
+                <button class="download-btn" onclick="downloadFile('socks5-content-3', 'SOCKS5_proxies.txt')">Descargar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenido para Opción 4 -->
+    <div id="content-4" class="content">
+        <div class="proxy-container">
+            <div id="http-4" class="proxy-box">
+                <h2>HTTP</h2>
+                <pre id="http-content-4"></pre>
+                <button class="download-btn" onclick="downloadFile('http-content-4', 'HTTP_proxies.txt')">Descargar</button>
+            </div>
+            <div id="socks4-4" class="proxy-box">
+                <h2>SOCKS4</h2>
+                <pre id="socks4-content-4"></pre>
+                <button class="download-btn" onclick="downloadFile('socks4-content-4', 'SOCKS4_proxies.txt')">Descargar</button>
+            </div>
+            <div id="socks5-4" class="proxy-box">
+                <h2>SOCKS5</h2>
+                <pre id="socks5-content-4"></pre>
+                <button class="download-btn" onclick="downloadFile('socks5-content-4', 'SOCKS5_proxies.txt')">Descargar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

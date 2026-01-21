@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertidor Twitch - Trollitch</title>
+    <link rel="icon" href="img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>Convertidor Twitch - Trollitch</h1>
+    
+    <h2>Descripción</h2>
+    <p>
+        Trollitch es una aplicación de escritorio diseñada para descargar transmisiones en directo desde Twitch en formatos MP4 y MP3. La aplicación utiliza <code>yt-dlp</code> para gestionar las descargas y <code>Tkinter</code> para ofrecer una interfaz gráfica sencilla e intuitiva, facilitando a los usuarios la elección del formato y la calidad de la descarga.
+    </p>
+
+    <h2>Características</h2>
+    <p>
+        - Descarga transmisiones en directo de Twitch en formatos MP4 o MP3.<br>
+        - Interfaz gráfica amigable construida con <code>Tkinter</code>.<br>
+        - Selección de calidad de descarga: mejor o peor disponible.<br>
+        - Barra de progreso visual para monitorear el estado de la descarga.<br>
+        - Compatible con la conversión automática a MP3 utilizando <code>FFmpeg</code>.
+    </p>
+
+    <h2>Requisitos</h2>
+    <p>
+        Para ejecutar este proyecto, necesitas tener instalados los siguientes componentes:
+    </p>
+    <ul>
+        <li><code>Python</code></li>
+        <li><code>yt-dlp</code></li>
+        <li><code>tk</code></li>
+        <li><a href="https://ffmpeg.org/download.html">FFmpeg</a> (necesario para la conversión de audio y video).</li>
+    </ul>
+
+    <h2>Instalación</h2>
+    <p>1. Clona este repositorio:</p>
+    <pre><code>git clone https://github.com/MikeTrollYT/Trollitch-ConvertidorDeTwitch.git
+cd Trollitch-ConvertidorDeTwitch
+    </code></pre>
+    <p>2. Instala las dependencias del proyecto:</p>
+    <pre><code>pip install -r requirements.txt
+    </code></pre>
+    <p>3. Asegúrate de tener FFmpeg instalado y disponible en el PATH de tu sistema operativo. <a href="https://ffmpeg.org/download.html">Guía de instalación de FFmpeg</a></p>
+
+    <h2>Verificar la Instalación de FFmpeg</h2>
+    <p>
+        Para asegurarte de que FFmpeg está instalado y configurado correctamente, puedes usar el script de prueba <code>prueba.py</code>.
+    </p>
+    <p>
+        1. Ejecuta el script con el siguiente comando:
+    </p>
+    <pre><code>python prueba.py
+    </code></pre>
+    <p>
+        2. Si el script descarga correctamente el archivo de prueba y no muestra errores, entonces FFmpeg está instalado y configurado correctamente.
+    </p>
+
+    <h2>Uso</h2>
+    <p>
+        1. Ejecuta la aplicación:
+    </p>
+    <pre><code>python main.py
+    </code></pre>
+    <p>
+        2. Introduce la URL del directo de Twitch en el campo de texto.
+    </p>
+    <p>
+        3. Selecciona el formato de salida (MP4 o MP3).
+    </p>
+    <p>
+        4. Selecciona la calidad de descarga (Mejor o Peor).
+    </p>
+    <p>
+        5. Haz clic en el botón "Descargar". La barra de progreso se actualizará conforme avance la descarga.
+    </p>
+    <p>
+        6. Los archivos se guardarán en la misma carpeta donde se ejecuta el programa.
+    </p>
+
+    <h2>Capturas de Pantalla</h2>
+    <div class="screenshot-container">
+        <img src="img/Convertidor.png" alt="Convertidor">
+    </div>
+
+    <div class="button-container">
+        <a href="https://github.com/MikeTrollYT/Trollitch-ConvertidorDeTwitch" class="download-button">
+            Descargar Proyecto
+        </a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

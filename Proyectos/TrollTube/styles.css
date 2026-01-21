@@ -1,0 +1,146 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f0f5;
+    color: #005f73;
+    line-height: 1.6;
+    position: relative;
+}
+
+h1, h2 {
+    color: #0096c7;
+    text-align: center;
+}
+
+p {
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+    text-align: justify;
+}
+
+ul {
+    max-width: 800px;
+    margin: 0 auto;
+    padding-left: 40px;
+    list-style-type: disc;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+pre {
+    background-color: #e0e0e5;
+    padding: 10px;
+    border-radius: 8px;
+    color: #005f73;
+    overflow-x: auto;
+    max-width: 800px;
+    margin: 20px auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    border: 2px solid #0096c7;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+code {
+    font-family: "Courier New", Courier, monospace;
+}
+
+a {
+    color: #0077b6;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.download-button {
+    background-color: #0077b6;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.download-button:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 0px 10px rgba(0, 119, 182, 0.5);
+    text-decoration: none;
+}
+
+.screenshot-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.screenshot-container img {
+    width: 100%;
+    max-width: 500px;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 1.4em;
+    }
+
+    p, ul {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+
+    pre {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .download-button {
+        font-size: 18px;
+        padding: 12px 24px;
+    }
+
+    .screenshot-container img {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    .download-button {
+        font-size: 16px;
+        padding: 10px 20px;
+        width: 90%;
+    }
+}

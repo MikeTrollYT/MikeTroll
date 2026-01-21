@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprobador de Proxies - Trollxies</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Comprobador de Proxies - Trollxies</h1>
+    
+    <h2>Descripción</h2>
+    <p>
+        Este proyecto es un script en Python para comprobar proxies HTTP, SOCKS4 y SOCKS5. El script verifica si los proxies listados en un archivo de texto son funcionales y los clasifica en archivos separados para proxies que funcionan y los que no.
+    </p>
+
+    <h2>Características</h2>
+    <p>
+        - Verifica proxies HTTP, SOCKS4 y SOCKS5.<br>
+        - Usa múltiples hilos para comprobar proxies de manera eficiente.<br>
+        - Muestra el estado de cada proxy en la consola con colores: verde para proxies funcionales y rojo para proxies fallidos.<br>
+        - Guarda los resultados en archivos de texto separados para proxies que funcionan y los que no.
+    </p>
+
+    <h2>Requisitos</h2>
+    <p>
+        Para ejecutar este proyecto, necesitas tener instalados los siguientes componentes:
+    </p>
+    <ul>
+        <li>Python 3.6 o superior</li>
+        <li>Paquetes Python:
+            <ul>
+                <li><code>requests</code></li>
+                <li><code>pysocks</code></li>
+                <li><code>colorama</code></li>
+            </ul>
+        </li>
+    </ul>
+
+    <h2>Instalación</h2>
+    <p>1. Instala las dependencias del proyecto:</p>
+    <pre><code>pip install -r requirements.txt
+    </code></pre>
+
+    <h2>Uso</h2>
+    <p>
+        1. Prepara el archivo de proxies:
+        <ul>
+            <li>Los archivos de proxies deben estar en el formato <code>IP:PORT</code>. Los archivos proporcionados deben ser llenados con proxies válidos:</li>
+            <li><code>HTTP_proxies.txt</code></li>
+            <li><code>SOCKS4_proxies.txt</code></li>
+            <li><code>SOCKS5_proxies.txt</code></li>
+            <li>Puedes encontrar proxies en el siguiente sitio web: <a href="https://miketrollyt.github.io/MikeTroll/proxies/" target="_blank">MikeTroll - Proxies</a></li>
+        </ul>
+    </p>
+    <p>
+        2. Ejecuta el script:
+    </p>
+    <pre><code>python main.py
+    </code></pre>
+    <p>
+        3. Ingresa el tipo de proxy:
+        <ul>
+            <li>Ingresa el tipo de proxy que deseas verificar cuando se te solicite. Las opciones disponibles son <code>HTTP</code>, <code>SOCKS4</code>, y <code>SOCKS5</code>.</li>
+        </ul>
+    </p>
+    <p>
+        4. Revisa los resultados:
+        <ul>
+            <li>El script generará dos archivos de salida:</li>
+            <li><code>working_<tipo_de_proxy>_proxies.txt</code>: Contiene proxies que funcionan.</li>
+            <li><code>non_working_<tipo_de_proxy>_proxies.txt</code>: Contiene proxies que no funcionan.</li>
+        </ul>
+    </p>
+
+    <h2>Notas</h2>
+    <p>
+        - Asegúrate de que el archivo de proxies no contenga líneas vacías ni formatos incorrectos.<br>
+        - Si el archivo de proxies tiene un formato incorrecto, el script puede arrojar errores.
+    </p>
+
+    <div class="button-container">
+        <a href="https://github.com/MikeTrollYT/Trollxies-ComprobadorDeProxies" class="download-button">
+            Descargar Proyecto
+        </a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

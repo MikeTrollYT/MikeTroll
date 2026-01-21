@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Agents - MikeTroll</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>User Agents</h1>
+    <p>🔍 ¡Descubre una extensa lista de más de 13,000 user agents! 🌐 Optimiza tus pruebas y garantiza que tu sitio web funcione a la perfección en cualquier dispositivo y navegador. 🚀</p>
+
+    <div class="button-container">
+        <button class="button" onclick="showContent(1)">Opción 1</button>
+        <button class="button" onclick="showContent(2)">Opción 2</button>
+        <button class="button" onclick="showContent(3)">Opción 3</button>
+    </div>
+
+    <!-- Contenido para Opción 1 -->
+    <div id="content-1" class="content">
+        <button class="download-btn" onclick="downloadFile('content-text-1', 'user-agents.txt')">Descargar</button>
+        <pre id="content-text-1"></pre>
+    </div>
+
+    <!-- Contenido para Opción 2 -->
+    <div id="content-2" class="content">
+        <button class="download-btn" onclick="downloadFile('content-text-2', 'user-agents.txt')">Descargar</button>
+        <pre id="content-text-2"></pre>
+    </div>
+
+    <!-- Contenido para Opción 3 -->
+    <div id="content-3" class="content">
+        <button class="download-btn" onclick="downloadFile('content-text-3', 'user-agents.txt')">Descargar</button>
+        <pre id="content-text-3"></pre>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

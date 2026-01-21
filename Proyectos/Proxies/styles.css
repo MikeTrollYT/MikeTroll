@@ -1,0 +1,240 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f5;
+    color: #005f73;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin: 20px 0;
+    color: #0096c7;
+}
+
+.description {
+    font-size: 1.2em;
+    margin: 20px auto;
+    color: #005f73;
+    max-width: 800px;
+    line-height: 1.6;
+}
+
+.content {
+    display: none;
+    margin: 20px auto;
+    max-width: 100%;
+}
+
+.content.active {
+    display: block;
+}
+
+.proxy-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.proxy-box {
+    background-color: #fff;
+    border: 2px solid #0096c7;
+    padding: 10px;
+    border-radius: 8px;
+    color: #005f73;
+    overflow: visible;
+    max-width: 300px;
+    flex: 1 1 30%;
+    min-width: 200px;
+    text-align: left;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.proxy-box h2 {
+    margin-top: 0;
+    color: #0096c7;
+    text-align: center;
+}
+
+.proxy-box pre {
+    margin: 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow: hidden;
+    max-height: none;
+    background-color: #e0e0e5;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: "Courier New", Courier, monospace;
+    color: #005f73;
+}
+
+.download-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #0077b6;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.download-btn:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 0px 10px rgba(0, 119, 182, 0.5);
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.button {
+    background-color: #0077b6;
+    border: none;
+    border-radius: 50px;
+    color: #fff;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    flex: 1 1 auto;
+    max-width: 200px;
+}
+
+.button:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 0px 10px rgba(0, 119, 182, 0.5);
+}
+
+.show-more-btn {
+    background-color: #0077b6;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.show-more-btn:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 0px 10px rgba(0, 119, 182, 0.5);
+}
+
+@media (max-width: 768px) {
+    .button {
+        font-size: 16px;
+        padding: 10px 20px;
+        max-width: 150px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .description {
+        font-size: 1em;
+    }
+
+    .proxy-box {
+        flex: 1 1 100%;
+    }
+
+    .proxy-container {
+        gap: 10px;
+    }
+
+    .proxy-box h2 {
+        font-size: 16px;
+    }
+
+    .proxy-box pre {
+        font-size: 12px;
+    }
+
+    .download-btn {
+        font-size: 12px;
+        padding: 5px 8px;
+    }
+
+    .proxy-box pre {
+        font-size: 12px;
+        max-height: 200px;
+        overflow: hidden;
+    }
+
+    .proxy-box pre {
+        font-size: 12px;
+        max-height: none;
+        overflow: visible;
+    }
+}
+
+@media (max-width: 480px) {
+    .button {
+        font-size: 14px;
+        padding: 8px 16px;
+        max-width: 100%;
+    }
+
+    .button-container {
+        flex-direction: column;
+    }
+
+    .download-btn {
+        font-size: 12px;
+        padding: 5px 8px;
+    }
+    
+    .proxy-box {
+        flex: 1 1 100%;
+    }
+
+    .proxy-container {
+        gap: 10px;
+    }
+
+    .proxy-box h2 {
+        font-size: 16px;
+    }
+
+    .proxy-box pre {
+        font-size: 12px;
+    }
+
+    .download-btn {
+        font-size: 12px;
+        padding: 5px 8px;
+    }
+
+    .proxy-box pre {
+        font-size: 12px;
+        max-height: 200px;
+        overflow: hidden;
+    }
+
+    .proxy-box pre {
+        font-size: 12px;
+        max-height: none;
+        overflow: visible;
+    }
+}

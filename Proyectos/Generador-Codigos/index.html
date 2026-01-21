@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Códigos</title>
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #121212;
+            color: #f0f0f0;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2rem;
+            color: #e16576;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 1200px;
+            gap: 20px;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .config-section, .result-section {
+            flex: 1;
+            padding: 20px;
+            background-color: #2a2a2a;
+            border-radius: 8px;
+            box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+        }
+        .config-section h2, .result-section h2 {
+            text-align: center; /* Centra solo el texto del título */
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            color: #e16576;
+        }
+        .config-section form, .result-section div {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Alinea los elementos del formulario a la izquierda */
+        }
+        label {
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+            display: block;
+            color: #ccc;
+        }
+        input, select, button {
+            width: 100%;
+            max-width: 300px; /* Limita el ancho de los inputs */
+            padding: 10px;
+            margin-bottom: 15px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+        }
+        input {
+            background-color: #2a2a2a;
+            color: #f0f0f0;
+        }
+        input:focus {
+            border: 1px solid #e16576;
+        }
+        button {
+            background-color: #e16576;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #b04e5b;
+        }
+        textarea {
+            width: 100%;
+            height: 200px;
+            background-color: #1e1e1e;
+            color: #00ff00;
+            font-family: monospace;
+            border: 1px solid #333;
+            border-radius: 5px;
+            resize: none;
+            padding: 10px;
+        }
+
+        /* Responsividad */
+        @media (min-width: 768px) {
+            .content {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Generador de Códigos</h1>
+        <div class="content">
+            <div class="config-section">
+                <h2>Configuración</h2>
+                <form>
+                    <label for="exclude">Caracteres no permitidos:</label>
+                    <input type="text" id="exclude" placeholder="Ejemplo: P,1,6,A">
+
+                    <label for="length">Longitud del código:</label>
+                    <input type="number" id="length" placeholder="Ejemplo: 12">
+
+                    <label for="delimiter">Delimitador:</label>
+                    <input type="text" id="delimiter" maxlength="1" placeholder="Ejemplo: -">
+
+                    <label for="delimiterEvery">Cada cuántos dígitos se coloca el delimitador:</label>
+                    <input type="number" id="delimiterEvery" placeholder="Ejemplo: 4">
+
+                    <label for="case">Formato de mayúsculas/minúsculas:</label>
+                    <select id="case">
+                        <option value="both">Ambos</option>
+                        <option value="uppercase">Solo mayúsculas</option>
+                        <option value="lowercase">Solo minúsculas</option>
+                    </select>
+
+                    <label for="count">Cantidad de códigos:</label>
+                    <input type="number" id="count" placeholder="Ejemplo: 10">
+
+                    <button id="generate" type="button">Generar</button>
+                </form>
+            </div>
+
+            <div class="result-section">
+                <h2>Códigos Generados</h2>
+                <div>
+                    <textarea id="output" readonly></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("generate").addEventListener("click", () => {
+            const exclude = document.getElementById("exclude").value.split(",");
+            const length = parseInt(document.getElementById("length").value);
+            const delimiter = document.getElementById("delimiter").value || "";
+            const delimiterEvery = parseInt(document.getElementById("delimiterEvery").value);
+            const caseOption = document.getElementById("case").value;
+            const count = parseInt(document.getElementById("count").value);
+
+            if (!length || !count) {
+                alert("Por favor, introduce una longitud y cantidad válidas.");
+                return;
+            }
+
+            const allChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            const allowedChars = allChars.split("").filter(ch => !exclude.includes(ch));
+            if (allowedChars.length === 0) {
+                alert("No hay caracteres permitidos disponibles.");
+                return;
+            }
+
+            const generateCode = () => {
+                let code = "";
+                for (let i = 0; i < length; i++) {
+                    const randomIndex = Math.floor(Math.random() * allowedChars.length);
+                    code += allowedChars[randomIndex];
+                }
+
+                // Aplicar delimitador cada cierta cantidad de dígitos
+                if (delimiter && delimiterEvery > 0) {
+                    code = code.match(new RegExp(`.{1,${delimiterEvery}}`, "g")).join(delimiter);
+                }
+
+                if (caseOption === "uppercase") code = code.toUpperCase();
+                if (caseOption === "lowercase") code = code.toLowerCase();
+
+                return code;
+            };
+
+            const uniqueCodes = new Set();
+            while (uniqueCodes.size < count) {
+                uniqueCodes.add(generateCode());
+            }
+
+            document.getElementById("output").value = Array.from(uniqueCodes).join("\n");
+        });
+    </script>
+</body>
+</html>

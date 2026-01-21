@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proximamente...</title>
+    <link rel="icon" type="image/svg+xml" href="Logo.svg">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="countdown-container">
+        <div class="countdown" id="countdown">
+            <span id="days">00</span>:
+            <span id="hours">00</span>:
+            <span id="minutes">00</span>:
+            <span id="seconds">00</span>
+        </div>
+        <img src="Radio.svg" alt="Radio" class="radio" id="radio-image">
+    </div>
+
+    <div class="modal-overlay" id="modal-overlay"></div>
+    <div class="modal" id="modal">
+        <p>PREPÁRATE PARA DESCUBRIR UNA NUEVA EXPERIENCIA AUDITIVA. ESTAMOS TRABAJANDO EN ALGO INCREÍBLE PARA REUNIR TODAS LAS EMISORAS DE RADIO DE ESPAÑA EN UN SOLO LUGAR.</p>
+        <br>
+        <p>¡MANTENTE ATENTO! FALTA POCO PARA EL LANZAMIENTO.</p>
+    </div>
+
+    <div class="audio-player">
+        <div class="audio-info">
+            <img src="cover1.jpg" alt="Cover" id="audio-cover">
+            <div class="details">
+                <span class="title" id="audio-title">Canción 1</span>
+                <span class="author" id="audio-author">Autor 1</span>
+            </div>
+        </div>
+        <div class="audio-controls">
+            <button id="prev-btn"><img src="Anterior.png" style="width: 25px;"></button>
+            <button id="play-btn"><img src="Play.png" style="width: 25px;" id="play-icon"></button>
+            <button id="next-btn" style="margin-right: 50px;"><img src="Proximo.png" style="width: 25px;"></button>
+        </div>  
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
