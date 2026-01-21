@@ -191,14 +191,16 @@ Ver [LICENSE](https://raw.githubusercontent.com/MikeTrollYT/JackBrid/refs/heads/
 
 ---
 
-<div align="center">
+<h3 align="center">🌟 Si te gusta JackBrid, ¡apóyalo con una estrella en GitHub!</h3>
 
-### 🌟 Si te gusta JackBrid, ¡apóyalo con una estrella en GitHub!
+<p align="center">
+  <a href="https://github.com/MikeTrollYT/JackBrid"><img src="https://img.shields.io/github/stars/MikeTrollYT/JackBrid?style=social" alt="Star on GitHub"></a>
+</p>
 
-[![Star on GitHub](https://img.shields.io/github/stars/MikeTrollYT/JackBrid?style=social)](https://github.com/MikeTrollYT/JackBrid)
+<p align="center">
+  <strong>Hecho por MikeTroll · 2026</strong>
+</p>
 
-**Hecho con ❤️ por la comunidad**
-
-[⬆️ Volver arriba](#-jackbrid---documentación-oficial)
-
-</div>
+<p align="center">
+  <a href="#-jackbrid---documentación-oficial">⬆️ Volver arriba</a>
+</p>
