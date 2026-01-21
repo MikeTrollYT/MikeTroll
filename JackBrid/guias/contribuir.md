@@ -446,8 +446,7 @@ Cualquier otra información relevante.
 
 ### Antes de Proponer
 
-1. **Verifica el roadmap**: Puede estar ya planificado
-2. **Busca discussions**: Puede haberse discutido antes
+1. **Busca discussions**: Puede haberse discutido antes
 3. **Considera el scope**: Debe ser relevante para JackBrid
 
 ### Plantilla de Feature Request
@@ -542,16 +541,16 @@ R: Consulta primero. Preferimos mantener dependencias mínimas.
 
 - **GitHub Issues**: Para bugs y features
 - **GitHub Discussions**: Para preguntas generales
-- **Discord** (próximamente): Para chat en tiempo real
-
 ---
 
-<div align="center">
+<p align="center">
+  <strong>¡Gracias por contribuir a JackBrid! 🎉</strong>
+</p>
 
-**¡Gracias por contribuir a JackBrid! 🎉**
+<p align="center">
+  Cada línea de código, cada issue, cada PR hace este proyecto mejor.
+</p>
 
-Cada línea de código, cada issue, cada PR hace este proyecto mejor.
-
-[⬅️ Volver al índice](/JackBrid/)
-
-</div>
+<p align="center">
+  <a href="/JackBrid/">⬅️ Volver al índice</a>
+</p>

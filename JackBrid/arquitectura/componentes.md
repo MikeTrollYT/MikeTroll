@@ -607,8 +607,7 @@ module.exports = {
 
 ---
 
-<div align="center">
-
-[⬅️ Volver a Arquitectura](/JackBrid/arquitectura/overview) | [Índice](/JackBrid/)
-
-</div>
+<p align="center">
+  <a href="/JackBrid/arquitectura/overview">⬅️ Volver a Arquitectura</a> |
+  <a href="/JackBrid/">Índice</a>
+</p>

@@ -710,8 +710,7 @@ echo ".env" >> .gitignore
 
 ---
 
-<div align="center">
-
-[⬅️ Volver al índice](/JackBrid/) | [Arquitectura ➡️](/JackBrid/arquitectura/overview)
-
-</div>
+<p align="center">
+  <a href="/JackBrid/">⬅️ Volver al índice</a> |
+  <a href="/JackBrid/arquitectura/overview">Arquitectura ➡️</a>
+</p>

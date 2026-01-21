@@ -55,7 +55,7 @@ AllDebrid convierte torrents lentos en descargas directas a máxima velocidad:
 
 ### ¿Puedo usar Real-Debrid en lugar de AllDebrid?
 
-Actualmente **solo AllDebrid** está soportado. Real-Debrid está en el roadmap para futuras versiones.
+Actualmente **solo AllDebrid** está soportado.
 
 ### ¿Funciona en móvil?
 
@@ -139,11 +139,10 @@ cp .env.example .env
 3. Es un código alfanumérico de 32 caracteres
 
 **Captura de pantalla:**
-```
-┌────────────────────────────────────┐
-│  Jackett          API Key: abc123  │ ← Aquí
-└────────────────────────────────────┘
-```
+
+<p align="center">
+  <img src="../img/img4.png" alt="API Key de Jackett" width="100%">
+</p>
 
 ### ¿Cómo obtengo la API Key de AllDebrid?
 
@@ -152,6 +151,7 @@ cp .env.example .env
 3. Clic en **"Generar nueva clave"**
 4. Copiar la clave generada
 5. Pegarla en el archivo `.env`
+
 
 ### Cambié el .env pero no funciona
 
@@ -624,12 +624,6 @@ cat .env | sed 's/API_KEY=.*/API_KEY=***/'
 - Sistema operativo y versión de Docker
 - Captura de pantalla (si aplica)
 
-### 4. Preguntar en Discussions
-
-[GitHub Discussions](https://github.com/MikeTrollYT/JackBrid/discussions)
-
-Para preguntas generales, dudas de uso, o propuestas.
-
 ---
 
 ## 📚 Recursos Adicionales
@@ -641,10 +635,11 @@ Para preguntas generales, dudas de uso, o propuestas.
 
 ---
 
-<div align="center">
+<p align="center">
+  <strong>¿No encontraste la solución?</strong>
+</p>
 
-**¿No encontraste la solución?**
-
-[📖 Volver al índice](/JackBrid/) | [🐛 Reportar bug](https://github.com/MikeTrollYT/JackBrid/issues)
-
-</div>
+<p align="center">
+  <a href="/JackBrid/">📖 Volver al índice</a> |
+  <a href="https://github.com/MikeTrollYT/JackBrid/issues">🐛 Reportar bug</a>
+</p>

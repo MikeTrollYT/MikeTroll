@@ -500,11 +500,14 @@ npx serve -p 8998
 **Optimizaciones:**
 
 1. **Minificación de assets**
-```bash
-# CSS
-npx csso frontend/styles.css -o frontend/styles.min.css
 
-# JS
+CSS:
+```bash
+npx csso frontend/styles.css -o frontend/styles.min.css
+```
+
+JS:
+```bash
 npx terser frontend/app.js -o frontend/app.min.js
 ```
 
@@ -616,8 +619,7 @@ docker compose logs --tail=100 backend
 
 ---
 
-<div align="center">
-
-[⬅️ Volver al índice](/JackBrid/) | [Componentes ➡️](/JackBrid/arquitectura/componentes)
-
-</div>
+<p align="center">
+  <a href="/JackBrid/">⬅️ Volver al índice</a> |
+  <a href="/JackBrid/arquitectura/componentes">Componentes ➡️</a>
+</p>

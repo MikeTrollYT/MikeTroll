@@ -19,35 +19,23 @@ Aprende a usar todas las características de JackBrid con ejemplos prácticos y 
 
 ### Vista General
 
-Al abrir JackBrid en `http://localhost:8998`, verás:
+Al abrir JackBrid en `http://localhost:8998`, verás la interfaz principal:
 
-```
-┌─────────────────────────────────────────────────────┐
-│  🎬 JackBrid                    [🟢 Jackett] [🟢 AD] │
-├─────────────────────────────────────────────────────┤
-│                                                      │
-│  Selecciona Trackers:                               │
-│  ☑ 1337x  ☑ ThePirateBay  ☐ RARBG  ☐ YTS           │
-│                                                      │
-│  🔍 [Buscar contenido...]                [Buscar]   │
-│                                                      │
-│  Ordenar por: [Seeders ▼]  Límite: [50]  [Solo ✓]  │
-│                                                      │
-├─────────────────────────────────────────────────────┤
-│  📦 Resultados de Búsqueda                          │
-│  ...                                                 │
-├─────────────────────────────────────────────────────┤
-│  🌐 Mis Elementos en AllDebrid                      │
-│  ...                                                 │
-└─────────────────────────────────────────────────────┘
-```
+<p align="center">
+  <img src="../img/img1.png" alt="Interfaz de JackBrid" width="100%">
+</p>
+
+La interfaz está dividida en tres secciones principales:
+
+1. **Búsqueda** (arriba) - Selección de trackers, campo de búsqueda y filtros
+2. **Resultados** (medio) - Torrents encontrados en tus búsquedas
+3. **Descargas** (abajo) - Elementos añadidos a AllDebrid listos para reproducir o descargar
 
 ### Indicadores de Estado
 
-- **🟢 Jackett**: Conectado correctamente
-- **🔴 Jackett**: Error de conexión o API Key inválida
-- **🟢 AD** (AllDebrid): Conectado y funcionando
-- **🔴 AD**: Error de conexión o límite excedido
+En la esquina superior derecha verás:
+- **🟢 Backend OK**: Conectado correctamente a Jackett y AllDebrid
+- **🔴 Backend Error**: Problema de conexión o API Key inválida
 
 ---
 
@@ -116,17 +104,17 @@ musica electronica
 
 ### Paso 4: Explorar Resultados
 
-Cada resultado muestra:
+<p align="center">
+  <img src="../img/img2.png" alt="Resultados de búsqueda" width="100%">
+</p>
 
-```
-┌─────────────────────────────────────────────────────────┐
-│ 🎬 The Matrix 1999 1080p BluRay x264                    │
-│ 📦 1.5 GB  |  🌱 1,523 seeders  |  📥 84 leechers       │
-│ 📍 Tracker: 1337x  |  📅 15 Ene 2024                    │
-│                                                          │
-│ [➕ Añadir a AllDebrid]  [📋 Copiar Magnet]             │
-└─────────────────────────────────────────────────────────┘
-```
+Cada resultado muestra información detallada del torrent:
+
+- **Título completo** - Nombre del archivo con calidad y formato
+- **Tamaño del archivo** - Tamaño total del torrent
+- **Seeders y Leechers** - Disponibilidad y velocidad esperada
+- **Tracker de origen** - Fuente del torrent
+- **Botón "Enviar"** - Añade el torrent directamente a AllDebrid
 
 **Información clave:**
 - **Seeders**: Más seeders = descarga más rápida
@@ -205,16 +193,18 @@ Tu contenido pasa por varios estados:
 
 ### Controles del Reproductor
 
-```
-┌────────────────────────────────────────────────────┐
-│                                                     │
-│                   [VIDEO AQUÍ]                     │
-│                                                     │
-├────────────────────────────────────────────────────┤
-│ ▶️ ⏸️  ⏮️ ⏭️  🔊 ████▒▒▒  [⚙️]  [🖼️]  [⛶]        │
-│ 00:15 ───────●────────────── 02:30:00              │
-└────────────────────────────────────────────────────┘
-```
+<p align="center">
+  <img src="../img/img3.png" alt="Reproductor de video" width="100%">
+</p>
+
+El reproductor integrado Plyr ofrece controles completos para la reproducción:
+
+- **Barra de progreso** - Desplazamiento rápido a cualquier punto del video
+- **Controles de reproducción** - Play/Pausa y avance/retroceso
+- **Control de volumen** - Ajuste de audio con barra deslizante
+- **Configuración** - Velocidad de reproducción y calidad
+- **Picture-in-Picture** - Ver el video mientras navegas
+- **Pantalla completa** - Modo inmersivo
 
 **Funciones:**
 - ▶️/⏸️ - Play/Pausa (Espacio)
@@ -445,7 +435,7 @@ TMDB: "The Matrix 1999"
 
 ### ¿Puedo usar Real-Debrid en lugar de AllDebrid?
 
-Actualmente JackBrid solo soporta AllDebrid. El soporte para Real-Debrid está en el roadmap.
+Actualmente JackBrid solo soporta AllDebrid.
 
 ### ¿Cuánto tarda en procesar un torrent?
 
@@ -470,8 +460,8 @@ El reproductor integrado soporta subtítulos WebVTT:
 
 ---
 
-<div align="center">
-
-[⬅️ Instalación](/JackBrid/guias/instalacion) | [Índice](/JackBrid/) | [FAQ ➡️](/JackBrid/guias/faq)
-
-</div>
+<p align="center">
+  <a href="/JackBrid/guias/instalacion">⬅️ Instalación</a> |
+  <a href="/JackBrid/">Índice</a> |
+  <a href="/JackBrid/guias/faq">FAQ ➡️</a>
+</p>

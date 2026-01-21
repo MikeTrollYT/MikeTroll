@@ -527,14 +527,12 @@ Si encuentras problemas durante la instalación:
    docker compose logs jackett
    ```
 
-2. **Consultar FAQ**: [guias/faq.md](/JackBrid/guias/faq)
+2. **Consultar FAQ**: [FAQ](/JackBrid/guias/faq)
 
 3. **Abrir un issue**: [GitHub Issues](https://github.com/MikeTrollYT/JackBrid/issues)
 
 ---
 
-<div align="center">
-
-[⬅️ Volver al índice](/JackBrid/) | [Siguiente: Configuración ➡️](/JackBrid/guias/configuracion)
-
-</div>
+<p align="center">
+  <a href="/JackBrid/">⬅️ Volver al índice</a>
+</p>

@@ -1,7 +1,7 @@
 # 🎬 JackBrid - Documentación Oficial
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/MikeTrollYT/JackBrid/refs/heads/main/frontend/img/logo.png" alt="JackBrid Logo" width="180">
+  <img src="./img/logo.png" alt="JackBrid Logo" width="180">
 </p>
 
 <h3 align="center">Panel Privado de Búsqueda y Streaming de Torrents</h3>
@@ -9,7 +9,7 @@
 <p align="center">
   <a href="https://www.docker.com/"><img src="https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker&logoColor=white" alt="Docker"></a>
   <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/Node.js-18+-339933?logo=node.js&logoColor=white" alt="Node.js"></a>
-  <a href="../LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License"></a>
+  <a href="https://raw.githubusercontent.com/MikeTrollYT/JackBrid/refs/heads/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License"></a>
   <a href="https://github.com/MikeTrollYT/JackBrid"><img src="https://img.shields.io/badge/GitHub-MikeTrollYT-181717?logo=github" alt="GitHub"></a>
 </p>
 
@@ -30,7 +30,6 @@ Imagina poder buscar contenido en múltiples trackers de torrents, añadirlo dir
 ### 🚀 Primeros Pasos
 
 - [📥 Instalación Rápida](/JackBrid/guias/instalacion)
-- [⚙️ Configuración Inicial](/JackBrid/guias/configuracion)
 - [🎯 Guía de Uso](/JackBrid/guias/uso)
 - [❓ FAQ y Solución de Problemas](/JackBrid/guias/faq)
 
