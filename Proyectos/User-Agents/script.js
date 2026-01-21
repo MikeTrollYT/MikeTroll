@@ -7,9 +7,9 @@ function showContent(option) {
 
 async function loadContent(option) {
     const urls = {
-        1: 'https://raw.githubusercontent.com/MikeTrollYT/MikeTroll/main/user-agents/user-agents.txt',
-        2: 'https://raw.githubusercontent.com/MikeTrollYT/MikeTroll/main/user-agents/user-agents-2.txt',
-        3: 'https://raw.githubusercontent.com/MikeTrollYT/MikeTroll/main/user-agents/user-agents-3.txt'
+        1: 'https://raw.githubusercontent.com/MikeTrollYT/MikeTroll/main/Proyectos/User-Agents/user-agents.txt',
+        2: 'https://raw.githubusercontent.com/MikeTrollYT/MikeTroll/main/Proyectos/User-Agents/user-agents-2.txt',
+        3: 'https://raw.githubusercontent.com/MikeTrollYT/MikeTroll/main/Proyectos/User-Agents/user-agents-3.txt'
     };
 
     try {
