@@ -15,6 +15,46 @@ body {
     box-sizing: border-box;
 }
 
+/* Estilos personalizados para scrollbar - Aplicado a todos los elementos */
+*::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+    background: rgba(0, 150, 199, 0.1);
+    border-radius: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: rgba(0, 150, 199, 0.4);
+    border-radius: 10px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 150, 199, 0.6);
+}
+
+/* Estilos especiales para el scrollbar del profile-container */
+.profile-container::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.profile-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.profile-container::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+
+.profile-container::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
 .main-container {
     display: flex;
     flex-wrap: nowrap;
@@ -27,7 +67,7 @@ body {
 }
 
 .profile-container {
-    flex: 0 0 320px;
+    flex: 0 0 400px;
     background-color: #0077b6;
     color: #fff;
     text-align: center;
@@ -35,6 +75,9 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    max-height: calc(100vh - 2em);
+    overflow-y: auto;
+    overflow-x: auto;
 }
 
 .profile-container img {
@@ -137,6 +180,9 @@ body {
     .profile-container {
         flex: 1;
         padding: 2em 1em;
+        max-height: none;
+        overflow-y: visible;
+        overflow-x: visible;
     }
     
     .projects-container {
@@ -354,3 +400,222 @@ background: #24292E;
   line-height: 40px;
 }
 }
+
+/* --- INICIO LÍNEA DEL TIEMPO --- */
+.timeline-section {
+    margin-top: auto;
+    width: 100%;
+    flex-shrink: 0;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.timeline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 0.8em 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    transition: opacity 0.3s ease;
+}
+
+.timeline-header:hover {
+    opacity: 0.8;
+}
+
+.timeline-header h3 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #fff;
+}
+
+.timeline-arrow {
+    font-size: 1em;
+    color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.timeline-arrow.open {
+    transform: rotate(180deg);
+}
+
+.timeline-container {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.4s ease;
+}
+
+.timeline-container.open {
+    max-height: 300px;
+    overflow-y: auto;
+    margin-top: 1em;
+}
+
+.timeline-wrapper {
+    position: relative;
+    padding: 1em 0;
+}
+
+.timeline-line {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.timeline-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5em;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-dot {
+    width: 16px;
+    height: 16px;
+    background-color: #fff;
+    border: 3px solid #00b4d8;
+    border-radius: 50%;
+    flex-shrink: 0;
+    z-index: 2;
+}
+
+.timeline-content {
+    margin-left: 1em;
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 0.6em 1em;
+    border-radius: 8px;
+    flex: 1;
+}
+
+.timeline-content h4 {
+    margin: 0 0 0.3em 0;
+    font-size: 1em;
+    color: #fff;
+}
+
+.timeline-year {
+    font-size: 0.85em;
+    color: rgba(255, 255, 255, 0.8);
+    font-style: italic;
+}
+
+/* Estilos para móvil (vertical) */
+@media (max-width: 768px) {
+    .timeline-header {
+        display: flex;
+    }
+    
+    .timeline-line {
+        left: 7px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+    }
+    
+    .timeline-wrapper {
+        padding-left: 0;
+    }
+}
+
+/* Estilos para escritorio (horizontal) */
+@media (min-width: 769px) {
+    .timeline-header {
+        display: none; /* Ocultar el toggle en escritorio */
+    }
+    
+    .timeline-section {
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
+        margin-top: auto;
+        flex-shrink: 0;
+    }
+    
+    .timeline-section::before {
+        content: "Línea del Tiempo";
+        display: block;
+        font-size: 1.2em;
+        color: #fff;
+        font-weight: bold;
+        margin-bottom: 1em;
+    }
+    
+    .timeline-container {
+        max-height: none !important;
+        overflow-x: auto;
+        overflow-y: hidden;
+        cursor: grab;
+        padding-bottom: 0.5em;
+        max-width: 100%
+        padding-bottom: 0.5em;
+    }
+    
+    .timeline-container:active {
+        cursor: grabbing;
+    }
+    
+    .timeline-container::-webkit-scrollbar {
+        height: 6px;
+    }
+    
+    .timeline-container::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+    }
+    
+    .timeline-container::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.4);
+        border-radius: 10px;
+    }
+    
+    .timeline-container::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 255, 255, 0.6);
+    }
+    
+    .timeline-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        width: max-content;
+        padding: 1em 0;
+        position: relative;
+    }
+    
+    .timeline-line {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 8px; /* Altura del dot (16px / 2) */
+        height: 2px;
+        width: 100%;
+        z-index: 1;
+    }
+    
+    .timeline-item {
+        flex-direction: column;
+        margin-right: 3em;
+        margin-bottom: 0;
+        min-width: 120px;
+        position: relative;
+    }
+    
+    .timeline-item:last-child {
+        margin-right: 0;
+    }
+    
+    .timeline-dot {
+        margin-bottom: 0.8em;
+        position: relative;
+        z-index: 2;
+    }
+    
+    .timeline-content {
+        margin-left: 0;
+        text-align: center;
+    }
+}
+/* --- FIN LÍNEA DEL TIEMPO --- */
