@@ -1,0 +1,2557 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentación de JackBrid">
+      
+      
+        <meta name="author" content="miketrollyt">
+      
+      
+        <link rel="canonical" href="https://miketrollyt.github.io/JackBrid-Docs/guias/uso/">
+      
+      
+        <link rel="prev" href="../instalacion/">
+      
+      
+        <link rel="next" href="../faq/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../img/logo.png">
+      <meta name="generator" content="zensical-0.0.17">
+    
+    
+      
+        <title>Guía de Uso de JackBrid - JackBrid Docs</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../../assets/stylesheets/modern/main.d4922b3c.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/modern/palette.dfe2e883.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,500,500i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,a=__md_scope)=>JSON.parse(t.getItem(a.pathname+"."+e)),__md_set=(e,t,a=localStorage,_=__md_scope)=>{try{a.setItem(_.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#guia-de-uso-de-jackbrid" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="JackBrid Docs" class="md-header__button md-logo" aria-label="JackBrid Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            JackBrid Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Guía de Uso de JackBrid
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="none" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="none" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-moon" viewBox="0 0 24 24"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Buscar">
+  <button type="button" class="md-search__button">
+    Buscar
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+        <a href="https://github.com/MikeTrollYT/JackBrid" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MikeTrollYT/JackBrid
+  </div>
+</a>
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="JackBrid Docs" class="md-nav__button md-logo" aria-label="JackBrid Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+
+    </a>
+    JackBrid Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/MikeTrollYT/JackBrid" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MikeTrollYT/JackBrid
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-home" viewBox="0 0 24 24"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Instalación
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Instalación
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../instalacion/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7z"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Guía de Instalación de JackBrid
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 16.5v-9l6 4.5M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Guía de Uso de JackBrid
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 16.5v-9l6 4.5M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Guía de Uso de JackBrid
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#interfaz-principal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interfaz Principal
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interfaz Principal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vista-general" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vista General
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#indicadores-de-estado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Indicadores de Estado
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#busqueda-de-torrents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Búsqueda de Torrents
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Búsqueda de Torrents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paso-1-seleccionar-trackers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 1: Seleccionar Trackers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-2-escribir-la-busqueda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 2: Escribir la Búsqueda
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-3-configurar-filtros" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 3: Configurar Filtros
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Paso 3: Configurar Filtros">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ordenar-por" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ordenar por
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limite-de-resultados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Límite de Resultados
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solo-con-seeders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solo con Seeders
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-4-explorar-resultados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 4: Explorar Resultados
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestion-de-alldebrid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Gestión de AllDebrid
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🌐 Gestión de AllDebrid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#anadir-torrents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Añadir Torrents
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Añadir Torrents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#opcion-1-desde-los-resultados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Opción 1: Desde los Resultados
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opcion-2-copiar-magnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Opción 2: Copiar Magnet
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estados-de-descarga" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estados de Descarga
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestionar-elementos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestionar Elementos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestionar Elementos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reproducir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reproducir
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copiar-link" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Copiar Link
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eliminar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Eliminar
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reproduccion-de-videos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎥 Reproducción de Videos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎥 Reproducción de Videos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usar-el-reproductor-integrado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usar el Reproductor Integrado
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controles-del-reproductor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Controles del Reproductor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atajos-de-teclado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Atajos de Teclado
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limitaciones-de-audio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limitaciones de Audio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reproduccion-remota" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reproducción Remota
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reproducción Remota">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#en-smart-tv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        En Smart TV
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#en-chromecast" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        En Chromecast
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#en-kodijellyfinplex" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        En Kodi/Jellyfin/Plex
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trucos-y-consejos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Trucos y Consejos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 Trucos y Consejos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#maximizar-resultados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maximizar Resultados
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimizar-velocidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optimizar Velocidad
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evitar-problemas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evitar Problemas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flujos-de-trabajo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 Flujos de Trabajo
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 Flujos de Trabajo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caso-1-ver-una-pelicula" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Caso 1: Ver una Película
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caso-2-descargar-una-serie-completa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Caso 2: Descargar una Serie Completa
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caso-3-streaming-en-smart-tv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Caso 3: Streaming en Smart TV
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caso-4-coleccion-para-jellyfinplex" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Caso 4: Colección para Jellyfin/Plex
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caso-5-musica-en-alta-calidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Caso 5: Música en Alta Calidad
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mejores-practicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎓 Mejores Prácticas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎓 Mejores Prácticas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gestion-de-alldebrid_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestión de AllDebrid
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#privacidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Privacidad
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#responsabilidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Responsabilidad
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preguntas-frecuentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ❓ Preguntas Frecuentes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="❓ Preguntas Frecuentes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#puedo-usar-real-debrid-en-lugar-de-alldebrid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Puedo usar Real-Debrid en lugar de AllDebrid?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cuanto-tarda-en-procesar-un-torrent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Cuánto tarda en procesar un torrent?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#puedo-usar-jackbrid-en-movil" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Puedo usar JackBrid en móvil?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#se-pueden-anadir-subtitulos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Se pueden añadir subtítulos?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ❓ FAQ y Solución de Problemas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contribuir/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤝 Guía de Contribución
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aquitectura
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Aquitectura
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arquitectura/componentes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📦 Componentes del Sistema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arquitectura/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏗️ Arquitectura de JackBrid
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/endpoints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔌 Documentación de API REST
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#interfaz-principal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interfaz Principal
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interfaz Principal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vista-general" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vista General
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#indicadores-de-estado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Indicadores de Estado
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#busqueda-de-torrents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Búsqueda de Torrents
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Búsqueda de Torrents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paso-1-seleccionar-trackers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 1: Seleccionar Trackers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-2-escribir-la-busqueda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 2: Escribir la Búsqueda
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-3-configurar-filtros" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 3: Configurar Filtros
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Paso 3: Configurar Filtros">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ordenar-por" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ordenar por
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limite-de-resultados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Límite de Resultados
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solo-con-seeders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solo con Seeders
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-4-explorar-resultados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 4: Explorar Resultados
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestion-de-alldebrid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Gestión de AllDebrid
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🌐 Gestión de AllDebrid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#anadir-torrents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Añadir Torrents
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Añadir Torrents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#opcion-1-desde-los-resultados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Opción 1: Desde los Resultados
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opcion-2-copiar-magnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Opción 2: Copiar Magnet
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estados-de-descarga" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estados de Descarga
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestionar-elementos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestionar Elementos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestionar Elementos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reproducir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reproducir
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copiar-link" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Copiar Link
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eliminar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Eliminar
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reproduccion-de-videos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎥 Reproducción de Videos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎥 Reproducción de Videos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usar-el-reproductor-integrado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usar el Reproductor Integrado
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controles-del-reproductor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Controles del Reproductor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atajos-de-teclado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Atajos de Teclado
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limitaciones-de-audio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limitaciones de Audio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reproduccion-remota" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reproducción Remota
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reproducción Remota">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#en-smart-tv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        En Smart TV
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#en-chromecast" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        En Chromecast
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#en-kodijellyfinplex" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        En Kodi/Jellyfin/Plex
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trucos-y-consejos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Trucos y Consejos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 Trucos y Consejos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#maximizar-resultados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maximizar Resultados
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimizar-velocidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optimizar Velocidad
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evitar-problemas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evitar Problemas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flujos-de-trabajo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 Flujos de Trabajo
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 Flujos de Trabajo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caso-1-ver-una-pelicula" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Caso 1: Ver una Película
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caso-2-descargar-una-serie-completa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Caso 2: Descargar una Serie Completa
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caso-3-streaming-en-smart-tv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Caso 3: Streaming en Smart TV
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caso-4-coleccion-para-jellyfinplex" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Caso 4: Colección para Jellyfin/Plex
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caso-5-musica-en-alta-calidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Caso 5: Música en Alta Calidad
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mejores-practicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎓 Mejores Prácticas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎓 Mejores Prácticas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gestion-de-alldebrid_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestión de AllDebrid
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#privacidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Privacidad
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#responsabilidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Responsabilidad
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preguntas-frecuentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ❓ Preguntas Frecuentes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="❓ Preguntas Frecuentes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#puedo-usar-real-debrid-en-lugar-de-alldebrid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Puedo usar Real-Debrid en lugar de AllDebrid?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cuanto-tarda-en-procesar-un-torrent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Cuánto tarda en procesar un torrent?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#puedo-usar-jackbrid-en-movil" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Puedo usar JackBrid en móvil?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#se-pueden-anadir-subtitulos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Se pueden añadir subtítulos?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navegación" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Inicio
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../instalacion/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Instalación
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+  
+
+
+<h1 id="guia-de-uso-de-jackbrid">Guía de Uso de JackBrid<a class="headerlink" href="#guia-de-uso-de-jackbrid" title="Permanent link">&para;</a></h1>
+<p>Aprende a usar todas las características de JackBrid con ejemplos prácticos y casos de uso reales.</p>
+<hr />
+<h2 id="interfaz-principal">Interfaz Principal<a class="headerlink" href="#interfaz-principal" title="Permanent link">&para;</a></h2>
+<h3 id="vista-general">Vista General<a class="headerlink" href="#vista-general" title="Permanent link">&para;</a></h3>
+<p>Al abrir JackBrid en <code>http://localhost:8998</code>, verás la interfaz principal:</p>
+<p><img alt="Interfaz de JackBrid" src=".././../img/img1.png" /></p>
+<div class="admonition info">
+<p class="admonition-title">Secciones de la Interfaz</p>
+<p>La interfaz está dividida en tres secciones principales:</p>
+<ol>
+<li><strong>Búsqueda</strong> (arriba) - Selección de trackers, campo de búsqueda y filtros</li>
+<li><strong>Resultados</strong> (medio) - Torrents encontrados en tus búsquedas</li>
+<li><strong>Descargas</strong> (abajo) - Elementos añadidos a AllDebrid listos para reproducir o descargar</li>
+</ol>
+</div>
+<h3 id="indicadores-de-estado">Indicadores de Estado<a class="headerlink" href="#indicadores-de-estado" title="Permanent link">&para;</a></h3>
+<p>En la esquina superior derecha verás:</p>
+<ul>
+<li><span class="twemoji green"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8z"/></svg></span> <strong>Backend OK</strong>: Conectado correctamente a Jackett y AllDebrid</li>
+<li><span class="twemoji red"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41z"/></svg></span> <strong>Backend Error</strong>: Problema de conexión o API Key inválida</li>
+</ul>
+<hr />
+<h2 id="busqueda-de-torrents">Búsqueda de Torrents<a class="headerlink" href="#busqueda-de-torrents" title="Permanent link">&para;</a></h2>
+<h3 id="paso-1-seleccionar-trackers">Paso 1: Seleccionar Trackers<a class="headerlink" href="#paso-1-seleccionar-trackers" title="Permanent link">&para;</a></h3>
+<div class="admonition tip">
+<p class="admonition-title">Selección de Trackers</p>
+<ol>
+<li><strong>Marca los trackers</strong> donde quieres buscar</li>
+<li>Puedes seleccionar uno o varios simultáneamente</li>
+<li>Más trackers = más resultados, pero búsqueda más lenta</li>
+</ol>
+<p><strong>Recomendación:</strong></p>
+</div>
+<ul>
+<li>Para películas: <code>1337x</code>, <code>YTS</code>, <code>RARBG</code></li>
+<li>Para series: <code>EZTV</code>, <code>ThePirateBay</code></li>
+<li>Para música: <code>ThePirateBay</code>, <code>Rutracker</code></li>
+</ul>
+<h3 id="paso-2-escribir-la-busqueda">Paso 2: Escribir la Búsqueda<a class="headerlink" href="#paso-2-escribir-la-busqueda" title="Permanent link">&para;</a></h3>
+<p><strong>Consejos de búsqueda:</strong></p>
+<p>✅ <strong>Buenas búsquedas:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>The Matrix 1080p
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Breaking Bad S01
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Daft Punk Discovery FLAC
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>Ubuntu 22.04
+</span></code></pre></div></p>
+<p>❌ <strong>Búsquedas poco efectivas:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pelicula buena accion
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>serie drama 2024 mejor
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>musica electronica
+</span></code></pre></div></p>
+<p><strong>Tips:</strong>
+- Usa el <strong>nombre original</strong> en inglés
+- Añade <strong>calidad</strong> si buscas algo específico: <code>1080p</code>, <code>4K</code>, <code>BluRay</code>
+- Para series, especifica <strong>temporada</strong>: <code>S01</code>, <code>Season 1</code>
+- Para álbumes, añade <strong>formato</strong>: <code>FLAC</code>, <code>320kbps</code></p>
+<h3 id="paso-3-configurar-filtros">Paso 3: Configurar Filtros<a class="headerlink" href="#paso-3-configurar-filtros" title="Permanent link">&para;</a></h3>
+<h4 id="ordenar-por">Ordenar por<a class="headerlink" href="#ordenar-por" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Opción</th>
+<th>Cuándo usar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Relevancia</strong></td>
+<td>Cuando buscas un título específico</td>
+</tr>
+<tr>
+<td><strong>Seeders</strong></td>
+<td>Para descargas más rápidas</td>
+</tr>
+<tr>
+<td><strong>Tamaño</strong></td>
+<td>Para encontrar versiones 4K o comprimidas</td>
+</tr>
+<tr>
+<td><strong>Fecha</strong></td>
+<td>Para contenido reciente</td>
+</tr>
+</tbody>
+</table>
+<h4 id="limite-de-resultados">Límite de Resultados<a class="headerlink" href="#limite-de-resultados" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>10</code> - Búsqueda rápida</li>
+<li><code>50</code> - Buena variedad (recomendado)</li>
+<li><code>100</code> - Búsqueda exhaustiva</li>
+<li><code>Sin límite</code> - Todos los resultados (puede ser lento)</li>
+</ul>
+<h4 id="solo-con-seeders">Solo con Seeders<a class="headerlink" href="#solo-con-seeders" title="Permanent link">&para;</a></h4>
+<ul>
+<li>✅ <strong>Activado</strong>: Solo muestra torrents con disponibilidad garantizada</li>
+<li>❌ <strong>Desactivado</strong>: Muestra todos, incluso torrents muertos</li>
+</ul>
+<p><strong>Recomendación:</strong> Déjalo siempre activado.</p>
+<h3 id="paso-4-explorar-resultados">Paso 4: Explorar Resultados<a class="headerlink" href="#paso-4-explorar-resultados" title="Permanent link">&para;</a></h3>
+<p><img alt="Resultados" src=".././../img/img2.png" /></p>
+<p>Cada resultado muestra información detallada del torrent:</p>
+<ul>
+<li><strong>Título completo</strong> - Nombre del archivo con calidad y formato</li>
+<li><strong>Tamaño del archivo</strong> - Tamaño total del torrent</li>
+<li><strong>Seeders y Leechers</strong> - Disponibilidad y velocidad esperada</li>
+<li><strong>Tracker de origen</strong> - Fuente del torrent</li>
+<li><strong>Botón "Enviar"</strong> - Añade el torrent directamente a AllDebrid</li>
+</ul>
+<p><strong>Información clave:</strong>
+- <strong>Seeders</strong>: Más seeders = descarga más rápida
+- <strong>Tamaño</strong>: Verifica que sea razonable para la calidad
+- <strong>Tracker</strong>: Algunos trackers son más confiables
+- <strong>Fecha</strong>: Contenido reciente suele tener más seeds</p>
+<hr />
+<h2 id="gestion-de-alldebrid">🌐 Gestión de AllDebrid<a class="headerlink" href="#gestion-de-alldebrid" title="Permanent link">&para;</a></h2>
+<h3 id="anadir-torrents">Añadir Torrents<a class="headerlink" href="#anadir-torrents" title="Permanent link">&para;</a></h3>
+<h4 id="opcion-1-desde-los-resultados">Opción 1: Desde los Resultados<a class="headerlink" href="#opcion-1-desde-los-resultados" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Buscar contenido</li>
+<li>Clic en <strong>"Añadir a AllDebrid"</strong></li>
+<li>Esperar confirmación</li>
+<li>El torrent aparecerá en la sección "Mis Elementos"</li>
+</ol>
+<h4 id="opcion-2-copiar-magnet">Opción 2: Copiar Magnet<a class="headerlink" href="#opcion-2-copiar-magnet" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Clic en <strong>"Copiar Magnet"</strong></li>
+<li>Ir a <a href="https://alldebrid.com/magnets/">AllDebrid Magnets</a></li>
+<li>Pegar el magnet y enviar</li>
+</ol>
+<h3 id="estados-de-descarga">Estados de Descarga<a class="headerlink" href="#estados-de-descarga" title="Permanent link">&para;</a></h3>
+<p>Tu contenido pasa por varios estados:</p>
+<table>
+<thead>
+<tr>
+<th>Estado</th>
+<th>Ícono</th>
+<th>Descripción</th>
+<th>Acción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>En Cola</strong></td>
+<td>⏳</td>
+<td>Esperando procesamiento</td>
+<td>Esperar</td>
+</tr>
+<tr>
+<td><strong>Descargando</strong></td>
+<td>⬇️</td>
+<td>AllDebrid descargando</td>
+<td>Ver progreso</td>
+</tr>
+<tr>
+<td><strong>Listo</strong></td>
+<td>✅</td>
+<td>Disponible para streaming</td>
+<td>Reproducir/Descargar</td>
+</tr>
+<tr>
+<td><strong>Error</strong></td>
+<td>❌</td>
+<td>Problema en el torrent</td>
+<td>Eliminar e intentar otro</td>
+</tr>
+<tr>
+<td><strong>Muerto</strong></td>
+<td>💀</td>
+<td>Sin seeders disponibles</td>
+<td>Buscar alternativa</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gestionar-elementos">Gestionar Elementos<a class="headerlink" href="#gestionar-elementos" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>┌──────────────────────────────────────────────────────────┐
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>  ✅ Example.Movie.2024.1080p.mkv                         
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>  📦 1.5 GB  |  📅 20 Ene 2024                            
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>  [▶️ Reproducir]  [📋 Copiar Link]  [🗑️ Eliminar]       
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>└──────────────────────────────────────────────────────────┘
+</span></code></pre></div>
+<h4 id="reproducir">Reproducir<a class="headerlink" href="#reproducir" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Abre el reproductor integrado</li>
+<li>Streaming directo sin descargar</li>
+<li>Controles de velocidad, volumen, PiP</li>
+</ul>
+<h4 id="copiar-link">Copiar Link<a class="headerlink" href="#copiar-link" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Copia la URL directa al portapapeles</li>
+<li>Útil para:</li>
+<li>Descargar con gestores (IDM, aria2)</li>
+<li>Reproducir en VLC</li>
+<li>Compartir (temporalmente)</li>
+</ul>
+<h4 id="eliminar">Eliminar<a class="headerlink" href="#eliminar" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Elimina el torrent de AllDebrid</li>
+<li>Libera espacio en tu cuenta</li>
+<li>No afecta a los torrents originales</li>
+</ul>
+<hr />
+<h2 id="reproduccion-de-videos">🎥 Reproducción de Videos<a class="headerlink" href="#reproduccion-de-videos" title="Permanent link">&para;</a></h2>
+<h3 id="usar-el-reproductor-integrado">Usar el Reproductor Integrado<a class="headerlink" href="#usar-el-reproductor-integrado" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Clic en <strong>"Reproducir"</strong> en cualquier elemento listo</li>
+<li>El reproductor se abrirá automáticamente</li>
+<li>El video comenzará en unos segundos</li>
+</ol>
+<h3 id="controles-del-reproductor">Controles del Reproductor<a class="headerlink" href="#controles-del-reproductor" title="Permanent link">&para;</a></h3>
+<p><img alt="Reproductor" src=".././../img/img3.png" /></p>
+<p>El reproductor integrado Plyr ofrece controles completos para la reproducción:</p>
+<ul>
+<li><strong>Barra de progreso</strong> - Desplazamiento rápido a cualquier punto del video</li>
+<li><strong>Controles de reproducción</strong> - Play/Pausa y avance/retroceso</li>
+<li><strong>Control de volumen</strong> - Ajuste de audio con barra deslizante</li>
+<li><strong>Configuración</strong> - Velocidad de reproducción y calidad</li>
+<li><strong>Picture-in-Picture</strong> - Ver el video mientras navegas</li>
+<li><strong>Pantalla completa</strong> - Modo inmersivo</li>
+</ul>
+<p><strong>Funciones:</strong>
+- ▶️/⏸️ - Play/Pausa (Espacio)
+- ⏮️/⏭️ - Retroceder/Adelantar 10 seg
+- 🔊 - Control de volumen (↑/↓)
+- ⚙️ - Velocidad, calidad
+- 🖼️ - Picture-in-Picture
+- ⛶ - Pantalla completa (F)</p>
+<h3 id="atajos-de-teclado">Atajos de Teclado<a class="headerlink" href="#atajos-de-teclado" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Tecla</th>
+<th>Acción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Espacio</code></td>
+<td>Play/Pausa</td>
+</tr>
+<tr>
+<td><code>F</code></td>
+<td>Pantalla completa</td>
+</tr>
+<tr>
+<td><code>M</code></td>
+<td>Mutear/Desmutear</td>
+</tr>
+<tr>
+<td><code>↑/↓</code></td>
+<td>Volumen &plusmn;</td>
+</tr>
+<tr>
+<td><code>←/→</code></td>
+<td>Retroceder/Adelantar 5 seg</td>
+</tr>
+<tr>
+<td><code>0-9</code></td>
+<td>Saltar al % del video (5 = 50%)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="limitaciones-de-audio">Limitaciones de Audio<a class="headerlink" href="#limitaciones-de-audio" title="Permanent link">&para;</a></h3>
+<p>⚠️ <strong>Importante:</strong> El reproductor web solo soporta:
+- ✅ AAC
+- ✅ MP3
+- ✅ Opus
+- ❌ AC3
+- ❌ DTS
+- ❌ TrueHD</p>
+<p><strong>Si no hay sonido:</strong></p>
+<ol>
+<li><strong>Copiar el link</strong> del video</li>
+<li><strong>Abrir en VLC</strong>:
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>vlc<span class="w"> </span><span class="s2">&quot;https://...alldebrid.com/dl/...&quot;</span>
+</span></code></pre></div></li>
+<li>VLC reproducirá cualquier códec correctamente</li>
+</ol>
+<h3 id="reproduccion-remota">Reproducción Remota<a class="headerlink" href="#reproduccion-remota" title="Permanent link">&para;</a></h3>
+<h4 id="en-smart-tv">En Smart TV<a class="headerlink" href="#en-smart-tv" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Copiar link del video</li>
+<li>En la TV, abrir navegador web o app VLC</li>
+<li>Pegar y reproducir</li>
+</ol>
+<h4 id="en-chromecast">En Chromecast<a class="headerlink" href="#en-chromecast" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Usar Google Chrome en PC</li>
+<li>Reproducir el video</li>
+<li>Clic en ícono de Chromecast</li>
+<li>Seleccionar dispositivo</li>
+</ol>
+<h4 id="en-kodijellyfinplex">En Kodi/Jellyfin/Plex<a class="headerlink" href="#en-kodijellyfinplex" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Copiar link</li>
+<li>Añadir como fuente externa</li>
+<li>Reproducir normalmente</li>
+</ol>
+<hr />
+<h2 id="trucos-y-consejos">🎯 Trucos y Consejos<a class="headerlink" href="#trucos-y-consejos" title="Permanent link">&para;</a></h2>
+<h3 id="maximizar-resultados">Maximizar Resultados<a class="headerlink" href="#maximizar-resultados" title="Permanent link">&para;</a></h3>
+<p><strong>1. Usa sinónimos y variaciones:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>&quot;The Godfather&quot; → &quot;Godfather&quot;
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>&quot;Star Wars Episode IV&quot; → &quot;Star Wars A New Hope&quot;
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>&quot;Breaking Bad&quot; → &quot;BrBa&quot;
+</span></code></pre></div></p>
+<p><strong>2. Prueba con y sin año:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>&quot;Blade Runner&quot; (1982 y 2049)
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>&quot;Blade Runner 1982&quot;
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>&quot;Blade Runner 2049&quot;
+</span></code></pre></div></p>
+<p><strong>3. Busca por código:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>IMDb: &quot;tt0133093&quot; (The Matrix)
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>TMDB: &quot;The Matrix 1999&quot;
+</span></code></pre></div></p>
+<h3 id="optimizar-velocidad">Optimizar Velocidad<a class="headerlink" href="#optimizar-velocidad" title="Permanent link">&para;</a></h3>
+<p><strong>Selección de trackers:</strong>
+- ❌ Seleccionar todos (lento)
+- ✅ Seleccionar 2-3 específicos (rápido)</p>
+<p><strong>Límite inteligente:</strong>
+- Primera búsqueda: 20-30 resultados
+- Si no encuentras: ampliar a 50-100</p>
+<h3 id="evitar-problemas">Evitar Problemas<a class="headerlink" href="#evitar-problemas" title="Permanent link">&para;</a></h3>
+<p><strong>1. Torrents falsos:</strong>
+- ❌ Tamaño sospechoso (película 4K de 200 MB)
+- ❌ Muy pocos seeders (&lt; 5)
+- ❌ Título con muchas keywords spam</p>
+<p><strong>2. Errores de AllDebrid:</strong>
+- Torrent muerto → Buscar alternativa con más seeds
+- Límite excedido → Esperar 24 horas
+- Error de hash → Torrent corrupto, usar otro</p>
+<p><strong>3. Problemas de reproducción:</strong>
+- Video no carga → Verificar conexión a Internet
+- Audio no funciona → Abrir en VLC
+- Video tartamudea → Reducir calidad o descargar</p>
+<hr />
+<h2 id="flujos-de-trabajo">📚 Flujos de Trabajo<a class="headerlink" href="#flujos-de-trabajo" title="Permanent link">&para;</a></h2>
+<h3 id="caso-1-ver-una-pelicula">Caso 1: Ver una Película<a class="headerlink" href="#caso-1-ver-una-pelicula" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>1. Buscar &quot;Inception 1080p&quot;
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>2. Ordenar por seeders
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>3. Seleccionar resultado con &gt; 100 seeds
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>4. Añadir a AllDebrid
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>5. Esperar 10-30 segundos (estado &quot;Listo&quot;)
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>6. Clic en &quot;Reproducir&quot;
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>7. Disfrutar en el navegador
+</span></code></pre></div>
+<p><strong>Tiempo total:</strong> &lt; 1 minuto</p>
+<hr />
+<h3 id="caso-2-descargar-una-serie-completa">Caso 2: Descargar una Serie Completa<a class="headerlink" href="#caso-2-descargar-una-serie-completa" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>1. Buscar &quot;Breaking Bad S01 1080p&quot;
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>2. Añadir a AllDebrid
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>3. Esperar a estado &quot;Listo&quot;
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>4. Repetir para S02, S03... S05
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>5. En cada elemento: &quot;Copiar Link&quot;
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>6. Usar aria2c para descargas paralelas:
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>   aria2c -x 16 &quot;https://...link1...&quot; &quot;https://...link2...&quot;
+</span></code></pre></div>
+<p><strong>Ventaja:</strong> Descargas a máxima velocidad sin límites.</p>
+<hr />
+<h3 id="caso-3-streaming-en-smart-tv">Caso 3: Streaming en Smart TV<a class="headerlink" href="#caso-3-streaming-en-smart-tv" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>1. Buscar contenido en JackBrid (PC)
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>2. Añadir a AllDebrid
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>3. Copiar link del video
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>4. Enviar link a la TV:
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>   - Email a ti mismo
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>   - Telegram &quot;Mensajes Guardados&quot;
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>   - Pastebin privado
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>5. En la TV: abrir VLC &gt; Red &gt; Pegar
+</span></code></pre></div>
+<hr />
+<h3 id="caso-4-coleccion-para-jellyfinplex">Caso 4: Colección para Jellyfin/Plex<a class="headerlink" href="#caso-4-coleccion-para-jellyfinplex" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>1. Buscar contenido en JackBrid
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>2. Añadir múltiples elementos a AllDebrid
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>3. Copiar todos los links
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>4. Descargar al servidor de medios:
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>   wget -i links.txt -P /media/movies/
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>5. Escanear biblioteca en Jellyfin/Plex
+</span></code></pre></div>
+<hr />
+<h3 id="caso-5-musica-en-alta-calidad">Caso 5: Música en Alta Calidad<a class="headerlink" href="#caso-5-musica-en-alta-calidad" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>1. Buscar &quot;Daft Punk Discovery FLAC&quot;
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>2. Filtrar por tamaño &gt; 400 MB (FLAC real)
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>3. Añadir a AllDebrid
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>4. Copiar link y descargar
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>5. Importar a biblioteca local
+</span></code></pre></div>
+<hr />
+<h2 id="mejores-practicas">🎓 Mejores Prácticas<a class="headerlink" href="#mejores-practicas" title="Permanent link">&para;</a></h2>
+<h3 id="gestion-de-alldebrid_1">Gestión de AllDebrid<a class="headerlink" href="#gestion-de-alldebrid_1" title="Permanent link">&para;</a></h3>
+<p><strong>Mantén tu cuenta limpia:</strong>
+- Elimina contenido después de verlo/descargarlo
+- AllDebrid tiene límite de espacio (varía por plan)
+- Contenido antiguo puede expirar</p>
+<p><strong>Organiza descargas:</strong>
+- Descarga contenido en lotes
+- Usa nombres descriptivos
+- Mantén carpetas ordenadas localmente</p>
+<h3 id="privacidad">Privacidad<a class="headerlink" href="#privacidad" title="Permanent link">&para;</a></h3>
+<p><strong>No compartas links directos:</strong>
+- Los links de AllDebrid son personales
+- Pueden rastrearse a tu cuenta
+- Se desactivan tras cierto tiempo</p>
+<p><strong>Usa VPN (opcional):</strong>
+- AllDebrid ya anonimiza tu IP ante los trackers
+- VPN adicional para máxima privacidad
+- No es obligatorio, AllDebrid es seguro</p>
+<h3 id="responsabilidad">Responsabilidad<a class="headerlink" href="#responsabilidad" title="Permanent link">&para;</a></h3>
+<p><strong>Contenido legal:</strong>
+- Usa JackBrid para contenido de dominio público
+- Distribuciones Linux, software open source
+- Media Creative Commons</p>
+<p><strong>Respaldo:</strong>
+- Guarda copias locales de contenido importante
+- Links de AllDebrid son temporales
+- No dependas 100% de la nube</p>
+<hr />
+<h2 id="preguntas-frecuentes">❓ Preguntas Frecuentes<a class="headerlink" href="#preguntas-frecuentes" title="Permanent link">&para;</a></h2>
+<h3 id="puedo-usar-real-debrid-en-lugar-de-alldebrid">¿Puedo usar Real-Debrid en lugar de AllDebrid?<a class="headerlink" href="#puedo-usar-real-debrid-en-lugar-de-alldebrid" title="Permanent link">&para;</a></h3>
+<p>Actualmente JackBrid solo soporta AllDebrid.</p>
+<h3 id="cuanto-tarda-en-procesar-un-torrent">¿Cuánto tarda en procesar un torrent?<a class="headerlink" href="#cuanto-tarda-en-procesar-un-torrent" title="Permanent link">&para;</a></h3>
+<p>Depende del tamaño y la disponibilidad:
+- Archivos pequeños (&lt; 1 GB): 10-30 segundos
+- Películas HD (1-5 GB): 30-60 segundos
+- Packs grandes (&gt; 10 GB): 1-5 minutos</p>
+<h3 id="puedo-usar-jackbrid-en-movil">¿Puedo usar JackBrid en móvil?<a class="headerlink" href="#puedo-usar-jackbrid-en-movil" title="Permanent link">&para;</a></h3>
+<p>Sí, la interfaz es responsive. Funciona en:
+- ✅ Navegadores móviles (Chrome, Safari)
+- ✅ Tablets
+- ❌ No hay app nativa (aún)</p>
+<h3 id="se-pueden-anadir-subtitulos">¿Se pueden añadir subtítulos?<a class="headerlink" href="#se-pueden-anadir-subtitulos" title="Permanent link">&para;</a></h3>
+<p>El reproductor integrado soporta subtítulos WebVTT:
+1. Descargar subtítulos (.srt) de OpenSubtitles
+2. Convertir a .vtt
+3. Configuración → Cargar subtítulo</p>
+<hr />
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pie" >
+        
+          
+          <a href="../instalacion/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Guía de Instalación de JackBrid">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                Guía de Instalación de JackBrid
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../faq/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: ❓ FAQ y Solución de Problemas">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              <div class="md-ellipsis">
+                ❓ FAQ y Solución de Problemas
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 MikeTrollYT
+
+    </div>
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      
+      <script id="__config" type="application/json">{"annotate":null,"base":"../..","features":["announce.dismiss","content.code.annotate","content.code.copy","content.code.select","content.footnote.tooltips","content.tabs.link","content.tooltips","navigation.footer","navigation.indexes","navigation.instant","navigation.instant.prefetch","navigation.path","navigation.sections","navigation.top","navigation.tracking","search.highlight"],"search":"../../assets/javascripts/workers/search.e2d2d235.min.js","tags":null,"translations":{"clipboard.copied":"Copiado al portapapeles","clipboard.copy":"Copiar al portapapeles","search.result.more.one":"1 más en esta página","search.result.more.other":"# más en esta página","search.result.none":"No se encontraron documentos","search.result.one":"1 documento encontrado","search.result.other":"# documentos encontrados","search.result.placeholder":"Teclee para comenzar búsqueda","search.result.term.missing":"Falta","select.version":"Seleccionar versión"},"version":null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.8ffeb9c9.min.js"></script>
+      
+    
+  </body>
+</html>
