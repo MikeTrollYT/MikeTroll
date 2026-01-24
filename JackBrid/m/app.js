@@ -1,6 +1,5 @@
 // Constantes
 const STORAGE_KEY = 'jackbrid_server_url';
-const EXPECTED_HTML_FRAGMENT = '<!doctype html>\n<html lang="es">\n<head>\n  <meta charset="utf-8" />\n  <meta name="viewport" content="width=device-width,initial-scale=1" />\n  <title>JackBrid</title>';
 
 // Elementos del DOM
 const configPanel = document.getElementById('config-panel');
@@ -125,7 +124,7 @@ async function verifyConnection(url) {
     
     try {
       const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 10000);
+      const timeoutId = setTimeout(() => controller.abort(), 5000);
       
       const response = await fetch(normalizedUrl, {
         method: 'GET',
@@ -144,6 +143,15 @@ async function verifyConnection(url) {
       const iframeResult = await verifyWithIframe(normalizedUrl);
       html = iframeResult.html;
       canValidateContent = iframeResult.canRead;
+      
+      // Si necesita validación por recurso
+      if (iframeResult.needsResourceValidation) {
+        verificationMessage.textContent = 'Validando servidor JackBrid...';
+        const isJackbrid = await validateJackbridByResource(normalizedUrl);
+        if (!isJackbrid) {
+          throw new Error('La página no parece ser JackBrid. Verifica la dirección.');
+        }
+      }
     }
     
     // Paso 2: Verificar el contenido HTML
@@ -177,6 +185,34 @@ async function verifyConnection(url) {
 }
 
 /**
+ * Valida que sea JackBrid intentando acceder a un endpoint de la API
+ */
+async function validateJackbridByResource(baseUrl) {
+  try {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 3000);
+    
+    const response = await fetch(`${baseUrl}/api/health`, {
+      method: 'GET',
+      cache: 'no-cache',
+      signal: controller.signal
+    });
+    
+    clearTimeout(timeoutId);
+    
+    // Si el endpoint responde, es JackBrid
+    if (response.ok) {
+      return true;
+    }
+    
+    return false;
+    
+  } catch (error) {
+    return false;
+  }
+}
+
+/**
  * Verifica la conexión usando un iframe (evita problemas de CORS)
  */
 function verifyWithIframe(url) {
@@ -190,7 +226,7 @@ function verifyWithIframe(url) {
     let timeoutId;
     let resolved = false;
     
-    // Timeout de 10 segundos
+    // Timeout de 5 segundos
     timeoutId = setTimeout(() => {
       if (!resolved) {
         resolved = true;
@@ -232,12 +268,22 @@ function verifyWithIframe(url) {
         
         document.body.removeChild(iframe);
         
-        // Si no podemos leer nada Y el título no es JackBrid, rechazar
-        if (!canRead && title.toLowerCase() !== 'jackbrid') {
-          reject(new Error('La página no parece ser JackBrid. Verifica la dirección.'));
-        } else {
-          resolve({ html, canRead, title });
+        // Si el HTML está vacío o casi vacío (menos de 100 chars), validar el título
+        const htmlIsEmpty = !html || html.length < 100;
+        
+        if (htmlIsEmpty && !title) {
+          // HTML vacío y sin título: CORS está bloqueando todo
+          // Intentar validar cargando un recurso específico de JackBrid
+          resolve({ html: null, canRead: false, title: '', needsResourceValidation: true });
+          return;
         }
+        
+        if (htmlIsEmpty && title.toLowerCase() !== 'jackbrid') {
+          reject(new Error('La página no parece ser JackBrid. Verifica la dirección.'));
+          return;
+        }
+        
+        resolve({ html, canRead, title, needsResourceValidation: false });
       }
     };
     
