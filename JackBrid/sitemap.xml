@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+      <url>
+        <loc>https://miketrollyt.github.io/JackBrid-Docs/</loc>
+      </url>
+      <url>
+        <loc>https://miketrollyt.github.io/JackBrid-Docs/guias/instalacion/</loc>
+      </url>
+      <url>
+        <loc>https://miketrollyt.github.io/JackBrid-Docs/guias/uso/</loc>
+      </url>
+      <url>
+        <loc>https://miketrollyt.github.io/JackBrid-Docs/guias/faq/</loc>
+      </url>
+      <url>
+        <loc>https://miketrollyt.github.io/JackBrid-Docs/guias/contribuir/</loc>
+      </url>
+      <url>
+        <loc>https://miketrollyt.github.io/JackBrid-Docs/arquitectura/componentes/</loc>
+      </url>
+      <url>
+        <loc>https://miketrollyt.github.io/JackBrid-Docs/arquitectura/overview/</loc>
+      </url>
+      <url>
+        <loc>https://miketrollyt.github.io/JackBrid-Docs/api/endpoints/</loc>
+      </url>
+</urlset>

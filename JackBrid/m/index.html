@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JackBrid - Configuración</title>
+  <link rel="icon" href="./../img/logo.png" type="image/png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="logo-container">
+      <img src="./../img/logo.png" alt="JackBrid Logo" class="logo">
+      <h1>JackBrid Mobile</h1>
+    </div>
+
+    <!-- Panel de configuración inicial -->
+    <div id="config-panel" class="panel hidden">
+      <h2>Configuración del Servicio</h2>
+      <p class="description">Introduce la dirección donde está ejecutándose JackBrid:</p>
+      
+      <form id="config-form">
+        <div class="input-group">
+          <label for="server-url">IP:Puerto o Dominio</label>
+          <input 
+            type="text" 
+            id="server-url" 
+            name="server-url" 
+            placeholder="Ej: 192.168.1.100:3000 o midominio.com"
+            required
+            autocomplete="off"
+          >
+          <small class="hint">Formato: IP:puerto (192.168.1.100:3000) o dominio.com</small>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">
+          <span class="btn-text">Conectar</span>
+          <span class="loader hidden"></span>
+        </button>
+      </form>
+    </div>
+
+    <!-- Panel de verificación -->
+    <div id="verification-panel" class="panel hidden">
+      <div class="spinner"></div>
+      <h2>Verificando conexión...</h2>
+      <p id="verification-message">Comprobando que el servicio esté disponible</p>
+    </div>
+
+    <!-- Panel de error -->
+    <div id="error-panel" class="panel hidden">
+      <div class="error-icon">⚠️</div>
+      <h2>Error de Conexión</h2>
+      <p id="error-message" class="error-text"></p>
+      
+      <div class="error-suggestions">
+        <h3>Posibles soluciones:</h3>
+        <ul>
+          <li>Verifica que estés en la misma red que el servidor</li>
+          <li>Comprueba que el contenedor Docker esté activo</li>
+          <li>Asegúrate de que la dirección sea correcta</li>
+          <li>Verifica que el puerto sea el correcto</li>
+        </ul>
+      </div>
+
+      <div class="button-group">
+        <button id="retry-btn" class="btn btn-secondary">Reintentar</button>
+        <button id="change-config-btn" class="btn btn-primary">Cambiar Configuración</button>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>JackBrid Mobile v1.0</p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
