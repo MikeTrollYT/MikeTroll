@@ -146,7 +146,7 @@ async function verifyConnection(url) {
       canValidateContent = iframeResult.canRead;
     }
     
-    // Paso 2: Verificar el contenido HTML solo si podemos leerlo Y tiene contenido real
+    // Paso 2: Verificar el contenido HTML
     if (canValidateContent && html && html.length > 100) {
       verificationMessage.textContent = 'Verificando que sea JackBrid...';
       
@@ -154,15 +154,14 @@ async function verifyConnection(url) {
       const normalizedHtml = html.replace(/\s+/g, ' ').trim().toLowerCase();
       const titleCheck = normalizedHtml.includes('jackbrid');
       const logoCheck = normalizedHtml.includes('logo.png');
+      const brandCheck = normalizedHtml.includes('jackbrid web');
       
-      if (!titleCheck && !logoCheck) {
+      if (!titleCheck || !logoCheck) {
         throw new Error('La página encontrada no parece ser JackBrid. Verifica la dirección.');
       }
-    } else {
-      // Si no podemos validar el contenido o el HTML está vacío (CORS), 
-      // pero el servidor respondió, asumimos que está bien
-      verificationMessage.textContent = 'Servidor accesible, preparando redirección...';
     }
+    // Si no podemos leer el HTML completo pero llegamos aquí, 
+    // significa que verifyWithIframe ya validó el título
     
     // Paso 3: Todo OK, guardar y redirigir
     verificationMessage.textContent = 'Conexión exitosa. Redirigiendo...';
@@ -207,16 +206,37 @@ function verifyWithIframe(url) {
         resolved = true;
         clearTimeout(timeoutId);
         
+        let html = null;
+        let canRead = false;
+        let title = '';
+        
         try {
           // Intentar acceder al contenido del iframe
           const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-          const html = iframeDoc.documentElement.outerHTML;
-          document.body.removeChild(iframe);
-          resolve({ html, canRead: true });
+          
+          // Intentar leer el título (a veces accesible incluso con CORS)
+          try {
+            title = iframeDoc.title || '';
+          } catch (titleError) {
+            // No se puede leer el título
+          }
+          
+          // Intentar leer el HTML completo
+          html = iframeDoc.documentElement.outerHTML;
+          canRead = true;
+          
         } catch (e) {
-          // Si no podemos acceder por CORS, el servidor responde pero no podemos validar
-          document.body.removeChild(iframe);
-          resolve({ html: null, canRead: false });
+          // CORS impide leer el contenido
+          canRead = false;
+        }
+        
+        document.body.removeChild(iframe);
+        
+        // Si no podemos leer nada Y el título no es JackBrid, rechazar
+        if (!canRead && title.toLowerCase() !== 'jackbrid') {
+          reject(new Error('La página no parece ser JackBrid. Verifica la dirección.'));
+        } else {
+          resolve({ html, canRead, title });
         }
       }
     };
