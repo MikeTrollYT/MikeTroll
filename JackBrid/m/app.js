@@ -115,6 +115,11 @@ async function verifyConnection(url) {
   try {
     const normalizedUrl = normalizeUrl(url);
     
+    // Verificar Mixed Content (HTTPS -> HTTP)
+    if (window.location.protocol === 'https:' && normalizedUrl.startsWith('http://')) {
+      throw new Error('No se puede conectar a HTTP desde HTTPS. Accede a esta página usando HTTP: ' + window.location.href.replace('https://', 'http://'));
+    }
+    
     // Paso 1: Verificar que el servidor responde
     verificationMessage.textContent = 'Conectando al servidor...';
     
@@ -306,7 +311,10 @@ function verifyWithIframe(url) {
 /**
  * Maneja los errores de conexión
  */
-function handleConnectionError(error, url) {
+fu// Detectar Mixed Content
+  if (error.message.includes('HTTP desde HTTPS')) {
+    errorMsg = error.message;
+  } else nction handleConnectionError(error, url) {
   console.error('Error de conexión:', error);
   
   let errorMsg = 'No se pudo conectar al servidor. ';
