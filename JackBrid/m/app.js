@@ -311,10 +311,7 @@ function verifyWithIframe(url) {
 /**
  * Maneja los errores de conexión
  */
-fu// Detectar Mixed Content
-  if (error.message.includes('HTTP desde HTTPS')) {
-    errorMsg = error.message;
-  } else nction handleConnectionError(error, url) {
+function handleConnectionError(error, url) {
   console.error('Error de conexión:', error);
   
   let errorMsg = 'No se pudo conectar al servidor. ';
