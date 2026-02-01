@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+      <url>
+        <loc>https://miketrollyt.github.io/Jackent-Docs/</loc>
+      </url>
+      <url>
+        <loc>https://miketrollyt.github.io/Jackent-Docs/guias/instalacion/</loc>
+      </url>
+      <url>
+        <loc>https://miketrollyt.github.io/Jackent-Docs/guias/uso/</loc>
+      </url>
+      <url>
+        <loc>https://miketrollyt.github.io/Jackent-Docs/guias/faq/</loc>
+      </url>
+      <url>
+        <loc>https://miketrollyt.github.io/Jackent-Docs/guias/contribuir/</loc>
+      </url>
+      <url>
+        <loc>https://miketrollyt.github.io/Jackent-Docs/arquitectura/componentes/</loc>
+      </url>
+      <url>
+        <loc>https://miketrollyt.github.io/Jackent-Docs/arquitectura/overview/</loc>
+      </url>
+      <url>
+        <loc>https://miketrollyt.github.io/Jackent-Docs/api/endpoints/</loc>
+      </url>
+</urlset>
