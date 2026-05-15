@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generador de Tarjetas para Google Sites</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-inner">
+      <div class="header-brand">
+        <i class="ti ti-layout-cards"></i>
+        <span>Google Sites Card Generator</span>
+      </div>
+      <p class="header-sub">Genera el código HTML para tus posts de blog en Google Sites</p>
+      <button class="btn-theme" id="themeToggle" aria-label="Cambiar tema">
+        <i class="ti ti-moon" id="themeIcon"></i>
+        <span id="themeLabel">Modo oscuro</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="layout">
+
+      <!-- PREVIEW -->
+      <aside class="preview-panel">
+        <div class="panel-header">
+          <i class="ti ti-eye"></i>
+          <span>Vista previa</span>
+        </div>
+        <div class="preview-stage">
+          <a class="card-preview" id="previewCard" href="#" target="_blank">
+            <div class="card-img-wrap">
+              <div class="card-img-placeholder" id="imgPlaceholder">
+                <i class="ti ti-photo"></i>
+                <span>Sin imagen</span>
+              </div>
+              <img id="previewImg" src="" alt="Portada" style="display:none">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title" id="previewTitle">Título de tu web</h3>
+              <p class="card-desc" id="previewDesc">Aquí va la breve descripción de tu Google Site. Explica de qué trata para animar a la gente a hacer clic y visitarla.</p>
+            </div>
+          </a>
+        </div>
+        <div class="preview-note">
+          <i class="ti ti-info-circle"></i>
+          Esta tarjeta se verá en tu post de Google Sites
+        </div>
+      </aside>
+
+      <!-- FORM -->
+      <section class="form-panel">
+        <div class="panel-header">
+          <i class="ti ti-settings-2"></i>
+          <span>Configuración</span>
+        </div>
+
+        <div class="form-body">
+
+          <div class="form-group">
+            <label for="inputUrl">
+              <i class="ti ti-link"></i> URL de Google Sites
+            </label>
+            <input type="url" id="inputUrl" placeholder="https://sites.google.com/view/tu-web">
+          </div>
+
+          <div class="form-group">
+            <label>
+              <i class="ti ti-photo"></i> Imagen de portada
+            </label>
+            <div class="img-row">
+              <input type="text" id="inputImgDirect" placeholder="https://i.ibb.co/...">
+              <button class="btn-upload" id="btnImgbb">
+                <i class="ti ti-cloud-upload"></i>
+                Subir a ImgBB
+              </button>
+            </div>
+            <p class="field-hint">
+              <i class="ti ti-info-circle"></i>
+              Pega el enlace directo <code>i.ibb.co</code> o usa el botón para subir la imagen
+            </p>
+          </div>
+
+          <div class="form-group">
+            <label for="inputTitle">
+              <i class="ti ti-heading"></i> Título
+            </label>
+            <input type="text" id="inputTitle" placeholder="Título de tu web" maxlength="80">
+            <span class="char-counter" id="titleCounter">0 / 80</span>
+          </div>
+
+          <div class="form-group">
+            <label for="inputDesc">
+              <i class="ti ti-align-left"></i> Descripción
+            </label>
+            <textarea id="inputDesc" placeholder="Breve descripción de tu Google Site para animar a los visitantes a hacer clic..." maxlength="300"></textarea>
+            <span class="char-counter" id="descCounter">0 / 300</span>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="output-section">
+            <div class="output-header">
+              <div class="output-label">
+                <i class="ti ti-code"></i> Código generado
+              </div>
+              <button class="btn-copy" id="copyBtn">
+                <i class="ti ti-copy"></i>
+                Copiar código
+              </button>
+            </div>
+            <pre class="code-block" id="codeOut"></pre>
+          </div>
+
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- MODAL IMGBB -->
+  <div class="modal-overlay" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h2 class="modal-title" id="modalTitle">
+          <i class="ti ti-cloud-upload"></i> Subir imagen a ImgBB
+        </h2>
+        <button class="modal-close" id="modalClose" aria-label="Cerrar modal">
+          <i class="ti ti-x"></i>
+        </button>
+      </div>
+
+      <div class="modal-steps">
+        <div class="step">
+          <span class="step-num">1</span>
+          <p>Abre ImgBB y sube tu imagen haciendo clic en el botón de abajo</p>
+        </div>
+        <div class="step">
+          <span class="step-num">2</span>
+          <p>Una vez subida, copia el enlace que te da ImgBB (formato <code>https://ibb.co/xxxxx</code>)</p>
+        </div>
+        <div class="step">
+          <span class="step-num">3</span>
+          <p>Pégalo en el campo de abajo y haz clic en <strong>Aplicar</strong></p>
+        </div>
+      </div>
+
+      <a href="https://imgbb.com/upload" target="_blank" class="btn-imgbb-open">
+        <i class="ti ti-external-link"></i>
+        Abrir ImgBB
+      </a>
+
+      <div class="modal-input-group">
+        <input type="text" id="modalInput" placeholder="https://ibb.co/mrYKmb3p">
+        <button class="btn-apply" id="modalApply">Aplicar</button>
+      </div>
+
+      <p class="modal-error" id="modalError">
+        <i class="ti ti-alert-circle"></i>
+        No se pudo convertir el enlace. Asegúrate de que tiene el formato <code>https://ibb.co/xxxxx</code>
+      </p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
