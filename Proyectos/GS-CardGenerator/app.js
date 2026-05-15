@@ -66,8 +66,8 @@ function update() {
 
   // Preview
   previewCard.href = url || '#';
-  previewTitle.textContent = title || 'Título de tu web';
-  previewDesc.textContent  = desc  || 'Aquí va la breve descripción de tu Google Site. Explica de qué trata para animar a la gente a hacer clic y visitarla.';
+  previewTitle.textContent = title || 'Título de tu post';
+  previewDesc.textContent  = desc  || 'Aquí va una breve descripción sobre lo que trata.';
 
   if (img) {
     previewImg.src         = img;
