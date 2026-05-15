@@ -79,10 +79,10 @@ function update() {
   }
 
   // Código generado
-  const siteUrl  = url  || 'AQUI_LA_URL_DE_TU_GOOGLE_SITE';
-  const imgSrc   = img  || 'AQUI_EL_ENLACE_DIRECTO_DE_TU_IMAGEN';
-  const titleOut = title || 'AQUÍ EL TÍTULO DE TU WEB';
-  const descOut  = desc  || 'Aquí va la breve descripción de tu Google Site. Explica de qué trata para animar a la gente a hacer clic y visitarla.';
+  const siteUrl  = url  || '';
+  const imgSrc   = img  || '';
+  const titleOut = title || '';
+  const descOut  = desc  || '';
 
   codeOut.textContent = generateHTML(siteUrl, imgSrc, titleOut, descOut);
 }
