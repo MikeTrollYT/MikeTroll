@@ -4,17 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Agents - MikeTroll</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<main class="container">
     <h1>User Agents</h1>
     <p>🔍 ¡Descubre una extensa lista de más de 13,000 user agents! 🌐 Optimiza tus pruebas y garantiza que tu sitio web funcione a la perfección en cualquier dispositivo y navegador. 🚀</p>
 
     <div class="button-container">
-        <button class="button" onclick="showContent(1)">Opción 1</button>
-        <button class="button" onclick="showContent(2)">Opción 2</button>
-        <button class="button" onclick="showContent(3)">Opción 3</button>
+        <button class="button" aria-pressed="false" onclick="showContent(1)">Opción 1</button>
+        <button class="button" aria-pressed="false" onclick="showContent(2)">Opción 2</button>
+        <button class="button" aria-pressed="false" onclick="showContent(3)">Opción 3</button>
     </div>
 
     <!-- Contenido para Opción 1 -->
@@ -35,6 +39,7 @@
         <pre id="content-text-3"></pre>
     </div>
 
+</main>
     <script src="script.js"></script>
 </body>
 </html>

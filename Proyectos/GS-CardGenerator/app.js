@@ -3,31 +3,29 @@ const themeToggle = document.getElementById('themeToggle');
 const themeIcon   = document.getElementById('themeIcon');
 const themeLabel  = document.getElementById('themeLabel');
 
-function applyTheme(dark) {
+function applyTheme(dark, save) {
   if (dark) {
     document.documentElement.setAttribute('data-theme', 'dark');
-    themeIcon.className  = 'ti ti-sun';
+    themeIcon.className = 'ti ti-sun';
     themeLabel.textContent = 'Modo claro';
   } else {
     document.documentElement.removeAttribute('data-theme');
-    themeIcon.className  = 'ti ti-moon';
+    themeIcon.className = 'ti ti-moon';
     themeLabel.textContent = 'Modo oscuro';
   }
-  localStorage.setItem('theme', dark ? 'dark' : 'light');
+  // Solo se guarda cuando la persona elige tema (no el del sistema)
+  if (save) {
+    try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch (e) {}
+  }
 }
 
 themeToggle.addEventListener('click', () => {
   const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-  applyTheme(!isDark);
+  applyTheme(!isDark, true);
 });
 
-// Cargar preferencia guardada o del sistema
-const saved = localStorage.getItem('theme');
-if (saved) {
-  applyTheme(saved === 'dark');
-} else {
-  applyTheme(window.matchMedia('(prefers-color-scheme: dark)').matches);
-}
+// El tema inicial ya lo aplicó el script del <head>; aquí solo se sincroniza el botón
+applyTheme(document.documentElement.getAttribute('data-theme') === 'dark', false);
 
 
 // ===== ELEMENTOS =====
@@ -53,6 +51,17 @@ const modalClose     = document.getElementById('modalClose');
 const btnImgbb       = document.getElementById('btnImgbb');
 
 
+// ===== UTILIDADES =====
+// Escapa texto para insertarlo de forma segura en el HTML generado
+function esc(str) {
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+
 // ===== UPDATE PREVIEW & CODE =====
 function update() {
   const url   = inputUrl.value.trim();
@@ -64,36 +73,34 @@ function update() {
   titleCounter.textContent = `${inputTitle.value.length} / 80`;
   descCounter.textContent  = `${inputDesc.value.length} / 300`;
 
-  // Preview
-  previewCard.href = url || '#';
+  // Preview (solo se permiten enlaces http/https en la vista previa)
+  previewCard.href = /^https?:\/\//i.test(url) ? url : '#';
   previewTitle.textContent = title || 'Título de tu post';
   previewDesc.textContent  = desc  || 'Aquí va una breve descripción sobre lo que trata.';
 
-  if (img) {
-    previewImg.src         = img;
-    previewImg.style.display = 'block';
-    imgPlaceholder.style.display = 'none';
-  } else {
+  if (!img) {
+    previewImg.removeAttribute('src');
     previewImg.style.display = 'none';
     imgPlaceholder.style.display = 'flex';
+  } else if (previewImg.getAttribute('src') !== img) {
+    // Solo se vuelve a cargar si cambió; los eventos load/error alternan la vista
+    previewImg.src = img;
   }
 
   // Código generado
-  const siteUrl  = url  || '';
-  const imgSrc   = img  || '';
-  const titleOut = title || '';
-  const descOut  = desc  || '';
-
-  codeOut.textContent = generateHTML(siteUrl, imgSrc, titleOut, descOut);
+  codeOut.textContent = generateHTML(url, img, title, desc);
 }
 
 function generateHTML(url, img, title, desc) {
-  return `<a href="${url}" target="_blank" style="text-decoration: none; font-family: Arial, sans-serif;">
-  <div style="max-width: 350px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); background-color: #ffffff; transition: transform 0.2s;">
-    <img src="${img}" alt="Portada de la web" style="width: 100%; height: 180px; object-fit: cover; display: block;">
+  const imgTag = img
+    ? `\n    <img src="${esc(img)}" alt="${esc(title || 'Portada de la web')}" style="width: 100%; height: 180px; object-fit: cover; display: block;">`
+    : '';
+
+  return `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer" style="text-decoration: none; font-family: Arial, sans-serif;">
+  <div style="max-width: 350px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); background-color: #ffffff; transition: transform 0.2s;">${imgTag}
     <div style="padding: 16px;">
-      <h3 style="margin: 0 0 8px 0; color: #333333; font-size: 18px;">${title}</h3>
-      <p style="margin: 0; color: #666666; font-size: 14px; line-height: 1.5;">${desc}</p>
+      <h3 style="margin: 0 0 8px 0; color: #333333; font-size: 18px;">${esc(title)}</h3>
+      <p style="margin: 0; color: #666666; font-size: 14px; line-height: 1.5;">${esc(desc)}</p>
     </div>
   </div>
 </a>`;
@@ -101,39 +108,42 @@ function generateHTML(url, img, title, desc) {
 
 
 // ===== COPY =====
-copyBtn.addEventListener('click', () => {
+function showCopied() {
+  copyBtn.classList.add('copied');
+  copyBtn.innerHTML = '<i class="ti ti-check"></i> ¡Copiado!';
+  setTimeout(() => {
+    copyBtn.classList.remove('copied');
+    copyBtn.innerHTML = '<i class="ti ti-copy"></i> Copiar código';
+  }, 2500);
+}
+
+copyBtn.addEventListener('click', async () => {
   const code = codeOut.textContent;
   if (!code) return;
 
-  navigator.clipboard.writeText(code).then(() => {
-    copyBtn.classList.add('copied');
-    copyBtn.innerHTML = '<i class="ti ti-check"></i> ¡Copiado!';
-    setTimeout(() => {
-      copyBtn.classList.remove('copied');
-      copyBtn.innerHTML = '<i class="ti ti-copy"></i> Copiar código';
-    }, 2500);
-  }).catch(() => {
-    // Fallback para entornos sin clipboard API
+  try {
+    await navigator.clipboard.writeText(code);
+    showCopied();
+  } catch (err) {
+    // Alternativa para entornos sin Clipboard API
     const ta = document.createElement('textarea');
     ta.value = code;
     ta.style.position = 'fixed';
     ta.style.opacity = '0';
     document.body.appendChild(ta);
     ta.select();
-    document.execCommand('copy');
+    const ok = document.execCommand('copy');
     document.body.removeChild(ta);
-    copyBtn.classList.add('copied');
-    copyBtn.innerHTML = '<i class="ti ti-check"></i> ¡Copiado!';
-    setTimeout(() => {
-      copyBtn.classList.remove('copied');
-      copyBtn.innerHTML = '<i class="ti ti-copy"></i> Copiar código';
-    }, 2500);
-  });
+    if (ok) showCopied();
+  }
 });
 
 
 // ===== MODAL =====
+let lastFocused = null;
+
 function openModal() {
+  lastFocused = document.activeElement;
   modal.classList.add('active');
   modalInput.value = '';
   modalError.classList.remove('visible');
@@ -142,6 +152,7 @@ function openModal() {
 
 function closeModal() {
   modal.classList.remove('active');
+  if (lastFocused) lastFocused.focus();
 }
 
 btnImgbb.addEventListener('click', openModal);
@@ -152,7 +163,17 @@ modal.addEventListener('click', (e) => {
 });
 
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
+  if (!modal.classList.contains('active')) return;
+  if (e.key === 'Escape') { closeModal(); return; }
+
+  // Mantiene el foco del teclado dentro del modal
+  if (e.key === 'Tab') {
+    const focusables = modal.querySelectorAll('button:not(:disabled), a[href], input');
+    const first = focusables[0];
+    const last  = focusables[focusables.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  }
 });
 
 modalApply.addEventListener('click', applyImgbb);
@@ -179,9 +200,7 @@ function setModalLoading(loading) {
 }
 
 function showModalError(msg) {
-  const icon = modalError.querySelector('i');
-  modalError.textContent = ' ' + msg;
-  if (icon) modalError.prepend(icon);
+  modalError.querySelector('span').textContent = msg;
   modalError.classList.add('visible');
 }
 
@@ -198,7 +217,8 @@ async function applyImgbb() {
     return;
   }
 
-  if (!/ibb\.co\//i.test(raw)) {
+  // Solo se aceptan enlaces de página de ibb.co (con o sin https://)
+  if (!/^(https?:\/\/)?(www\.)?ibb\.co\/[A-Za-z0-9]+/i.test(raw)) {
     showModalError('El enlace no parece ser de ImgBB. Usa el formato https://ibb.co/xxxxx');
     return;
   }
@@ -222,7 +242,15 @@ async function applyImgbb() {
 async function fetchRealDirectUrl(pageUrl) {
   if (!/^https?:\/\//i.test(pageUrl)) pageUrl = 'https://' + pageUrl;
 
-  const res = await fetch(CORS_PROXY + encodeURIComponent(pageUrl));
+  // Si el proxy no responde en 10 s, se cancela
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 10000);
+  let res;
+  try {
+    res = await fetch(CORS_PROXY + encodeURIComponent(pageUrl), { signal: controller.signal });
+  } finally {
+    clearTimeout(timer);
+  }
   if (!res.ok) throw new Error('Proxy error ' + res.status);
 
   const data = await res.json();
@@ -252,7 +280,7 @@ function setImage(url) {
 }
 
 
-// ===== IMAGE LOAD ERROR =====
+// ===== IMAGE LOAD / ERROR =====
 previewImg.addEventListener('error', () => {
   // Si la imagen no carga, mostramos el placeholder
   previewImg.style.display = 'none';
@@ -260,10 +288,8 @@ previewImg.addEventListener('error', () => {
 });
 
 previewImg.addEventListener('load', () => {
-  if (previewImg.src && previewImg.src !== window.location.href) {
-    previewImg.style.display = 'block';
-    imgPlaceholder.style.display = 'none';
-  }
+  previewImg.style.display = 'block';
+  imgPlaceholder.style.display = 'none';
 });
 
 

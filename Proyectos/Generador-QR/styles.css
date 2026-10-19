@@ -1,0 +1,53 @@
+:root{
+  --ink:#0b1b2b;--ink2:#13293f;--paper:#f3f6f9;--card:#fff;--line:#d9e3ec;
+  --text:#16283a;--muted:#5d7287;--accent:#00a8e8;--amber:#ffb703;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{
+  margin:0;padding:1.2em;min-height:100vh;
+  display:flex;flex-direction:column;justify-content:center;align-items:center;gap:1.5em;
+  font-family:'DM Sans',system-ui,sans-serif;color:var(--text);line-height:1.6;
+  background-color:var(--paper);
+  background-image:radial-gradient(circle at 1px 1px,#c9d6e2 1px,transparent 0);
+  background-size:22px 22px;
+}
+.container{
+  width:100%;max-width:520px;background:var(--card);
+  border-radius:24px;padding:2.5em 3em;
+  box-shadow:0 30px 60px -20px rgba(11,27,43,.35);
+}
+h1{
+  margin:0 0 1em;color:var(--ink);
+  font-family:'Bricolage Grotesque',sans-serif;font-weight:800;
+  font-size:clamp(2em,4.5vw,2.6em);letter-spacing:-.035em;line-height:1.02;
+}
+label{display:block;margin-bottom:.5em;font-weight:700;color:var(--ink)}
+input[type="url"]{
+  width:100%;padding:.9em 1.1em;margin-bottom:1em;
+  background:var(--paper);color:var(--text);
+  border:1px solid var(--line);border-radius:14px;
+  font:inherit;font-size:1em;
+}
+button{
+  width:100%;padding:.85em 1.6em;border:0;border-radius:14px;
+  background:var(--accent);color:var(--ink);
+  font:inherit;font-weight:700;font-size:1.05em;cursor:pointer;
+  transition:background .2s ease,transform .2s ease;
+}
+button:hover{background:var(--amber);transform:translateY(-3px)}
+button.secondary{
+  background:transparent;border:1px solid var(--line);color:var(--ink);margin-top:1em;
+}
+button.secondary:hover{background:var(--ink);border-color:var(--ink);color:#fff}
+#qrError{margin:1em 0 0;color:#b3261e;font-weight:500}
+#qrResult{
+  margin-top:1.8em;padding:1.5em;text-align:center;
+  background:var(--paper);border:1px solid var(--line);border-radius:14px;
+}
+#qr canvas{max-width:100%;height:auto!important;border-radius:10px}
+footer{color:var(--muted);font-size:.9em;text-align:center}
+:is(input,button):focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+@media (max-width:768px){.container{padding:1.8em 1.4em;border-radius:20px}}
+@media (max-width:480px){body{padding:.5em}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}

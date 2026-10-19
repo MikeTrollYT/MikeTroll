@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comprobador de User Agents - Trollgents</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<main class="container">
     <h1>Comprobador de User Agents - Trollgents</h1>
-    
+
     <h2>Descripción</h2>
     <p>
         Este proyecto es un script en Python para comprobar user agents. El script verifica si los user agents listados en un archivo de texto son funcionales o si están obsoletos, y los clasifica en archivos separados para user agents funcionales y obsoletos.
@@ -41,32 +45,32 @@
     </code></pre>
 
     <h2>Uso</h2>
-    <p>
-        1. Prepara el archivo de user agents:
+    <div class="step">
+        <p>1. Prepara el archivo de user agents:</p>
         <ul>
             <li>El archivo <code>user_agents.txt</code> debe contener una lista de user agents, uno por línea.</li>
             <li>Puedes encontrar user agents en el siguiente sitio web: <a href="https://miketrollyt.github.io/MikeTroll/user-agents/" target="_blank">MikeTroll - User Agents</a></li>
         </ul>
-    </p>
+    </div>
     <p>
         2. Ejecuta el script:
     </p>
     <pre><code>python main.py
     </code></pre>
-    <p>
-        3. Ingresa la URL del sitio web:
+    <div class="step">
+        <p>3. Ingresa la URL del sitio web:</p>
         <ul>
             <li>Ingresa la URL del sitio web que deseas usar para verificar los user agents (por ejemplo, <code>https://www.google.com</code>).</li>
         </ul>
-    </p>
-    <p>
-        4. Revisa los resultados:
+    </div>
+    <div class="step">
+        <p>4. Revisa los resultados:</p>
         <ul>
             <li>El script generará dos archivos de salida:</li>
             <li><code>user_agents_funcionales.txt</code>: Contiene user agents que funcionan.</li>
             <li><code>user_agents_obsoletos.txt</code>: Contiene user agents que no funcionan.</li>
         </ul>
-    </p>
+    </div>
 
     <h2>Notas</h2>
     <p>
@@ -79,7 +83,7 @@
             Descargar Proyecto
         </a>
     </div>
-
+</main>
     <script src="script.js"></script>
 </body>
 </html>

@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comprobador de Proxies - Trollxies</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<main class="container">
     <h1>Comprobador de Proxies - Trollxies</h1>
-    
+
     <h2>Descripción</h2>
     <p>
         Este proyecto es un script en Python para comprobar proxies HTTP, SOCKS4 y SOCKS5. El script verifica si los proxies listados en un archivo de texto son funcionales y los clasifica en archivos separados para proxies que funcionan y los que no.
@@ -44,8 +48,8 @@
     </code></pre>
 
     <h2>Uso</h2>
-    <p>
-        1. Prepara el archivo de proxies:
+    <div class="step">
+        <p>1. Prepara el archivo de proxies:</p>
         <ul>
             <li>Los archivos de proxies deben estar en el formato <code>IP:PORT</code>. Los archivos proporcionados deben ser llenados con proxies válidos:</li>
             <li><code>HTTP_proxies.txt</code></li>
@@ -53,26 +57,26 @@
             <li><code>SOCKS5_proxies.txt</code></li>
             <li>Puedes encontrar proxies en el siguiente sitio web: <a href="https://miketrollyt.github.io/MikeTroll/proxies/" target="_blank">MikeTroll - Proxies</a></li>
         </ul>
-    </p>
+    </div>
     <p>
         2. Ejecuta el script:
     </p>
     <pre><code>python main.py
     </code></pre>
-    <p>
-        3. Ingresa el tipo de proxy:
+    <div class="step">
+        <p>3. Ingresa el tipo de proxy:</p>
         <ul>
             <li>Ingresa el tipo de proxy que deseas verificar cuando se te solicite. Las opciones disponibles son <code>HTTP</code>, <code>SOCKS4</code>, y <code>SOCKS5</code>.</li>
         </ul>
-    </p>
-    <p>
-        4. Revisa los resultados:
+    </div>
+    <div class="step">
+        <p>4. Revisa los resultados:</p>
         <ul>
             <li>El script generará dos archivos de salida:</li>
-            <li><code>working_<tipo_de_proxy>_proxies.txt</code>: Contiene proxies que funcionan.</li>
-            <li><code>non_working_<tipo_de_proxy>_proxies.txt</code>: Contiene proxies que no funcionan.</li>
+            <li><code>working_&lt;tipo_de_proxy&gt;_proxies.txt</code>: Contiene proxies que funcionan.</li>
+            <li><code>non_working_&lt;tipo_de_proxy&gt;_proxies.txt</code>: Contiene proxies que no funcionan.</li>
         </ul>
-    </p>
+    </div>
 
     <h2>Notas</h2>
     <p>
@@ -85,7 +89,7 @@
             Descargar Proyecto
         </a>
     </div>
-
+</main>
     <script src="script.js"></script>
 </body>
 </html>

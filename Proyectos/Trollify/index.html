@@ -7,9 +7,13 @@
     <meta name="description" content="El mejor convertidor de Spotify">
     <link rel="icon" href="img/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<main class="page">
     <h1>Convertidor Spotify - Trollify</h1>
     
     <h2>Descripción</h2>
@@ -80,9 +84,9 @@ cd Trollify-ConvertidorDeSpotify
 
     <h2>Capturas de Pantalla</h2>
     <div class="screenshot-container">
-        <img src="img/Convertidor.png" alt="Convertidor">
-        <img src="img/EjemploSong.png" alt="Canción">
-        <img src="img/EjemploAlbum.png" alt="Álbum">
+        <img class="zoomable-image" tabindex="0" src="img/Convertidor.png" alt="Convertidor">
+        <img class="zoomable-image" tabindex="0" src="img/EjemploSong.png" alt="Canción">
+        <img class="zoomable-image" tabindex="0" src="img/EjemploAlbum.png" alt="Álbum">
     </div>
 
     <div class="button-container">
@@ -91,6 +95,42 @@ cd Trollify-ConvertidorDeSpotify
         </a>
     </div>
 
+</main>
+
+
+    <script>
+    (function () {
+        var overlay = document.createElement('div');
+        overlay.className = 'image-overlay';
+        overlay.setAttribute('role', 'dialog');
+        overlay.setAttribute('aria-modal', 'true');
+        var big = document.createElement('img');
+        overlay.appendChild(big);
+        document.body.appendChild(overlay);
+
+        function open(img) {
+            big.src = img.src;
+            big.alt = img.alt;
+            overlay.classList.add('open');
+            document.body.classList.add('image-zoom-open');
+        }
+        function close() {
+            overlay.classList.remove('open');
+            document.body.classList.remove('image-zoom-open');
+        }
+
+        document.querySelectorAll('.zoomable-image').forEach(function (img) {
+            img.addEventListener('click', function () { open(img); });
+            img.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(img); }
+            });
+        });
+        overlay.addEventListener('click', close);
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') close();
+        });
+    })();
+    </script>
     <script src="script.js"></script>
 </body>
 </html>

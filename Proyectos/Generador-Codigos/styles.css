@@ -1,0 +1,101 @@
+:root{
+  --ink:#0b1b2b;--ink2:#13293f;--paper:#f3f6f9;--card:#fff;--line:#d9e3ec;
+  --text:#16283a;--muted:#5d7287;--accent:#00a8e8;--amber:#ffb703;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;padding:1.2em;min-height:100vh;
+  display:flex;justify-content:center;align-items:center;
+  font-family:'DM Sans',system-ui,sans-serif;color:var(--text);line-height:1.6;
+  background-color:var(--paper);
+  background-image:radial-gradient(circle at 1px 1px,#c9d6e2 1px,transparent 0);
+  background-size:22px 22px;
+}
+.container{
+  display:flex;width:100%;max-width:1400px;background:var(--card);
+  border-radius:24px;overflow:hidden;
+  box-shadow:0 30px 60px -20px rgba(11,27,43,.35);
+}
+h1,h2{font-family:'Bricolage Grotesque',sans-serif;margin:0;letter-spacing:-.03em}
+h1{
+  color:var(--ink);font-weight:800;
+  font-size:clamp(2em,4.5vw,3.4em);letter-spacing:-.035em;line-height:1.02;margin-bottom:1em;
+}
+
+/* Configuración */
+.config-section{flex:1;min-width:0;padding:2.5em 3em}
+.config-section h2{
+  display:flex;align-items:center;gap:.8em;
+  color:var(--ink);font-weight:700;font-size:1.35em;line-height:1;margin-bottom:1.2em;
+}
+.config-section h2::after{content:"";flex:1;height:1px;background:var(--line)}
+form{display:grid;grid-template-columns:1fr 1fr;gap:1em 1.2em;max-width:680px}
+.field{display:flex;flex-direction:column;justify-content:flex-end}
+.wide{grid-column:1 / -1}
+label{margin-bottom:.4em;font-size:.95em;font-weight:700;color:var(--ink)}
+input,select{
+  width:100%;padding:.8em 1em;
+  background:var(--paper);color:var(--text);
+  border:1px solid var(--line);border-radius:14px;
+  font:inherit;font-size:1em;
+}
+button{
+  padding:.85em 1.6em;border:0;border-radius:14px;
+  font:inherit;font-weight:700;font-size:1.05em;cursor:pointer;
+  transition:background .2s ease,color .2s ease,transform .2s ease;
+}
+button.primary{background:var(--accent);color:var(--ink)}
+button.primary:hover:not(:disabled){background:var(--amber);transform:translateY(-3px)}
+button.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.25)}
+button.ghost:hover:not(:disabled){background:rgba(255,255,255,.14)}
+button:disabled{opacity:.45;cursor:not-allowed}
+#message{margin:1em 0 0;min-height:1.6em;color:var(--muted);font-weight:500}
+#message.error{color:#b3261e}
+
+/* Panel oscuro de resultados */
+.result-section{
+  flex:0 0 420px;display:flex;flex-direction:column;position:relative;overflow:hidden;
+  padding:2.5em 2em;color:#e8f1f8;
+  background:linear-gradient(170deg,var(--ink2),var(--ink) 70%);
+}
+.result-section::before{
+  content:"";position:absolute;top:-90px;right:-90px;width:260px;height:260px;
+  border-radius:50%;background:radial-gradient(circle,rgba(0,168,232,.45),transparent 70%);
+  pointer-events:none;
+}
+.result-section > *{position:relative}
+.result-section h2{color:#fff;font-weight:800;font-size:2.4em;line-height:1;margin-bottom:.8em}
+textarea{
+  flex:1;width:100%;min-height:320px;resize:none;padding:1em;
+  background:rgba(255,255,255,.07);color:#e8f1f8;
+  border:1px solid rgba(255,255,255,.25);border-radius:14px;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.95em;line-height:1.5;
+}
+.actions{display:flex;gap:.8em;margin-top:1em;flex-wrap:wrap}
+.actions button{flex:1 1 auto}
+
+/* Scrollbars */
+::-webkit-scrollbar{width:8px;height:8px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:rgba(0,168,232,.35);border-radius:10px}
+::-webkit-scrollbar-thumb:hover{background:rgba(0,168,232,.6)}
+textarea::-webkit-scrollbar-thumb{background:rgba(255,255,255,.25)}
+
+:is(input,select,button,textarea):focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+
+@media (max-width:1024px){
+  .result-section{flex-basis:320px;padding:1.5em}
+  .config-section{padding:2em}
+}
+@media (max-width:768px){
+  body{align-items:flex-start}
+  .container{flex-direction:column;border-radius:20px}
+  .config-section{padding:1.8em 1.4em}
+  .result-section{flex:none}
+  .result-section h2{font-size:2em}
+}
+@media (max-width:480px){
+  body{padding:.5em}
+  form{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}

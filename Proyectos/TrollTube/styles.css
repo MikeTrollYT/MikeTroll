@@ -131,6 +131,42 @@ a:hover{text-decoration:underline}
   background:var(--paper);
 }
 
+/* Imagenes Ampliables */
+.zoomable-image{cursor:zoom-in;transition:transform .25s ease,box-shadow .25s ease}
+.zoomable-image:hover{transform:scale(1.02);box-shadow:0 8px 20px rgba(11,27,43,.18)}
+.zoomable-image:focus-visible{outline:3px solid var(--amber);outline-offset:4px}
+body.image-zoom-open{overflow:hidden}
+.image-overlay{
+  position:fixed;
+  inset:0;
+  z-index:1000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:1.5em;
+  background:rgba(5,14,24,.82);
+  opacity:0;
+  visibility:hidden;
+  cursor:zoom-out;
+  transition:opacity .3s ease,visibility .3s ease;
+}
+.image-overlay.open{opacity:1;visibility:visible}
+.image-overlay img{
+  display:block;
+  max-width:94vw;
+  max-height:92vh;
+  width:auto;
+  height:auto;
+  border:3px solid var(--accent);
+  border-radius:14px;
+  background:var(--paper);
+  box-shadow:0 25px 70px rgba(0,0,0,.55);
+  transform:scale(.7);
+  transition:transform .35s cubic-bezier(.2,.8,.2,1);
+  cursor:default;
+}
+.image-overlay.open img{transform:scale(1)}
+
 /* Botón de descarga */
 .button-container{text-align:left;margin-top:2.5em}
 .download-button{
