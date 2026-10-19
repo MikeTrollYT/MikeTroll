@@ -31,6 +31,9 @@ a:focus-visible,.timeline-header:focus-visible{outline:3px solid var(--amber);ou
 .rs-li:nth-child(4) .rs-a:before{background:#333}
 .rs-li:nth-child(5) .rs-a:before{background:#6e5494}
 
+.spotify-embed{--spotify-scale:.73;width:calc(435px * var(--spotify-scale));height:calc(250px * var(--spotify-scale));margin:0 0 2em;overflow:hidden;border-radius:14px}
+.spotify-embed iframe{display:block;width:435px;height:250px;border:0;background:transparent;transform:scale(var(--spotify-scale));transform-origin:top left}
+
 .projects-container{flex:1;padding:2.5em 3em;overflow-y:auto;max-height:calc(100vh - 2.4em)}
 .intro{margin-bottom:2.5em}
 .intro h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(2em,4.5vw,3.4em);line-height:1.02;letter-spacing:-.035em;margin:0 0 .4em;color:var(--ink)}
@@ -82,14 +85,17 @@ a:focus-visible,.timeline-header:focus-visible{outline:3px solid var(--amber);ou
 .timeline-content{margin-left:0;text-align:center}
 }
 
-@media(max-width:1024px){.profile-container{flex:0 0 300px;--pad:1.5em;padding:2em var(--pad)}.project-list{grid-template-columns:repeat(2,1fr)}.projects-container{padding:2em 1.5em}}
+@media(max-width:1024px){.profile-container{flex:0 0 300px;--pad:1.5em;padding:2em var(--pad)}.project-list{grid-template-columns:repeat(2,1fr)}.projects-container{padding:2em 1.5em}.spotify-embed{--spotify-scale:.62}}
 @media(max-width:768px){
 body{align-items:flex-start}
 .main-container{flex-direction:column}
 .profile-container{flex:1;max-height:none;overflow:visible}
+.spotify-embed{--spotify-scale:.92;margin-bottom:-5.5em}
+.timeline-section{margin-top:0}
 .projects-container{max-height:none;padding:2em 1.2em}
 }
-@media(max-width:480px){body{padding:.5em}.project-list{grid-template-columns:1fr}.profile-container h2{font-size:2em}}
+@media(max-width:480px){body{padding:.5em}.project-list{grid-template-columns:1fr}.profile-container h2{font-size:2em}.spotify-embed{--spotify-scale:.86;margin-bottom:-5.5em}}
+@media(max-width:400px){.spotify-embed{--spotify-scale:.68;margin-bottom:-5.5em}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 
 /* Popup */
