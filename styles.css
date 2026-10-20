@@ -94,9 +94,9 @@ a:focus-visible,.timeline-header:focus-visible{outline:3px solid var(--amber);ou
 body{align-items:flex-start}
 .main-container{flex-direction:column}
 .profile-container{flex:1;max-height:none;overflow:visible}
-.spotify-embed{height:calc(200px * var(--spotify-scale) + 1.2em);margin:0 0 .5em}
+.spotify-embed{width:100%;height:calc(200px + 1.2em);margin:0 0 .5em}
 .spotify-embed p{position:static;margin:0 0 .25em}
-.spotify-embed iframe{height:200px}
+.spotify-embed iframe{width:100%;height:200px;transform:none}
 .timeline-section{margin-top:0}
 .projects-container{max-height:none;padding:2em 1.2em}
 }
