@@ -31,8 +31,9 @@ a:focus-visible,.timeline-header:focus-visible{outline:3px solid var(--amber);ou
 .rs-li:nth-child(4) .rs-a:before{background:#333}
 .rs-li:nth-child(5) .rs-a:before{background:#6e5494}
 
-.spotify-embed{--spotify-scale:.73;width:calc(435px * var(--spotify-scale));height:calc(250px * var(--spotify-scale));margin:0 0 2em;overflow:hidden;border-radius:14px}
-.spotify-embed iframe{display:block;width:435px;height:250px;border:0;background:transparent;transform:scale(var(--spotify-scale));transform-origin:top left}
+.spotify-embed{--spotify-scale:.73;width:calc(435px * var(--spotify-scale));height:calc(80px * var(--spotify-scale));margin:0 0 1em;overflow:hidden;border-radius:8px;position:relative}
+.spotify-embed p{position:absolute;bottom:100%;left:0;margin:0 0 .25em;color:var(--accent);font-size:.85em;font-weight:500}
+.spotify-embed iframe{display:block;width:435px;height:80px;border:0;border-radius:8px;background:transparent;box-shadow:none;transform:scale(var(--spotify-scale));transform-origin:top left}
 
 .projects-container{flex:1;padding:2.5em 3em;overflow-y:auto;max-height:calc(100vh - 2.4em)}
 .intro{margin-bottom:2.5em}
@@ -72,6 +73,9 @@ a:focus-visible,.timeline-header:focus-visible{outline:3px solid var(--amber);ou
 .timeline-line{left:7px;top:0;bottom:0;width:2px}
 }
 @media(min-width:769px){
+.spotify-embed{height:calc(200px * var(--spotify-scale) + 1.45em);margin:-1em 0 .75em}
+.spotify-embed p{position:static;margin:0 0 .25em}
+.spotify-embed iframe{height:200px}
 .timeline-header{display:none}
 .timeline-section{width:auto;border-top:1px solid rgba(255,255,255,.2);padding-top:1.2em;margin-right:calc(var(--pad)*-1)}
 .timeline-section::before{content:"Línea del tiempo";display:block;font:700 1.1em 'Bricolage Grotesque',sans-serif;color:#fff}
@@ -90,12 +94,14 @@ a:focus-visible,.timeline-header:focus-visible{outline:3px solid var(--amber);ou
 body{align-items:flex-start}
 .main-container{flex-direction:column}
 .profile-container{flex:1;max-height:none;overflow:visible}
-.spotify-embed{--spotify-scale:.92;margin-bottom:-5.5em}
+.spotify-embed{height:calc(200px * var(--spotify-scale) + 1.2em);margin:0 0 .5em}
+.spotify-embed p{position:static;margin:0 0 .25em}
+.spotify-embed iframe{height:200px}
 .timeline-section{margin-top:0}
 .projects-container{max-height:none;padding:2em 1.2em}
 }
-@media(max-width:480px){body{padding:.5em}.project-list{grid-template-columns:1fr}.profile-container h2{font-size:2em}.spotify-embed{--spotify-scale:.86;margin-bottom:-5.5em}}
-@media(max-width:400px){.spotify-embed{--spotify-scale:.68;margin-bottom:-5.5em}}
+@media(max-width:480px){body{padding:.5em}.project-list{grid-template-columns:1fr}.profile-container h2{font-size:2em}.spotify-embed{--spotify-scale:.86}}
+@media(max-width:400px){.spotify-embed{--spotify-scale:.68}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 
 /* Popup */
