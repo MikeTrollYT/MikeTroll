@@ -32,17 +32,28 @@
                         <a class="rs-a" href="https://github.com/MikeTrollYT"><i class="fab fa-github icon"></i></a></li>
                 </ul>
             </div>
-            <!--
             <div class="spotify-embed">
                 <iframe
-                    src="https://now-playing-spotify-kappa.vercel.app/embed"
+                    id="spotifyIframe"
                     title="Spotify reproduciendo ahora"
                     width="720"
                     height="250"
                     loading="lazy"
                     allowtransparency="true">
                 </iframe>
-            </div>-->
+                <script>
+                    const spotifyIframe = document.getElementById('spotifyIframe');
+                    const mobileMediaQuery = window.matchMedia('(max-width: 768px)');
+                    const updateSpotifySource = () => {
+                        spotifyIframe.src = mobileMediaQuery.matches
+                            ? 'https://now-playing-spotify-kappa.vercel.app/embed'
+                            : 'http://localhost:3000/embed?style=compact';
+                    };
+
+                    updateSpotifySource();
+                    mobileMediaQuery.addEventListener('change', updateSpotifySource);
+                </script>
+            </div>
 
             <!-- INICIO LÍNEA DEL TIEMPO -->
             <div class="timeline-section">
